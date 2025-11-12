@@ -1,0 +1,916 @@
+type: collection.insomnia.rest/5.0
+name: Smartfleet
+meta:
+  id: wrk_03fb7f0f1fcb41029a25329a2ded9c24
+  created: 1761866610661
+  modified: 1761866610661
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/api/token/
+    name: Obter Login
+    meta:
+      id: req_d8b36ebc26bf4a57b4bc7a7fc3a894b9
+      created: 1761866632146
+      modified: 1761875792400
+      isPrivate: false
+      description: ""
+      sortKey: -1761866632146
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "username": "motorista1",
+          "password": "mot12345678"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Add's
+    meta:
+      id: fld_841c75047f034b06b06b40204e22cb97
+      created: 1761873480617
+      modified: 1761873480617
+      sortKey: -1761873480617
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/categorias-veiculos/
+        name: Add Categoria de veiculos
+        meta:
+          id: req_921647c3481d43bba28c56eab921a6e1
+          created: 1761866756486
+          modified: 1761873497862
+          isPrivate: false
+          description: ""
+          sortKey: -1761873493440
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"nome": "Moto"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODcyOTU0LCJpYXQiOjE3NjE4NzI2NTQsImp0aSI6IjdhMTkxOTUwZTQ2MjRmMzU4ZGE4Y2FiNTI4MDQ0MzVmIiwidXNlcl9pZCI6IjEifQ.fq5nuS8XHj7FaHsFKvppnFRRb_rSzijRFgYhcHoFMDE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/veiculos/
+        name: Add Veiculos
+        meta:
+          id: req_3fac478de8834c56ba0aa869f8d2d63a
+          created: 1761872941792
+          modified: 1761873493270
+          isPrivate: false
+          description: ""
+          sortKey: -1761873493240
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"placa": "BAD-1234",
+             	"modelo": "Iveco", 
+            	"categoria": 2, 
+            	"data_aquisicao": "2023-01-01", 
+            	"data_ultima_manutencao": "2025-01-01"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODczMzIyLCJpYXQiOjE3NjE4NzMwMjIsImp0aSI6IjZiMWI1NmM5NThmNzQyMDJhNzc0NWU1MTY5M2VjOWNjIiwidXNlcl9pZCI6IjEifQ.ixCjGsJjYgzkCQynq5XmXvivjBBnlADs2FmoeUkTiG0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: Add Viagem
+        meta:
+          id: req_43554ed37bcc4e0ba010f173f64139ce
+          created: 1761873102695
+          modified: 1761873495379
+          isPrivate: false
+          description: ""
+          sortKey: -1761873493340
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"destino": "Santos", 
+            	"quilometragem": 150, 
+            	"data_hora_inicio": "2025-11-05T10:00:00Z", 
+            	"veiculo": 2, 
+            	"motorista": 5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODczNzI5LCJpYXQiOjE3NjE4NzM0MjksImp0aSI6IjM1MzkyNjRkYzY0MDRiZWQ5MGEwNmNhYjM1YzQ4ZDAzIiwidXNlcl9pZCI6IjEifQ.Hn8XR8sHlzE_OUTYvnABhZ1YGItIIOdXmu4KIfonU-U
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Superuser
+    meta:
+      id: fld_e61953f00737451da582149954216f94
+      created: 1761873509067
+      modified: 1761873509067
+      sortKey: -1761873509067
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/viagens
+        name: Vê as viagens?
+        meta:
+          id: req_2aa7694cd340478a823e54f24b945256
+          created: 1761873523209
+          modified: 1761874359031
+          isPrivate: false
+          description: ""
+          sortKey: -1761873524767
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/manutencoes/
+        name: Criar Manutenção
+        meta:
+          id: req_8395b65ae9744dd294580f3883643a29
+          created: 1761873630809
+          modified: 1761874589328
+          isPrivate: false
+          description: ""
+          sortKey: -1761873509103.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"veiculo": 1, 
+            	"data": "2025-11-01", 
+            	"tipo": "PREVENTIVA", 
+            	"descricao": "Teste Supervisor", 
+            	"custo": 100, 
+            	"tecnico": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/dashboard/
+        name: Acessar Dashboard
+        meta:
+          id: req_db80baa6d09c48849e81298fd425d576
+          created: 1761874165721
+          modified: 1761874355633
+          isPrivate: false
+          description: ""
+          sortKey: -1761873516935.25
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/dashboard/?data_inicio=2025-01-01
+        name: Acessar Dashboard - data
+        meta:
+          id: req_eb696c3e45dc4b9ab1f14aaae489363a
+          created: 1761874202752
+          modified: 1761874353022
+          isPrivate: false
+          description: ""
+          sortKey: -1761873513019.375
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/dashboard/?categoria=1
+        name: Acessar Dashboard - cat
+        meta:
+          id: req_6a6c8835be0d4039b0f313a420a38a0b
+          created: 1761874254081
+          modified: 1761874350466
+          isPrivate: false
+          description: ""
+          sortKey: -1761873511061.4375
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: Criar viagem
+        meta:
+          id: req_1753bf1d3f7547ba8b9934f12a7a8055
+          created: 1761874292274
+          modified: 1761874344645
+          isPrivate: false
+          description: ""
+          sortKey: -1761873501271.75
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"destino": "Santos", 
+            	"quilometragem": 80, 
+            	"data_hora_inicio": "2025-11-01T14:00:00Z", 
+            	"veiculo": 2, 
+            	"motorista": 5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/veiculos/1/
+        name: Editar veiculos
+        meta:
+          id: req_f2447f368de94fb28ac2ba2b6d4e7392
+          created: 1761874409257
+          modified: 1761874479496
+          isPrivate: false
+          description: ""
+          sortKey: -1761873497355.875
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"placa": "OK-EDITADO", 
+            	"modelo": "Scania", 
+            	"categoria": 1, 
+            	"data_aquisicao": "2024-01-01", 
+            	"data_ultima_manutencao": "2025-10-30"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/veiculos/manutencao-atrasada/
+        name: Acessar Manutenções Atrasadas
+        meta:
+          id: req_6b61ce76d249451385d8a8325c7b209d
+          created: 1761874606162
+          modified: 1761874673215
+          isPrivate: false
+          description: ""
+          sortKey: -1761873514977.3125
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/veiculos
+        name: ve os veiculos
+        meta:
+          id: req_37c5c213d8f44d03ae9954f6fd9197d9
+          created: 1761874798351
+          modified: 1761874803599
+          isPrivate: false
+          description: ""
+          sortKey: -1761873520851.125
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYwNzM2LCJpYXQiOjE3NjE4NzQzMzYsImp0aSI6IjYxZWNiMzMzNjAwNTRhZGQ5ODdkOGYxMWU5M2Q1MmRhIiwidXNlcl9pZCI6IjEifQ.QvDhp7j0zWbvsmAWoQB5GifQc2a6kEhdvJtcJJ2lxnk
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Engenheiro
+    meta:
+      id: fld_5da5a8c9db664c46bc9229ef5a9d1520
+      created: 1761874885880
+      modified: 1761874885880
+      sortKey: -1761874885880
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/categorias-veiculos/
+        name: Criar categoria
+        meta:
+          id: req_5efd60e7677b478895fc4897c0f3c981
+          created: 1761874890714
+          modified: 1761875067079
+          isPrivate: false
+          description: ""
+          sortKey: -1761874909251
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"nome": "MOTOCICLETA", "descricao": "Veículo de entrega rápida"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxMzkzLCJpYXQiOjE3NjE4NzQ5OTMsImp0aSI6ImQ3ZjhlMDk2MDQ5MzQwN2ZiNGZkODRkNjc5YmY0MzAyIiwidXNlcl9pZCI6IjMifQ.qfng20583K1vOgO9v5YWhWQhsgEh6l8MhocrVAcUoBs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/categorias-veiculos/1/
+        name: (Teste Negativo) Editar Categoria
+        meta:
+          id: req_5317a648e2d44ec9b92c7640b86ae914
+          created: 1761875143856
+          modified: 1761875159610
+          isPrivate: false
+          description: ""
+          sortKey: -1761874217009
+        method: PUT
+        body:
+          mimeType: application/json
+          text: '{"nome": "CAMINHAO-EDITADO"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxMzkzLCJpYXQiOjE3NjE4NzQ5OTMsImp0aSI6ImQ3ZjhlMDk2MDQ5MzQwN2ZiNGZkODRkNjc5YmY0MzAyIiwidXNlcl9pZCI6IjMifQ.qfng20583K1vOgO9v5YWhWQhsgEh6l8MhocrVAcUoBs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/categorias-veiculos/1/
+        name: (Teste Negativo) Deletar Categoria
+        meta:
+          id: req_4d1dfbd6c85a4adaad1daf357d533253
+          created: 1761875177291
+          modified: 1761875187909
+          isPrivate: false
+          description: ""
+          sortKey: -1761873870888
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxMzkzLCJpYXQiOjE3NjE4NzQ5OTMsImp0aSI6ImQ3ZjhlMDk2MDQ5MzQwN2ZiNGZkODRkNjc5YmY0MzAyIiwidXNlcl9pZCI6IjMifQ.qfng20583K1vOgO9v5YWhWQhsgEh6l8MhocrVAcUoBs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: Listar Viagens (Ver Tudo)
+        meta:
+          id: req_7565b9bb32e14eb48524aa2cd6dd100f
+          created: 1761875207594
+          modified: 1761875299685
+          isPrivate: false
+          description: ""
+          sortKey: -1761874563130
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxMzkzLCJpYXQiOjE3NjE4NzQ5OTMsImp0aSI6ImQ3ZjhlMDk2MDQ5MzQwN2ZiNGZkODRkNjc5YmY0MzAyIiwidXNlcl9pZCI6IjMifQ.qfng20583K1vOgO9v5YWhWQhsgEh6l8MhocrVAcUoBs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: (Teste Negativo) Criar Viagem
+        meta:
+          id: req_b6b2a4c5f19049c8a732f7902d31edff
+          created: 1761875231079
+          modified: 1761875254133
+          isPrivate: false
+          description: ""
+          sortKey: -1761873611297.25
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"destino": "Teste Engenheiro", "quilometragem": 10, "data_hora_inicio":
+            "2025-11-01T15:00:00Z", "veiculo": 1, "motorista": 2}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxMzkzLCJpYXQiOjE3NjE4NzQ5OTMsImp0aSI6ImQ3ZjhlMDk2MDQ5MzQwN2ZiNGZkODRkNjc5YmY0MzAyIiwidXNlcl9pZCI6IjMifQ.qfng20583K1vOgO9v5YWhWQhsgEh6l8MhocrVAcUoBs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/veiculos/manutencao-atrasada/
+        name: (Teste Negativo) Acessar Manutenções Atrasadas
+        meta:
+          id: req_ee41420bab2a476482b1c08e3c724989
+          created: 1761875275096
+          modified: 1761875285942
+          isPrivate: false
+          description: ""
+          sortKey: -1761873568032.125
+        method: GET
+        body:
+          mimeType: application/json
+          text: '{"destino": "Teste Engenheiro", "quilometragem": 10, "data_hora_inicio":
+            "2025-11-01T15:00:00Z", "veiculo": 1, "motorista": 2}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxMzkzLCJpYXQiOjE3NjE4NzQ5OTMsImp0aSI6ImQ3ZjhlMDk2MDQ5MzQwN2ZiNGZkODRkNjc5YmY0MzAyIiwidXNlcl9pZCI6IjMifQ.qfng20583K1vOgO9v5YWhWQhsgEh6l8MhocrVAcUoBs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Mecanico
+    meta:
+      id: fld_6261521fd70441788d8098d71f598ace
+      created: 1761875325827
+      modified: 1761875325827
+      sortKey: -1761875325827
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/veiculos/manutencao-atrasada/
+        name: Acessar Manutenções Atrasadas
+        meta:
+          id: req_39d7d3791d8543c9b0ef5fd4e04398c7
+          created: 1761875337521
+          modified: 1761875433181
+          isPrivate: false
+          description: ""
+          sortKey: -1761875344349
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxNzc0LCJpYXQiOjE3NjE4NzUzNzQsImp0aSI6ImZiMDU5MjlhOTJiMDRlNGZhODZkMjc2ZWVlZTZlNDMzIiwidXNlcl9pZCI6IjQifQ.Rkv45LIZOSX3rLZdDRH-fbT1O6B_-pCy4ib7aICCMKU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/manutencoes/
+        name: Criar Manutenção
+        meta:
+          id: req_d42d3e2764f74f64b8b3b88f5b8b34df
+          created: 1761875466022
+          modified: 1761875516087
+          isPrivate: false
+          description: ""
+          sortKey: -1761875126800
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"veiculo": 2, "data": "2025-10-30", "tipo": "CORRETIVA", "descricao":
+            "Troca de óleo", "custo": 450.00, "tecnico":2}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxNzc0LCJpYXQiOjE3NjE4NzUzNzQsImp0aSI6ImZiMDU5MjlhOTJiMDRlNGZhODZkMjc2ZWVlZTZlNDMzIiwidXNlcl9pZCI6IjQifQ.Rkv45LIZOSX3rLZdDRH-fbT1O6B_-pCy4ib7aICCMKU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/manutencoes/1/
+        name: Editar Manutenção
+        meta:
+          id: req_97091cd22f934519b69db01298fa9127
+          created: 1761875535155
+          modified: 1761875553182
+          isPrivate: false
+          description: ""
+          sortKey: -1761875018025.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: '{"veiculo": 2, "data": "2025-10-31", "tipo": "CORRETIVA", "descricao":
+            "Troca de óleo e filtro", "custo": 550.00, "tecnico":2}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxNzc0LCJpYXQiOjE3NjE4NzUzNzQsImp0aSI6ImZiMDU5MjlhOTJiMDRlNGZhODZkMjc2ZWVlZTZlNDMzIiwidXNlcl9pZCI6IjQifQ.Rkv45LIZOSX3rLZdDRH-fbT1O6B_-pCy4ib7aICCMKU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: Listar Viagens (Ver Tudo)
+        meta:
+          id: req_874a8436c6eb4920ac2afc133a1d1e59
+          created: 1761875564548
+          modified: 1761875570897
+          isPrivate: false
+          description: ""
+          sortKey: -1761875235574.5
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxNzc0LCJpYXQiOjE3NjE4NzUzNzQsImp0aSI6ImZiMDU5MjlhOTJiMDRlNGZhODZkMjc2ZWVlZTZlNDMzIiwidXNlcl9pZCI6IjQifQ.Rkv45LIZOSX3rLZdDRH-fbT1O6B_-pCy4ib7aICCMKU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: (Teste Negativo) Criar Viagem
+        meta:
+          id: req_9cd70d0cef464ed891edccb4492fba23
+          created: 1761875585674
+          modified: 1761875607222
+          isPrivate: false
+          description: ""
+          sortKey: -1761875072412.75
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"destino": "Teste Mecânico", "quilometragem": 10, "data_hora_inicio":
+            "2025-11-01T15:00:00Z", "veiculo": 1, "motorista":5}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxNzc0LCJpYXQiOjE3NjE4NzUzNzQsImp0aSI6ImZiMDU5MjlhOTJiMDRlNGZhODZkMjc2ZWVlZTZlNDMzIiwidXNlcl9pZCI6IjQifQ.Rkv45LIZOSX3rLZdDRH-fbT1O6B_-pCy4ib7aICCMKU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/veiculos/
+        name: (Teste Negativo) Criar Veículo
+        meta:
+          id: req_1fd8b27f819347099736c5f78ab8a66d
+          created: 1761875642957
+          modified: 1761875657500
+          isPrivate: false
+          description: ""
+          sortKey: -1761875045219.125
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"placa": "MEC-0001", "modelo": "Uno", "categoria": 2, "data_aquisicao":
+            "2024-01-01"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxNzc0LCJpYXQiOjE3NjE4NzUzNzQsImp0aSI6ImZiMDU5MjlhOTJiMDRlNGZhODZkMjc2ZWVlZTZlNDMzIiwidXNlcl9pZCI6IjQifQ.Rkv45LIZOSX3rLZdDRH-fbT1O6B_-pCy4ib7aICCMKU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/dashboard/
+        name: (Teste Negativo) Acessar Dashboard
+        meta:
+          id: req_e1596ece609e462c9a25a8a05735aa77
+          created: 1761875668650
+          modified: 1761875684778
+          isPrivate: false
+          description: ""
+          sortKey: -1761875289961.75
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYxNzc0LCJpYXQiOjE3NjE4NzUzNzQsImp0aSI6ImZiMDU5MjlhOTJiMDRlNGZhODZkMjc2ZWVlZTZlNDMzIiwidXNlcl9pZCI6IjQifQ.Rkv45LIZOSX3rLZdDRH-fbT1O6B_-pCy4ib7aICCMKU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Motorista
+    meta:
+      id: fld_cc6ffa5979954e81a3aa70e97ea185be
+      created: 1761875730999
+      modified: 1761875740046
+      sortKey: -1761875325927
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: Listar Viagens (Filtrado)
+        meta:
+          id: req_0ae0ac9fa5d2448681b1692da4d56320
+          created: 1761875731000
+          modified: 1761875819082
+          isPrivate: false
+          description: ""
+          sortKey: -1761875344349
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYyMTkzLCJpYXQiOjE3NjE4NzU3OTMsImp0aSI6ImEwMTc2Mzk4ZTQ3NDRmYjU5ZmIxNTkzMTdmMWJiMzJlIiwidXNlcl9pZCI6IjUifQ.1XyqzvnFGdq74sgvb7d8NKiYYJ8lTyW04VfBK_GcTw4
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/veiculos/
+        name: Listar Veículos
+        meta:
+          id: req_a5ae66be3ba2489d80ab8421b5e101fe
+          created: 1761875841426
+          modified: 1761875882422
+          isPrivate: false
+          description: ""
+          sortKey: -1761875317155.375
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxOTYyMTkzLCJpYXQiOjE3NjE4NzU3OTMsImp0aSI6ImEwMTc2Mzk4ZTQ3NDRmYjU5ZmIxNTkzMTdmMWJiMzJlIiwidXNlcl9pZCI6IjUifQ.1XyqzvnFGdq74sgvb7d8NKiYYJ8lTyW04VfBK_GcTw4
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_6edcb420cc59a78ee8cb79ad83c6bd1e99071ca6
+    created: 1761866610664
+    modified: 1761866610664
+environments:
+  name: Base Environment
+  meta:
+    id: env_6edcb420cc59a78ee8cb79ad83c6bd1e99071ca6
+    created: 1761866610663
+    modified: 1761866610663
+    isPrivate: false

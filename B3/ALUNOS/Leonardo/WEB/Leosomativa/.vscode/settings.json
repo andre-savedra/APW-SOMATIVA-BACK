@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/250ae9c3-6c33-4030-b72a-ed22fce22920/resourceGroups/appsvc_linux_westus2_basic/providers/Microsoft.Web/sites/somativab3leo",
+    "appService.deploySubpath": "."
+}

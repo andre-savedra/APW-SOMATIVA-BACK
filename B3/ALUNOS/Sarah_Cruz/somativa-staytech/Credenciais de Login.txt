@@ -1,0 +1,20 @@
+Credenciais de Login
+
+Recepção: user.recepcao
+Senha: recep123
+
+Governança: user.governanca
+Senha: gover123
+
+Manutenção: user.manutencao	
+Senha: manut123
+
+Gerencia: user.gerencia
+Senha: geren123
+
+Admin: user.admin
+Senha: ademe123
+
+Superuser: sarah
+Senha:123
+

@@ -1,0 +1,352 @@
+type: collection.insomnia.rest/5.0
+name: Somativa
+meta:
+  id: wrk_010352230ecf4433aa2276d144908a21
+  created: 1761863553341
+  modified: 1761863553341
+collection:
+  - url: http://127.0.0.1:8000/api/auth/users/
+    name: CRIAR USUARIO
+    meta:
+      id: req_f21d15fdb3e64ee49157554a1a3fb569
+      created: 1761865710272
+      modified: 1761874732106
+      isPrivate: false
+      sortKey: -1761871425776
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "andre",
+        	"cargo": "RECEPCAO",
+        	"email": "andre_savedra@gmail.com",
+        	"password": "andre2025@"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/auth/jwt/create/
+    name: FAZER LOGIN(governança)
+    meta:
+      id: req_62458d43339a497d8b782d69f65419e5
+      created: 1761867185650
+      modified: 1761874826414
+      isPrivate: false
+      sortKey: -1761871425726
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "josepsse@gmail.com",
+        	"password": "teste211@"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_b44780c588654dab9dd1853dc3a8e33b
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_15da51182d144f95a1988de57fb732dc
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/reservas/
+    name: LISTA RESERVAS
+    meta:
+      id: req_05da82c816794a4a8a28b46cc76800dd
+      created: 1761871425676
+      modified: 1761873740267
+      isPrivate: false
+      sortKey: -1761871425676
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "andre_savedra@gmail.com",
+        	"password": "andre2025@"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_2fabc762aa4a4a0989c090506012614b
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_f10a472ca6984b0884f9ba2432d81a33
+      - id: pair_7dc03189196f4e8c8127645e8b5a6701
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc0MzE1LCJpYXQiOjE3NjE4NzMxMTUsImp0aSI6ImIwYWRmNzE2MTg1NjQ4ZTg5MjNjOGE5OGFkNzc5NjI0IiwidXNlcl9pZCI6IjMifQ.McaglPc6KB8Ox5EvoD-hVhnf4OoEFJeqfBvZ-bA3KEc
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODczMDU1LCJpYXQiOjE3NjE4NzI5OTUsImp0aSI6ImFlMTkzMTRjMWQ3NzQ5Yzg4MzNhN2EzNzJmYjIzZWFjIiwidXNlcl9pZCI6IjMifQ.XFF7ZCGM9JLoZ3eG-HZMBKv7EMzXb-xeAzYmiyjILfc
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/hospedes/
+    name: CRIA HOSPEDE
+    meta:
+      id: req_65147033be524c0cb4a7a24abdaab747
+      created: 1761871531416
+      modified: 1761874032637
+      isPrivate: false
+      sortKey: -1761871425688.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome_completo": "joaozinho",
+        	"cpf": "522133322",
+        	"telefone": "1999837221133",
+        	"nacionalidade": "brasileiro",
+        	"email": "nicolas2025@gmail.com"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_9fa3a66e0ad74401bc5bd7c37848dc7f
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_74ed62069207413eb4c94f85850d406e
+      - id: pair_9f04f4f9e66645d0a44a5459eabba125
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc0MzE1LCJpYXQiOjE3NjE4NzMxMTUsImp0aSI6ImIwYWRmNzE2MTg1NjQ4ZTg5MjNjOGE5OGFkNzc5NjI0IiwidXNlcl9pZCI6IjMifQ.McaglPc6KB8Ox5EvoD-hVhnf4OoEFJeqfBvZ-bA3KEc
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/hospedes/
+    name: CONSULTA HOSPEDE
+    meta:
+      id: req_01f1fd6608a14f0082a20dd4ba9d4556
+      created: 1761871719551
+      modified: 1761873891074
+      isPrivate: false
+      sortKey: -1761871425701
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome_completo": "Nicolas",
+        	"cpf": "5222121333322",
+        	"telefone": "1999837221133",
+        	"nacionalidade": "brasileiro",
+        	"email": "nicolas2025@gmail.com"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_40f80d78e27642cb9070f04e56d88517
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_b80c0d8f36794b8c82ea1c926d691722
+      - id: pair_0d062c0ad66941baac836261c5072a7d
+        name: Authorization
+        value: " Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwi\
+          ZXhwIjoxNzYxODc0MzE1LCJpYXQiOjE3NjE4NzMxMTUsImp0aSI6ImIwYWRmNzE2MTg1N\
+          jQ4ZTg5MjNjOGE5OGFkNzc5NjI0IiwidXNlcl9pZCI6IjMifQ.McaglPc6KB8Ox5EvoD-\
+          hVhnf4OoEFJeqfBvZ-bA3KEc"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/acomodacoes/
+    name: CONSULTA ACOMODACOES
+    meta:
+      id: req_b42d6ff3938d4df29c569d07727af048
+      created: 1761871954826
+      modified: 1761874915759
+      isPrivate: false
+      sortKey: -1761871425682.25
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome_completo": "Nicolas",
+        	"cpf": "5222121333322",
+        	"telefone": "1999837221133",
+        	"nacionalidade": "brasileiro",
+        	"email": "nicolas2025@gmail.com"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_40f80d78e27642cb9070f04e56d88517
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_b80c0d8f36794b8c82ea1c926d691722
+      - id: pair_a0006ca1d871467a86dad391c5c9177a
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc2MDI3LCJpYXQiOjE3NjE4NzQ4MjcsImp0aSI6ImE3Mzk2ODJiNjc3MTQzZmQ5ZDllYzFlMWRiMWQ3NjY2IiwidXNlcl9pZCI6IjUifQ.mIZ9KvyBGGCc4IhEPJ6fYwuWeQ0gqWratjNI-wZZHi0
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/governanca/pendentes
+    name: CONSULTA GOVERNANÇA
+    meta:
+      id: req_a46dc41e97f749d080b6f5d3759bd040
+      created: 1761872441180
+      modified: 1761873142617
+      isPrivate: false
+      sortKey: -1761717768302.6562
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome_completo": "Nicolas",
+        	"cpf": "5222121333322",
+        	"telefone": "1999837221133",
+        	"nacionalidade": "brasileiro",
+        	"email": "nicolas2025@gmail.com"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_40f80d78e27642cb9070f04e56d88517
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_b80c0d8f36794b8c82ea1c926d691722
+      - id: pair_8e8ae500ac274c508740b5ac1ef95d87
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc0MzE1LCJpYXQiOjE3NjE4NzMxMTUsImp0aSI6ImIwYWRmNzE2MTg1NjQ4ZTg5MjNjOGE5OGFkNzc5NjI0IiwidXNlcl9pZCI6IjMifQ.McaglPc6KB8Ox5EvoD-hVhnf4OoEFJeqfBvZ-bA3KEc
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/acomodacoes/3/
+    name: ATUALIZAR LIMPEZA
+    meta:
+      id: req_e5a74ffebe934d87a3b2a11672471af2
+      created: 1761873980780
+      modified: 1761875455670
+      isPrivate: false
+      sortKey: -1761871425679.125
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "data_ultima_limpeza": "2025-11-01",
+          "funcionario_responsavel": 2
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_2fabc762aa4a4a0989c090506012614b
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_f10a472ca6984b0884f9ba2432d81a33
+      - id: pair_7dc03189196f4e8c8127645e8b5a6701
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc2MDI3LCJpYXQiOjE3NjE4NzQ4MjcsImp0aSI6ImE3Mzk2ODJiNjc3MTQzZmQ5ZDllYzFlMWRiMWQ3NjY2IiwidXNlcl9pZCI6IjUifQ.mIZ9KvyBGGCc4IhEPJ6fYwuWeQ0gqWratjNI-wZZHi0
+        disabled: false
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/auth/users/
+    name: CRIAR USUARIO(GOVERNANÇA)
+    meta:
+      id: req_08522d833d4540d78d9e71ffcb86e6a3
+      created: 1761874712899
+      modified: 1761874763036
+      isPrivate: false
+      sortKey: -1761871425751
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "jose",
+        	"cargo": "GOVERNANCA",
+        	"email": "josepsse@gmail.com",
+        	"password": "teste211@"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_8bf3242eb2124cf0ad762bf85fc7a3bdec599d4e
+    created: 1761863553351
+    modified: 1761863553351
+environments:
+  name: Base Environment
+  meta:
+    id: env_8bf3242eb2124cf0ad762bf85fc7a3bdec599d4e
+    created: 1761863553347
+    modified: 1761863553347
+    isPrivate: false

@@ -1,0 +1,709 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1743724328558
+  modified: 1743724328558
+collection:
+  - name: SomativaMangeira
+    meta:
+      id: fld_810fc02620de4ff9848d4ae06925d4c6
+      created: 1758064319429
+      modified: 1758066075597
+      sortKey: -1758064319429
+    children:
+      - name: Usuarios
+        meta:
+          id: fld_111a21df12444ad09dcd162bf7410315
+          created: 1758064864723
+          modified: 1758064877068
+          sortKey: -1758064322878
+      - name: Produtos
+        meta:
+          id: fld_c90a804202484834917ed2bae013fa4c
+          created: 1758066274314
+          modified: 1758066274314
+          sortKey: -1758066274314
+      - name: Categorias
+        meta:
+          id: fld_f24445482092485bbbef9ded4ec4a168
+          created: 1758066583554
+          modified: 1758066583554
+          sortKey: -1758066583554
+      - name: Imagens
+        meta:
+          id: fld_84f2d249afe14477a83e7ca02f0d1477
+          created: 1758066771604
+          modified: 1758066771604
+          sortKey: -1758066771604
+      - name: Carrinho
+        meta:
+          id: fld_244656dd8123428699d7815eedbf4ab4
+          created: 1758068161718
+          modified: 1758068167346
+          sortKey: -1758068161718
+      - name: Pedidos
+        meta:
+          id: fld_9d2dd7221944459288de13c65e91a4c4
+          created: 1758069869024
+          modified: 1758069869024
+          sortKey: -1758069869024
+      - name: Avaliações
+        meta:
+          id: fld_38bb9698889f48cb945fa07768e4c9c0
+          created: 1758071792317
+          modified: 1758071792317
+          sortKey: -1758071792317
+  - name: Somativa1_A3-BACKEND
+    meta:
+      id: fld_d6c1f6abd93043c9af17d168792ff39f
+      created: 1761696330659
+      modified: 1761696330659
+      sortKey: -1761696330659
+    children:
+      - name: Autenticação
+        meta:
+          id: fld_385c06c1cd8c4f0db0ad9b310371bb5a
+          created: 1761696269516
+          modified: 1761697754646
+          sortKey: -1761696350589
+          description: Endpoints de autenticação JWT
+        children:
+          - url: http://localhost:8000/api/auth/token/
+            name: 🔑 1. Login Admin (JWT)
+            meta:
+              id: req_5cafb265798a41419dbc913b3be031b6
+              created: 1698537600000
+              modified: 1761696572320
+              isPrivate: false
+              description: Obter token JWT do usuário admin
+              sortKey: -1698537600000
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "username": "admin",
+                  "password": "admin123"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_content_type
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/auth/token/
+            name: 🔑 17. Login Usuário Comum
+            meta:
+              id: req_e472a2ff125f41fca9287b20f092e7b8
+              created: 1698537700000
+              modified: 1761696563991
+              isPrivate: false
+              description: Obter token JWT do usuário comum (para testar permissões)
+              sortKey: -1698537700000
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "username": "usuario",
+                  "password": "usuario123"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Categorias
+        meta:
+          id: fld_b813b8f772e3476f975048a02f780050
+          created: 1761696269519
+          modified: 1761697743185
+          sortKey: -1761696350689
+          description: CRUD de Categorias
+        children:
+          - url: http://localhost:8000/api/categorias/
+            name: Listar Categorias
+            meta:
+              id: req_8d5fda598618494eaeb6c9acfa2be31a
+              created: 1698537800000
+              modified: 1761697731986
+              isPrivate: false
+              sortKey: -1698537800000
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_ef3f209ee47b4c8c9c32f2fc744a29c6
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/categorias/
+            name: 3. Criar Categoria
+            meta:
+              id: req_1d3adea4863f45709d09a68d2a4be810
+              created: 1698537900000
+              modified: 1761697726236
+              isPrivate: false
+              sortKey: -1698537900000
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "nome": "Consoles"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_3af7ebc693fc4ed3ba0bf6558f5eed71
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_661db5b8ff8f4cb78732ac495042866d
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Marcas
+        meta:
+          id: fld_30a34153c8444fefa0cecfc948485875
+          created: 1761696269522
+          modified: 1761697738512
+          sortKey: -1761696350789
+          description: CRUD de Marcas
+        children:
+          - url: http://localhost:8000/api/marcas/
+            name: 4. Criar Marca
+            meta:
+              id: req_cdfb1e743f7841df8357bbdcb07373b8
+              created: 1698538000000
+              modified: 1761697721132
+              isPrivate: false
+              sortKey: -1698538000000
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "nome": "Xbox",
+                  "cnpj": "11.222.333/0001-43"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_003d3c33d22c4381a014b09fc67f6173
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_e5583195bd99423aa0af9cf38a5fa77a
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Produtos
+        meta:
+          id: fld_3d0a44dff7ae43f69bd3381b79968f26
+          created: 1761696269525
+          modified: 1761697629938
+          sortKey: -1761696350889
+          description: CRUD de Produtos com filtros e ordenação
+        children:
+          - url: http://localhost:8000/api/produtos/
+            name: 5. Criar Produto
+            meta:
+              id: req_a1dfe3384add4479a58714365c050a08
+              created: 1698538100000
+              modified: 1761697715854
+              isPrivate: false
+              sortKey: -1698538100000
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "nome": "PlayStation 6",
+                  "codigo_registro": "PS6001",
+                  "codigo_barras": "7899988877767",
+                  "categoria": 1,
+                  "marca": 1,
+                  "custo": "3500.00",
+                  "valor_venda": "4500.00",
+                  "informacoes_adicionais": "Console de última geração"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_60e8ac7af6e949feac1ac48f58bae130
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_e1fbc9650b154258a0fbab3f2c3dbc6e
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/produtos/
+            name: 6. Listar Produtos (com detalhes)
+            meta:
+              id: req_b8e816ce016642cfa3d8580fe66cbee7
+              created: 1698538200000
+              modified: 1761697709141
+              isPrivate: false
+              description: Verifica se mostra categoria e marca detalhadas (não apenas ID)
+              sortKey: -1698538200000
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_383e129acc374107ba2308c666403c09
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/produtos/buscar-codigo-barras/
+            name: 7. Buscar por Código de Barras (parcial)
+            meta:
+              id: req_58d895e56ee04205b9fd16abcb5f3370
+              created: 1698538300000
+              modified: 1761697702319
+              isPrivate: false
+              sortKey: -1698538300000
+            method: GET
+            parameters:
+              - name: codigo
+                value: "789"
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_0c0acae01b2a4e029b138e484de647b4
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/produtos/em-promocao/
+            name: 8. Filtrar Produtos em Promoção
+            meta:
+              id: req_988fc3338b554ff8a825d37e1002be78
+              created: 1698538400000
+              modified: 1761697696680
+              isPrivate: false
+              sortKey: -1698538400000
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_8d23fe1548cb484da0f41ff8204e0579
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/produtos/
+            name: 9. Filtrar Produtos por Setor
+            meta:
+              id: req_5bf7dcadcb7a4d02b643a75bcb795f0a
+              created: 1698538500000
+              modified: 1761697691122
+              isPrivate: false
+              sortKey: -1698538500000
+            method: GET
+            parameters:
+              - name: setor
+                value: A
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_621c1a47a68144b38dfc649fed54800d
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/produtos/
+            name: 10. Ordenar por Valor (DESC)
+            meta:
+              id: req_2b827e095aa8443c952256d04e26b4c4
+              created: 1698538600000
+              modified: 1761697684318
+              isPrivate: false
+              sortKey: -1698538600000
+            method: GET
+            parameters:
+              - name: ordering
+                value: -valor_venda
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_520029c249324d94b4947b25f2ff23bc
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/produtos/
+            name: 11. Ordenar por Data (ASC)
+            meta:
+              id: req_4a7fc2c97f294f78b1a84f55faa8376c
+              created: 1698538700000
+              modified: 1761697677600
+              isPrivate: false
+              sortKey: -1698538700000
+            method: GET
+            parameters:
+              - name: ordering
+                value: data_cadastro
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_cb431fb788aa4269a01e80243ff06827
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/produtos/mais-antigos/
+            name: 12. 10 Produtos Mais Antigos
+            meta:
+              id: req_b2c075cbf2c14b2bb374768807eb6d68
+              created: 1698538800000
+              modified: 1761697637917
+              isPrivate: false
+              sortKey: -1698538800000
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_1c63c7e8402941088b187469936f8dcc
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Setores
+        meta:
+          id: fld_b60d60f95a5e4ae1b314f4cd635bf015
+          created: 1761696269527
+          modified: 1761697623597
+          sortKey: -1761696350989
+          description: CRUD de Setores
+        children:
+          - url: http://localhost:8000/api/setores/
+            name: ➕ 13. Criar Setor
+            meta:
+              id: req_2ec6dc9eb4c34c95ad7fbda3b323ce34
+              created: 1698538900000
+              modified: 1761696956219
+              isPrivate: false
+              sortKey: -1698538900000
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "nome": "T",
+                  "descricao": "Setor T - Área de Teste"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_cdb27a9da31a460a9651e3baf1401a57
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_1560434d1a49434da2213179f57db7ac
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/setores/
+            name: 📋 14. Listar Setores (com escaninhos)
+            meta:
+              id: req_4ff73851fdcb4088a4a71538f0bc37ca
+              created: 1698539000000
+              modified: 1761696881609
+              isPrivate: false
+              description: Verifica se mostra todos os escaninhos do setor
+              sortKey: -1698539000000
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_0596fa8a1ad647be891d85399c6b159c
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Escaninhos
+        meta:
+          id: fld_2037c34b8552424f9fb948b71a1b09f7
+          created: 1761696269529
+          modified: 1761697748983
+          sortKey: -1761696350639
+          description: CRUD de Escaninhos
+        children:
+          - url: http://localhost:8000/api/escaninhos/
+            name: ➕ 15. Criar Escaninho
+            meta:
+              id: req_28163227075d41238b68228967f1fbe1
+              created: 1698539100000
+              modified: 1761697057967
+              isPrivate: false
+              sortKey: -1698539100000
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "codigo": "998",
+                  "setor": 1,
+                  "produto": 1,
+                  "quantidade": 10
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_db1135b4463f4e3b9b665e7367c23c44
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_c51a28abe2df471396c7fccbd2282c79
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Teste de Permissões
+        meta:
+          id: fld_0cb4946e1bba428eb2771524fff5e9f3
+          created: 1761696269532
+          modified: 1761697614957
+          sortKey: -1761696351089
+          description: Testes de permissões de usuário
+        children:
+          - url: http://localhost:8000/api/produtos/1/promocao/
+            name: ❌ 18. Promoção com Usuário (DEVE FALHAR)
+            meta:
+              id: req_8b630e8357e241769f0ecdae87fa5c4e
+              created: 1698539300000
+              modified: 1761696904411
+              isPrivate: false
+              description: Testa se usuário comum consegue alterar promoção (deve falhar)
+              sortKey: -1698539300000
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "em_promocao": true
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_64ae943475e541e79be4efb7e1d0fd57
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0ODk1LCJpYXQiOjE3NjE2OTY4OTUsImp0aSI6IjM2MThmNmRhNjZiNDRkZmVhMTE1YTZkNzVhY2Q1ZjFiIiwidXNlcl9pZCI6IjIifQ.qk3LAzxF1W3Xc66AIwgjKG0lPyy5DxfXmB01NLdN5vU
+                id: pair_f3dc138ba4ed49e8ac8e0f47991df457
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/produtos/1/promocao/
+            name: ✅ 19. Promoção com Admin (DEVE FUNCIONAR)
+            meta:
+              id: req_d0902f2d2ad544b492fc4811ed563de5
+              created: 1698539400000
+              modified: 1761696921143
+              isPrivate: false
+              description: Testa se admin consegue alterar promoção (deve funcionar)
+              sortKey: -1698539400000
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "em_promocao": true
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_2b4d7db4b73a4858ab45e4a0083a6cbf
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzE0NzUyLCJpYXQiOjE3NjE2OTY3NTIsImp0aSI6IjRmNTVkZTFkYjkzZDQ3OTc4OTIwNDRkYTE0NWM0ZTM2IiwidXNlcl9pZCI6IjEifQ.xr4DAvBEwssz5BWTqHnRdvImXSiyXSfPKmgvv2Fkt60
+                id: pair_a3329f5510ba4fc6bfc719b936ecfe24
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: 🔐 Autenticação
+    meta:
+      id: fld_d67b7b67b99e4c12ac48114297658701
+      created: 1761697576669
+      modified: 1761697576669
+      sortKey: -1698539500000
+      description: Endpoints de autenticação JWT
+  - name: 📂 Categorias
+    meta:
+      id: fld_a1cdf58e747749719df3c09aeb64daba
+      created: 1761697576671
+      modified: 1761697576671
+      sortKey: -1698539400000
+      description: CRUD de Categorias
+  - name: 🏷️ Marcas
+    meta:
+      id: fld_94b44030a0a7462792cd82903f83b121
+      created: 1761697576673
+      modified: 1761697576673
+      sortKey: -1698539300000
+      description: CRUD de Marcas
+  - name: 📦 Produtos
+    meta:
+      id: fld_cda61134afda41c08c418a6020a1f004
+      created: 1761697576674
+      modified: 1761697576674
+      sortKey: -1698539200000
+      description: CRUD de Produtos com filtros e ordenação
+  - name: 🏢 Setores
+    meta:
+      id: fld_5285b3d6aec44b68a44da86e5f255448
+      created: 1761697576676
+      modified: 1761697576676
+      sortKey: -1698539100000
+      description: CRUD de Setores
+  - name: 📦 Escaninhos
+    meta:
+      id: fld_cbb1ec8f5a4a46688af304791d2a3a1b
+      created: 1761697576677
+      modified: 1761697576677
+      sortKey: -1698539000000
+      description: CRUD de Escaninhos
+  - name: 🔒 Teste de Permissões
+    meta:
+      id: fld_500220eb766b49e5b1ac814e664b2bba
+      created: 1761697576678
+      modified: 1761697576678
+      sortKey: -1698538900000
+      description: Testes de permissões de usuário
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1743724336571
+    modified: 1743724336571
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1743724336002
+    modified: 1758074221858
+    isPrivate: false
+  subEnvironments:
+    - name: Base Environment
+      meta:
+        id: env_1b2f7bbb387c4884b6c871e9ac40ffce
+        created: 1761696269459
+        modified: 1761696269459
+        isPrivate: false
+        sortKey: 1698537600000
+      data:
+        base_url: http://localhost:8000/api
+    - name: Base Environment
+      meta:
+        id: env_2cdafc9b301441d28a56d127a55db46c
+        created: 1761696647559
+        modified: 1761696647559
+        isPrivate: false
+        sortKey: 1698537600000
+      data:
+        base_url: http://localhost:8000/api
+    - name: Base Environment
+      meta:
+        id: env_dfe29c74b70544aa84249e1209a6c792
+        created: 1761697576631
+        modified: 1761697576631
+        isPrivate: false
+        sortKey: 1698537600000
+      data:
+        base_url: http://localhost:8000/api

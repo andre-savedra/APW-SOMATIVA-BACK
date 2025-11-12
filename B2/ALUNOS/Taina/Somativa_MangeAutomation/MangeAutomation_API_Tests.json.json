@@ -1,0 +1,605 @@
+{
+	"_type": "export",
+	"__export_format": 4,
+	"__export_date": "2025-10-31T23:50:00.000Z",
+	"__export_source": "insomnia.desktop.app:v2023.5.8",
+	"resources": [
+		{
+			"_id": "wrk_mangeautomation",
+			"parentId": null,
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "MangeAutomation API - Testes de Regras",
+			"description": "",
+			"scope": "collection",
+			"_type": "workspace"
+		},
+		{
+			"_id": "req_admin_setup_1",
+			"parentId": "fld_admin_setup",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/produtos/",
+			"name": "Cria Produto (Ex: Parafuso)",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"nome\": \"Parafuso Sextavado 1/4\",\n\t\"codigo\": \"PAR-001\",\n\t\"descricao\": \"Parafuso de alta resistencia\",\n\t\"categoria\": \"Fixacao\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -100,
+			"_type": "request"
+		},
+		{
+			"_id": "fld_admin_setup",
+			"parentId": "wrk_mangeautomation",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "ADMIN (Setup Inicial)",
+			"description": "Use o Ambiente 'Admin' para criar dados basicos para os outros testes.",
+			"environment": {},
+			"metaSortKey": -100,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_admin_setup_2",
+			"parentId": "fld_admin_setup",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/maquinas/",
+			"name": "Cria Maquina (Ex: Prensa)",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"codigo\": \"PRN-01\",\n\t\"nome\": \"Prensa Hidraulica 10T\",\n\t\"descricao\": \"Prensa para moldar pecas\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -90,
+			"_type": "request"
+		},
+		{
+			"_id": "req_admin_setup_3",
+			"parentId": "fld_admin_setup",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/lotes/",
+			"name": "Cria Lote (Para o Produto 1)",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"codigo\": \"LOTE-2025-10-31\",\n\t\"data_inicio\": \"2025-10-31T10:00:00Z\",\n\t\"produto\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -80,
+			"_type": "request"
+		},
+		{
+			"_id": "fld_producao",
+			"parentId": "wrk_mangeautomation",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "TESTE: Papel PRODUCAO",
+			"description": "Use o Ambiente 'Produtor'",
+			"environment": {},
+			"metaSortKey": -70,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_prod_1_ok",
+			"parentId": "fld_producao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/itens/",
+			"name": "SUCESSO: Criar ItemProduzido",
+			"description": "Regra: 'PRODUCAO' PODE criar itens.",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"lote\": 1,\n\t\"maquina\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -100,
+			"_type": "request"
+		},
+		{
+			"_id": "req_prod_2_fail",
+			"parentId": "fld_producao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/maquinas/",
+			"name": "FALHA: Criar Maquina",
+			"description": "Regra: 'PRODUCAO' NAO PODE criar maquinas.\n\nDeve retornar 403 Forbidden.",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"codigo\": \"PRN-02-FAIL\",\n\t\"nome\": \"Maquina Teste Producao\",\n\t\"descricao\": \"Deve falhar\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -90,
+			"_type": "request"
+		},
+		{
+			"_id": "req_prod_3_fail",
+			"parentId": "fld_producao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/dashboard/producao/",
+			"name": "FALHA: Ver Dashboard",
+			"description": "Regra: 'PRODUCAO' NAO PODE ver dashboard.\n\nDeve retornar 403 Forbidden.",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -80,
+			"_type": "request"
+		},
+		{
+			"_id": "fld_manutencao",
+			"parentId": "wrk_mangeautomation",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "TESTE: Papel MANUTENCAO",
+			"description": "Use o Ambiente 'Mecanico'",
+			"environment": {},
+			"metaSortKey": -60,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_man_1_ok",
+			"parentId": "fld_manutencao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/manutencoes/",
+			"name": "SUCESSO: Criar Manutencao",
+			"description": "Regra: 'MANUTENCAO' PODE criar manutencoes.\n\nO 'funcionario' sera setado automaticamente para o usuario logado.",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"maquina\": 1,\n\t\"descricao\": \"Troca de oleo realizada pelo mecanico\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -100,
+			"_type": "request"
+		},
+		{
+			"_id": "req_man_2_ok",
+			"parentId": "fld_manutencao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/maquinas/precisa_manutencao/",
+			"name": "SUCESSO: Ver Maquinas (Acao)",
+			"description": "Regra: 'MANUTENCAO' PODE ver maquinas que precisam de manutencao.",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -90,
+			"_type": "request"
+		},
+		{
+			"_id": "req_man_3_fail",
+			"parentId": "fld_manutencao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/itens/",
+			"name": "FALHA: Criar ItemProduzido",
+			"description": "Regra: 'MANUTENCAO' NAO PODE criar itens.\n\nDeve retornar 403 Forbidden.",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"lote\": 1,\n\t\"maquina\": 1\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -80,
+			"_type": "request"
+		},
+		{
+			"_id": "fld_inspecao",
+			"parentId": "wrk_mangeautomation",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "TESTE: Papel INSPECAO",
+			"description": "Use o Ambiente 'Inspetor'",
+			"environment": {},
+			"metaSortKey": -50,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_ins_1_ok",
+			"parentId": "fld_inspecao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/lotes/",
+			"name": "SUCESSO: Ver Lotes (Queryset)",
+			"description": "Regra: 'INSPECAO' ve apenas lotes nao inspecionados ou atribuidos a ele.",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -100,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ins_2_ok",
+			"parentId": "fld_inspecao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/lotes/producao_reprovada/",
+			"name": "SUCESSO: Ver Lotes Reprovados (Acao)",
+			"description": "Regra: 'INSPECAO' PODE ver producao reprovada.",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -90,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ins_3_fail",
+			"parentId": "fld_inspecao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/dashboard/producao/",
+			"name": "FALHA: Ver Dashboard",
+			"description": "Regra: 'INSPECAO' NAO PODE ver dashboard.\n\nDeve retornar 403 Forbidden.",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -80,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ins_4_fail",
+			"parentId": "fld_inspecao",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/usuarios/",
+			"name": "FALHA: Ver Todos Usuarios",
+			"description": "Regra: 'INSPECAO' so pode ver ele mesmo.\n\nA lista deve conter apenas 1 usuario (ele mesmo).",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -70,
+			"_type": "request"
+		},
+		{
+			"_id": "fld_chefe",
+			"parentId": "wrk_mangeautomation",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "TESTE: Papel CHEFE_PRODUCAO",
+			"description": "Use o Ambiente 'Chefe'",
+			"environment": {},
+			"metaSortKey": -40,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_chefe_1_ok",
+			"parentId": "fld_chefe",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/dashboard/producao/",
+			"name": "SUCESSO: Ver Dashboard",
+			"description": "Regra: 'CHEFE_PRODUCAO' PODE ver dashboard.",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -100,
+			"_type": "request"
+		},
+		{
+			"_id": "req_chefe_2_ok",
+			"parentId": "fld_chefe",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/lotes/producao_reprovada/",
+			"name": "SUCESSO: Ver Lotes Reprovados (Acao)",
+			"description": "Regra: 'CHEFE_PRODUCAO' PODE ver producao reprovada.",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -90,
+			"_type": "request"
+		},
+		{
+			"_id": "req_chefe_3_ok",
+			"parentId": "fld_chefe",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"url": "{{ _.base_url }}/usuarios/",
+			"name": "SUCESSO: Ver Todos Usuarios",
+			"description": "Regra: 'CHEFE_PRODUCAO' PODE ver todos usuarios.\n\nA lista deve conter todos os usuarios criados.",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "basic",
+				"useISO88591": false,
+				"disabled": false,
+				"username": "{% request 'authentication', 'user' %}",
+				"password": "{% request 'authentication', 'pass' %}"
+			},
+			"metaSortKey": -80,
+			"_type": "request"
+		},
+		{
+			"_id": "env_base",
+			"parentId": "wrk_mangeautomation",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "Base Environment",
+			"data": {
+				"base_url": "http://127.0.0.1:8000/api"
+			},
+			"dataPropertyOrder": {
+				"&": [
+					"base_url"
+				]
+			},
+			"color": null,
+			"isPrivate": false,
+			"metaSortKey": 1678834800000,
+			"_type": "environment"
+		},
+		{
+			"_id": "env_admin",
+			"parentId": "env_base",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "Admin",
+			"data": {
+				"user": "admin",
+				"pass": "SUA_SENHA_ADMIN_AQUI"
+			},
+			"dataPropertyOrder": {
+				"&": [
+					"user",
+					"pass"
+				]
+			},
+			"color": "#e03434",
+			"isPrivate": false,
+			"metaSortKey": 100,
+			"_type": "environment"
+		},
+		{
+			"_id": "env_chefe",
+			"parentId": "env_base",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "Chefe",
+			"data": {
+				"user": "chefe",
+				"pass": "SUA_SENHA_CHEFE_AQUI"
+			},
+			"dataPropertyOrder": {
+				"&": [
+					"user",
+					"pass"
+				]
+			},
+			"color": "#f89b3d",
+			"isPrivate": false,
+			"metaSortKey": 200,
+			"_type": "environment"
+		},
+		{
+			"_id": "env_produtor",
+			"parentId": "env_base",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "Produtor",
+			"data": {
+				"user": "produtor",
+				"pass": "SUA_SENHA_PRODUTOR_AQUI"
+			},
+			"dataPropertyOrder": {
+				"&": [
+					"user",
+					"pass"
+				]
+			},
+			"color": "#3d9df8",
+			"isPrivate": false,
+			"metaSortKey": 300,
+			"_type": "environment"
+		},
+		{
+			"_id": "env_inspetor",
+			"parentId": "env_base",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "Inspetor",
+			"data": {
+				"user": "inspetor",
+				"pass": "SUA_SENHA_INSPETOR_AQUI"
+			},
+			"dataPropertyOrder": {
+				"&": [
+					"user",
+					"pass"
+				]
+			},
+			"color": "#3df8a2",
+			"isPrivate": false,
+			"metaSortKey": 400,
+			"_type": "environment"
+		},
+		{
+			"_id": "env_mecanico",
+			"parentId": "env_base",
+			"modified": 1678834800000,
+			"created": 1678834800000,
+			"name": "Mecanico",
+			"data": {
+				"user": "mecanico",
+				"pass": "SUA_SENHA_MECANICO_AQUI"
+			},
+			"dataPropertyOrder": {
+				"&": [
+					"user",
+					"pass"
+				]
+			},
+			"color": "#f83de6",
+			"isPrivate": false,
+			"metaSortKey": 500,
+			"_type": "environment"
+		}
+	]
+}

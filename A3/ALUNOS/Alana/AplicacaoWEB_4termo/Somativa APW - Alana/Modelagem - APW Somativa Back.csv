@@ -1,0 +1,29 @@
+Categoria;;;Produto;;
+id_categoria;;;id_produto;;
+categoria;varchar;;nome;;varchar
+data regis.;date;;código de registro;;number
+;;;códg. de barras ;;number
+;;;categoria;;FK
+;;;marca;;FK
+setores;;;data de cadastro;;date
+id_setor;;;custo;;number
+nome;varchar;;valor de venda;;number
+;;;se está em promoção;;boolean
+;;;;;
+Escaninhos;;;marca;;
+id_escaninho;number;;id_marca;;
+setores;FK;;nome;;
+codigo_escaninho;;;CNPJ;;
+produto ;boolean;;inclusão;;
+Produto_FK;FK;;;;
+quantidade;number;;;;
+;;;;;
+;;;;;
+;;;cod;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;

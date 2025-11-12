@@ -1,0 +1,195 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1742519074325
+  modified: 1742519074325
+  description: ""
+collection:
+  - name: SWAPI
+    meta:
+      id: fld_7d3eca053838447ab9149c7ab8eb7e27
+      created: 1742519089268
+      modified: 1742519089268
+      sortKey: -1742519089268
+      description: ""
+  - name: CMS
+    meta:
+      id: fld_818c242bcc954fe8963a7abb11dfcc36
+      created: 1743723949410
+      modified: 1743723949410
+      sortKey: -1743723949410
+      description: ""
+  - name: CMS
+    meta:
+      id: fld_9355d4a3d52c4dc796eee26dbc959cee
+      created: 1743723949410
+      modified: 1743723949410
+      sortKey: -1743723949410
+      description: ""
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: QUBITRO
+    meta:
+      id: fld_163e56b7936c48b3a0884db1b1a733b9
+      created: 1747953357548
+      modified: 1747953357548
+      sortKey: -1747953357548
+      description: ""
+  - name: MANFLIX
+    meta:
+      id: fld_deeca5aae1564fa9824fc5bfe07e1605
+      created: 1755048703629
+      modified: 1755048703629
+      sortKey: -1755048703629
+      description: ""
+    children:
+      - name: MOVIES
+        meta:
+          id: fld_0252752fbc52423e8dde53bb9e2c521a
+          created: 1755048713037
+          modified: 1755048713037
+          sortKey: -1755048713037
+          description: ""
+        children:
+          - url: http://localhost:8000/api/movies
+            name: MOVIES
+            meta:
+              id: req_4a94ab09232e4c58adb83bd652318314
+              created: 1755048730104
+              modified: 1755048756578
+              isPrivate: false
+              description: ""
+              sortKey: -1755048730104
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/movies/3/
+            name: MOVIES
+            meta:
+              id: req_0b27fbc0be8c42ea983616b7268c4fca
+              created: 1755048827460
+              modified: 1755049051746
+              isPrivate: false
+              description: ""
+              sortKey: -1755048827460
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/movies/
+            name: MOVIES
+            meta:
+              id: req_2f89f05111cd4274b327260790256dc3
+              created: 1755049008616
+              modified: 1755049008616
+              isPrivate: false
+              description: ""
+              sortKey: -1755048778782
+            method: POST
+            body:
+              mimeType: application/json
+              text: >-
+                	{
+                		"title": "Harry Potter e a Câmara Secreta",
+                		"description": "teste POST",
+                		"category": "FICÇÃO",
+                		"published_date": "2024-10-11",
+                		"photo": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/11/harry-potter-e-a-camara-secreta.jpg",
+                		"classification": 6,
+                		"directors": [
+                			1
+                		]
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/movies/4/
+            name: MOVIES
+            meta:
+              id: req_bda89e64ef974ec7928f0cb6c8161ccd
+              created: 1755049085113
+              modified: 1755049118957
+              isPrivate: false
+              description: ""
+              sortKey: -1755048754443
+            method: PUT
+            body:
+              mimeType: application/json
+              text: >-
+                	{
+                		"title": "Harry Potter e a Câmara Secreta",
+                		"description": "teste POST",
+                		"category": "FICÇÃO",
+                		"published_date": "2024-10-11",
+                		"photo": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/11/harry-potter-e-a-camara-secreta.jpg",
+                		"classification": 5,
+                		"directors": [
+                			1
+                		]
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1742519080261
+    modified: 1743719586445
+  cookies:
+    - key: _auth_new_session
+      value: 828dfd15d9b288aa80f7dcec45a37f41
+      domain: api.contentful.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-04-03T22:32:46.153Z
+      lastAccessed: 2025-04-03T22:33:06.444Z
+      id: 10427cbf-e347-4f7a-978c-1e995b35aa93
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1742519080180
+    modified: 1742519080180
+    isPrivate: false

@@ -1,0 +1,209 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1747962323377
+  modified: 1747962323377
+collection:
+  - name: Projeto Andre
+    meta:
+      id: fld_74fed922aefd47e08f67c15af3589447
+      created: 1761867771128
+      modified: 1761867771128
+      sortKey: -1761867771128
+    children:
+      - name: Empregados
+        meta:
+          id: fld_c2baa37cfbb94479abb5e36dbbad9bc8
+          created: 1761875494663
+          modified: 1761875496934
+          sortKey: -1761867776983
+        children:
+          - url: http://127.0.0.1:8000/api/empregado/create/
+            name: Criar empregados
+            meta:
+              id: req_7ea5a5b5d57040dea862063718ad3fb3
+              created: 1761875500649
+              modified: 1761875596645
+              isPrivate: false
+              sortKey: -1761875505885
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_479d0011761849c6965b1ca9132d4513
+                  name: registro
+                  value: "12345"
+                  disabled: false
+                - id: pair_0018957d6d5941d7b7c73b6ba725a37a
+                  name: nome
+                  value: Thiago123
+                  disabled: false
+                - id: pair_98c70a89e53c43caa5e4014d78210365
+                  name: cargo
+                  value: GOVERNANCA
+                  disabled: false
+                - id: pair_410152749d0a46bdacf60f96a018b4ef
+                  name: data_contratacao
+                  value: 2025-10-31
+                  disabled: false
+                - id: pair_5eff21961789402e84882696ce520ca4
+                  name: password
+                  value: "1234"
+                  disabled: false
+            parameters:
+              - id: pair_d75cb69688ed411597895b027f9b3930
+                disabled: false
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar Reservas
+        meta:
+          id: req_ea1286c3d12c4fb483172c7fe92685e9
+          created: 1761867774607
+          modified: 1761870393595
+          isPrivate: false
+          sortKey: -1761867776683
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar hospedes
+        meta:
+          id: req_fbff54e338244caeb3732185a9f326a3
+          created: 1761867875507
+          modified: 1761876291302
+          isPrivate: false
+          sortKey: -1761867776783
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_52b64373925a4a9ba3f26668698431a6
+              name: nome_inteiro
+              value: Thiago Alves
+              disabled: false
+            - id: pair_71b1a1f71bfd4e7a87cf3dd96b697aa2
+              name: cpf
+              value: "123143"
+              disabled: false
+            - id: pair_8da144ff59d140c29cf26b8ee83915e8
+              name: email
+              value: thiago123@gmail.com
+              disabled: false
+            - id: pair_27071e506f2c431986b3a802c1e90305
+              name: phone
+              value: "12413413"
+              disabled: false
+            - id: pair_2f9eb9934a2e4dad8d0a856b42160723
+              name: data_de_registro
+              value: 2025-10-31
+              disabled: false
+            - id: pair_b3d5fe9f1e374502ab16e056b02fde79
+              name: nacionalidade
+              value: Brasil
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+            id: pair_df8c7b8302b04505b31e6c968ccc7c94
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc5ODgwLCJpYXQiOjE3NjE4NzYyODAsImp0aSI6IjBjNDU4YWRhNWZkNDQ2NmRhZmFmMjFjZjNiOGQzYTNmIiwidXNlcl9pZCI6IjUifQ.hb_Nf7w_aqUIaWuZGTsC7wYoaD_G3_eJbqrm6F9M8wU
+            id: pair_66e9b948596e4b84a4c17ebcf5119e08
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Retornar Reservas
+        meta:
+          id: req_dc02b36cb5ca4f6c890a71dfe377aba4
+          created: 1761870382974
+          modified: 1761870400006
+          isPrivate: false
+          sortKey: -1755212269642.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/auth/jwt/create/
+        name: Get Token (Registro e Password)
+        meta:
+          id: req_d5ea6b60f91f4b8cb1c83ba97f3ceb4c
+          created: 1761870988845
+          modified: 1761875640733
+          isPrivate: false
+          sortKey: -1761867776883
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_f9f78e3144884666a43f1d980c005190
+              name: registro
+              value: "12345"
+              disabled: false
+            - id: pair_b5343979659749349024bbb346ea278a
+              name: password
+              value: "1234"
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1747962442746
+    modified: 1747962442746
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1747962442660
+    modified: 1747962442660
+    isPrivate: false

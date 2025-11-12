@@ -1,0 +1,428 @@
+type: collection.insomnia.rest/5.0
+name: Somativa - Backend
+meta:
+  id: wrk_a8d34af24467422387cd4e168feeb7c6
+  created: 1761870540935
+  modified: 1761870540935
+collection:
+  - name: Employee
+    meta:
+      id: fld_0a511917fe874a90a9b09d31fe536845
+      created: 1761870591804
+      modified: 1761870591804
+      sortKey: -1761870591804
+    children:
+      - url: http://127.0.0.1:8000/api/employee/
+        name: Get Employee
+        meta:
+          id: req_7ef359bd2bd6441e908336f56835d9c0
+          created: 1761870568122
+          modified: 1761876489560
+          isPrivate: false
+          sortKey: -1761870597916
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/employee/
+        name: New Request
+        meta:
+          id: req_758c8f27d1b142e4aea513c1d373405a
+          created: 1761870613919
+          modified: 1761873497478
+          isPrivate: false
+          sortKey: -1761870613919
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+                "id": 1,
+                "name": "Maria Almeida",
+                "email": "maria@example.com",
+                "cpf": "987.654.321-00",
+                "hire_date": "2023-02-20",
+                "role": "DRIVER"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/employee/1/
+        name: New Request
+        meta:
+          id: req_1bba6afb437f4147931928c183f9135d
+          created: 1761870861951
+          modified: 1761871133541
+          isPrivate: false
+          sortKey: -1761870861951
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |
+            {
+                "name": "João da Silva Pereira"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/employee/3/
+        name: New Request
+        meta:
+          id: req_1b09843021c248f7b0354571f98d6100
+          created: 1761872048503
+          modified: 1761873473697
+          isPrivate: false
+          sortKey: -1761872048503
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Trip
+    meta:
+      id: fld_91afbd4ffc234e81a7bb19039f31e413
+      created: 1761870625686
+      modified: 1761870625686
+      sortKey: -1761870625686
+    children:
+      - url: http://127.0.0.1:8000/api/trip/
+        name: New Request
+        meta:
+          id: req_4d375fb0d3c643138dafa0c701323e82
+          created: 1761870627812
+          modified: 1761870636826
+          isPrivate: false
+          sortKey: -1761870627812
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/trip/
+        name: New Request
+        meta:
+          id: req_89c9ece9408f4349b88bab31039be660
+          created: 1761870640666
+          modified: 1761873818929
+          isPrivate: false
+          sortKey: -1761870640666
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+                "vehicle": 1,
+                "driver": 4,
+                "start_datetime": "2025-10-31T14:00:00Z",
+                "end_datetime": "2025-10-31T18:00:00Z",
+                "destination": "Rio de Janeiro",
+                "mileage": 300,
+                "code": "TRIP003"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Maintenance
+    meta:
+      id: fld_033af4c715794527a5d3e8e209e38e5b
+      created: 1761870655928
+      modified: 1761870655928
+      sortKey: -1761870655928
+    children:
+      - url: http://127.0.0.1:8000/api/maintenance/
+        name: New Request
+        meta:
+          id: req_8f3481b629ef4282a92efaed0bedee1b
+          created: 1761870657776
+          modified: 1761870666008
+          isPrivate: false
+          sortKey: -1761870657776
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/maintenance/
+        name: New Request
+        meta:
+          id: req_1033bfa820d04b7a90182893710dfbf3
+          created: 1761870667993
+          modified: 1761876459268
+          isPrivate: false
+          sortKey: -1761870667993
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "code": "MTN001",
+              "vehicle": 1,
+              "date": "2025-10-30",
+              "type": "PREVENTIVE",
+              "description": "Troca de óleo e verificação de freios.",
+              "cost": "350.50",
+              "technician": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Vehicle
+    meta:
+      id: fld_cc506360f6a641a687010e741747b3c9
+      created: 1761870681904
+      modified: 1761870681904
+      sortKey: -1761870681904
+    children:
+      - url: http://127.0.0.1:8000/api/vehicle/
+        name: New Request
+        meta:
+          id: req_f4b80a1990ab4c5eabba641db7320fe8
+          created: 1761870683956
+          modified: 1761870690978
+          isPrivate: false
+          sortKey: -1761870683956
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/vehicle/
+        name: New Request
+        meta:
+          id: req_45000b00cb0f485e98750e8edb014d23
+          created: 1761870692956
+          modified: 1761875422392
+          isPrivate: false
+          sortKey: -1761870692956
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+                "plate": "ABC-8746",
+                "model": "Mini caminhão Fiat",
+                "category": "TRUCK",
+                "acquisition_date": "2022-05-15",
+                "last_maintenance": "2025-09-20"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/vehicle/1/
+        name: New Request
+        meta:
+          id: req_cc735e4e808d4f9988c18b628e75502a
+          created: 1761871349406
+          modified: 1761871444186
+          isPrivate: false
+          sortKey: -1761871349406
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "last_maintenance_date": "2025-10-29"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Filters
+    meta:
+      id: fld_ba43b84a463e416f8d3a2bc6a6610646
+      created: 1761873750490
+      modified: 1761873750490
+      sortKey: -1761873750490
+    children:
+      - url: http://127.0.0.1:8000/api/trip/?mileage_min=300
+        name: Km
+        meta:
+          id: req_b57c7e0e63cd4b588952b02cd7135d9e
+          created: 1761873753927
+          modified: 1761875351675
+          isPrivate: false
+          sortKey: -1761873753927
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/trip/?driver=Maria
+        name: Motorista
+        meta:
+          id: req_02d177e87fac426594edceb1323a9e43
+          created: 1761874785806
+          modified: 1761875335161
+          isPrivate: false
+          sortKey: -1761874785806
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/trip/?start_datetime_after=2025-10-31T00:00:00
+        name: Data
+        meta:
+          id: req_8e4d4443071449e38180f6b227a99f5b
+          created: 1761875303919
+          modified: 1761875329181
+          isPrivate: false
+          sortKey: -1761875303919
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/vehicle/?plate=ABC
+        name: Veículo
+        meta:
+          id: req_3fe1ddbe6d0c4511879e1b0d11d45635
+          created: 1761875360224
+          modified: 1761875501706
+          isPrivate: false
+          sortKey: -1761875360224
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_4129451081c946e862c4647f4551b9cd22538174
+    created: 1761870540943
+    modified: 1761870540943
+environments:
+  name: Base Environment
+  meta:
+    id: env_4129451081c946e862c4647f4551b9cd22538174
+    created: 1761870540939
+    modified: 1761870540939
+    isPrivate: false

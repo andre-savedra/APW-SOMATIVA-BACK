@@ -1,0 +1,358 @@
+type: collection.insomnia.rest/5.0
+name: AvaliacaoAPW
+meta:
+  id: wrk_d31bb18bc4024b52baa2d1e360f43959
+  created: 1762475600604
+  modified: 1762478170087
+collection:
+  - name: Users (CustomUser)
+    meta:
+      id: fld_f08f1cb930904011a3e751ce08515252
+      created: 1762475600609
+      modified: 1762475600609
+      sortKey: -1762475600609
+      description: Criação e testes de usuários com cargos diferentes
+    children:
+      - url: "{{ base_url }}/customuser/"
+        name: Create User - PRODUCAO
+        meta:
+          id: req_682f1580a43c46099512d71ac59ac533
+          created: 1762475600620
+          modified: 1762478112619
+          isPrivate: false
+          sortKey: -1762475600620
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Luana Producao",
+              "email": "luana.producao@example.com",
+              "cpf": "11122233344",
+              "numero_registro": "REG001",
+              "phone_number": "11999990000",
+              "birth_date": "1995-03-10",
+              "data_contratacao": "2023-02-01",
+              "cargo": "PRODUCAO",
+              "is_staff": false,
+              "is_active": true,
+              "password": "testpassword123"
+            }
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/customuser/"
+        name: Create User - INSPECAO
+        meta:
+          id: req_d74b3c5469a24828bba954ba8c64202f
+          created: 1762475600621
+          modified: 1762479487596
+          isPrivate: false
+          sortKey: -1762475600621
+        method: GET
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Carlos Inspecao",
+              "email": "carlos.inspecao@example.com",
+              "cpf": "22233344455",
+              "numero_registro": "REG002",
+              "cargo": "INSPECAO",
+              "password": "testpassword123"
+            }
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/customuser/"
+        name: Create User - MANUTENCAO
+        meta:
+          id: req_aa08c89f6d9f476dba6732118fc3149e
+          created: 1762475600622
+          modified: 1762475600622
+          isPrivate: false
+          sortKey: -1762475600622
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Marina Manutencao",
+              "email": "marina.manutencao@example.com",
+              "cpf": "33344455566",
+              "numero_registro": "REG003",
+              "cargo": "MANUTENCAO",
+              "password": "testpassword123"
+            }
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/customuser/"
+        name: Create User - ADMIN
+        meta:
+          id: req_788693effa534f0a987bb40a6ccbec3d
+          created: 1762475600623
+          modified: 1762475600623
+          isPrivate: false
+          sortKey: -1762475600623
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Admin Root",
+              "email": "admin@example.com",
+              "cpf": "44455566677",
+              "numero_registro": "REG004",
+              "cargo": "ADMIN",
+              "is_staff": true,
+              "is_superuser": true,
+              "password": "adminpass123"
+            }
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produto
+    meta:
+      id: fld_b8cd9f5c1c6f4512978b750b5479e3ef
+      created: 1762475600623
+      modified: 1762475600623
+      sortKey: -1762475600623
+    children:
+      - url: "{{ base_url }}/produto/"
+        name: Create Produto
+        meta:
+          id: req_3930aa5f9af24f1bbd2287cbf0dac826
+          created: 1762475600624
+          modified: 1762475600624
+          isPrivate: false
+          sortKey: -1762475600624
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Biscoito Doce",
+              "codigo": 1001,
+              "descricao": "Biscoito chocolate 100g",
+              "categoria": "PRODUCTION"
+            }
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/produto/"
+        name: List Produtos
+        meta:
+          id: req_7cd4310a41404756897b2e387631ac6b
+          created: 1762475600624
+          modified: 1762475600624
+          isPrivate: false
+          sortKey: -1762475600624
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Maquina & Manutencao
+    meta:
+      id: fld_0e61853051ff42f4b5005ad63e98b7f6
+      created: 1762475600625
+      modified: 1762475600625
+      sortKey: -1762475600625
+    children:
+      - url: "{{ base_url }}/maquina/"
+        name: Create Maquina
+        meta:
+          id: req_e10be6b2e5f24da7b5bfdba0558cbe7b
+          created: 1762475600625
+          modified: 1762475600625
+          isPrivate: false
+          sortKey: -1762475600625
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": 2001,
+              "foto": "http://example.com/foto_maquina.jpg",
+              "nome": "Cortadora A",
+              "descricao": "Máquina de corte modelo A"
+            }
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/maquina/"
+        name: List Maquinas
+        meta:
+          id: req_286938f5eabd4d5cbc44e1993b814fb4
+          created: 1762475600626
+          modified: 1762476725807
+          isPrivate: false
+          sortKey: -1762475600626
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/manutencao/"
+        name: Create Manutencao
+        meta:
+          id: req_e205d1daa16b41c9b728ee85cb702f8e
+          created: 1762475600627
+          modified: 1762475775826
+          isPrivate: false
+          sortKey: -1762475600627
+        method: GET
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "maquina": 1,
+              "data_hora": "2025-08-01T10:00:00Z",
+              "descricao": "Troca de correia",
+              "responsavel": 3
+            }
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Lote & ItensLote
+    meta:
+      id: fld_462b446da4974799a0a636bf9f54f23e
+      created: 1762475600629
+      modified: 1762475600629
+      sortKey: -1762475600629
+    children:
+      - url: "{{ base_url }}/itens/"
+        name: Create ItensLote
+        meta:
+          id: req_496f6321c7ba4cf195cf0176c6da1aae
+          created: 1762475600630
+          modified: 1762475978515
+          isPrivate: false
+          sortKey: -1762475600630
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "data_hora": "2025-10-15T08:15:00Z",
+              "maquina": 1,
+              "lote": 1
+            }
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/lote/"
+        name: Create Lote
+        meta:
+          id: req_e0349662fec34014812b1442cde38e8a
+          created: 1762475600630
+          modified: 1762476049238
+          isPrivate: false
+          sortKey: -1762475600630
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": 3001,
+              "produto": 1,
+              "data_inicio": "2025-10-15T08:00:00Z",
+              "data_final": "2025-10-15T12:00:00Z",
+              "data_inspecao": "2025-10-16T09:00:00Z",
+              "qr_code": "http://example.com/qrcode/3001.png",
+              "responsavel": 1,
+              "status": "APPROVED"
+            }
+        parameters:
+          - id: pair_af1e9ba5b0634a22b8222c1b8e4a42a2
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url
+          }}/lote/?status=REPROVED&date_from=2025-10-01&date_to=2025-10-31"
+        name: Filter Lotes - Reprovados
+        meta:
+          id: req_7033162483a3409492eda5cd250c3f3a
+          created: 1762475600632
+          modified: 1762475600632
+          isPrivate: false
+          sortKey: -1762475600632
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_9aeb29c42ede5e63aab3bfdd777bc6a06f44935a
+    created: 1762475609518
+    modified: 1762475609518
+environments:
+  name: Base Environment
+  meta:
+    id: env_09fed336a2e247b686e51c6f760cec61
+    created: 1762475600608
+    modified: 1762475600608
+    isPrivate: false
+  data:
+    base_url: http://localhost:8000/api

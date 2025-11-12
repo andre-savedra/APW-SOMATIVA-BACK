@@ -1,0 +1,146 @@
+type: collection.insomnia.rest/5.0
+name: Somativa
+meta:
+  id: wrk_5943286297f14908ac70cb0daabfefb6
+  created: 1748306277842
+  modified: 1748306277842
+collection:
+  - name: Login
+    meta:
+      id: fld_18ce000667194c4fa71645618247fee6
+      created: 1761700288182
+      modified: 1761700288182
+      sortKey: -1761700288182
+  - name: Criar maquina
+    meta:
+      id: fld_4ab6da6ea1df476f96e8c34043743ff8
+      created: 1761700826886
+      modified: 1761700826886
+      sortKey: -1761700826886
+  - name: Funcionarios
+    meta:
+      id: fld_889ccede0d9b482490f802b83e7b10f1
+      created: 1761701241045
+      modified: 1761701241045
+      sortKey: -1761701241045
+  - url: http://127.0.0.1:8000/api/auth/jwt/create/
+    name: Login
+    meta:
+      id: req_bbf7dc3fd9e0453a8cd5fa8d74fc42a6
+      created: 1761700262467
+      modified: 1761700851971
+      isPrivate: false
+      sortKey: -1761700262467
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "manutencao@manutencao.com",
+        	"password": "Cv123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+        value: "Content-Type: application/json"
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/maquinas/
+    name: Maquina
+    meta:
+      id: req_5b2a888379b54e758ed5bbb47e0cf1ba
+      created: 1761700860903
+      modified: 1761701578674
+      isPrivate: false
+      sortKey: -1761700557534
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"codigo_identificador": "M-CNC-001", 
+        	"nome": "Torno Principal", 
+        	"descricao": "CNC de alta precisão", 
+        	"ultima_data_manutencao": "2025-10-28T10:00:00Z", 
+        	"responsavel_manutencao":2
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_f002c3f26f5045baaffb766bc0519984
+      - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+        value: "Content-Type: application/json"
+        disabled: false
+      - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzAxNjEwLCJpYXQiOjE3NjE3MDE1NTAsImp0aSI6Ijc3OWY1NDdkNWNkODQyN2I4ZmUzMTVlZmM5OWJlMDg2IiwidXNlcl9pZCI6IjIifQ.NMdLwLtH2ZepteDbXhJRDqr4XrkO_nfuuP27VTyDETI
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/funcionarios/
+    name: Id
+    meta:
+      id: req_feeada5b0961499cab4ffd5cb498e9c7
+      created: 1761701225360
+      modified: 1761701562856
+      isPrivate: false
+      sortKey: -1761701033965.5
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"codigo_identificador": "M-CNC-001", 
+        	"nome": "Torno Principal", 
+        	"descricao": "CNC de alta precisão", 
+        	"ultima_data_manutencao": "2025-10-28T10:00:00Z", 
+        	"responsavel_manutencao":2
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_f002c3f26f5045baaffb766bc0519984
+      - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+        value: "Content-Type: application/json"
+        disabled: false
+      - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNzAxNjEwLCJpYXQiOjE3NjE3MDE1NTAsImp0aSI6Ijc3OWY1NDdkNWNkODQyN2I4ZmUzMTVlZmM5OWJlMDg2IiwidXNlcl9pZCI6IjIifQ.NMdLwLtH2ZepteDbXhJRDqr4XrkO_nfuuP27VTyDETI
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_78d0832b1b8a2c3ca00bdfd1667e14a32a644412
+    created: 1748306277851
+    modified: 1748306277851
+environments:
+  name: Base Environment
+  meta:
+    id: env_78d0832b1b8a2c3ca00bdfd1667e14a32a644412
+    created: 1748306277848
+    modified: 1748306277848
+    isPrivate: false

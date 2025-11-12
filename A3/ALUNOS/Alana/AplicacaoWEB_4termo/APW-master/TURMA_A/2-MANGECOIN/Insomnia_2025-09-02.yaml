@@ -1,0 +1,495 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1742519074325
+  modified: 1742519074325
+  description: ""
+collection:
+  - name: SWAPI
+    meta:
+      id: fld_7d3eca053838447ab9149c7ab8eb7e27
+      created: 1742519089268
+      modified: 1742519089268
+      sortKey: -1742519089268
+      description: ""
+  - name: CMS
+    meta:
+      id: fld_818c242bcc954fe8963a7abb11dfcc36
+      created: 1743723949410
+      modified: 1743723949410
+      sortKey: -1743723949410
+      description: ""
+  - name: CMS
+    meta:
+      id: fld_9355d4a3d52c4dc796eee26dbc959cee
+      created: 1743723949410
+      modified: 1743723949410
+      sortKey: -1743723949410
+      description: ""
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: QUBITRO
+    meta:
+      id: fld_163e56b7936c48b3a0884db1b1a733b9
+      created: 1747953357548
+      modified: 1747953357548
+      sortKey: -1747953357548
+      description: ""
+  - name: MANFLIX
+    meta:
+      id: fld_deeca5aae1564fa9824fc5bfe07e1605
+      created: 1755048703629
+      modified: 1755048703629
+      sortKey: -1755048703629
+      description: ""
+    children:
+      - name: MOVIES
+        meta:
+          id: fld_0252752fbc52423e8dde53bb9e2c521a
+          created: 1755048713037
+          modified: 1755048713037
+          sortKey: -1755048713037
+          description: ""
+      - name: DIRECTORS
+        meta:
+          id: fld_0c2524c4e1294504ae77e7b992a9f79c
+          created: 1755642682555
+          modified: 1755642682555
+          sortKey: -1755048708333
+          description: ""
+  - name: MANGECOIN
+    meta:
+      id: fld_3a86d37647e240e596207b982c4300b7
+      created: 1756852176179
+      modified: 1756852176179
+      sortKey: -1756852176179
+      description: ""
+    children:
+      - name: TOKENS
+        meta:
+          id: fld_840286a1c2c840c8a9eadb57c31f7afb
+          created: 1756852190675
+          modified: 1756852190675
+          sortKey: -1756852190675
+          description: ""
+        children:
+          - url: http://localhost:8000/api/tokens/
+            name: CREATE TOKEN
+            meta:
+              id: req_d6b729684e9c4cef9e841de09ffaab41
+              created: 1756852194286
+              modified: 1756852627814
+              isPrivate: false
+              description: ""
+              sortKey: -1756852194286
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "DODGECOIN",
+                  "code": "DODGE",
+                  "token_creation_date": "2020-05-01",
+                  "description": "É uma memecoin",
+                   "conversion_rate": "80"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/tokens
+            name: GET TOKENS
+            meta:
+              id: req_ce66780fcc95482e99003d9ce387ffdf
+              created: 1756852230518
+              modified: 1756864400586
+              isPrivate: false
+              description: ""
+              sortKey: -1756852194386
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+                id: pair_8c6ff64b89e046b0849ec643821ac708
+              - id: pair_97a651cb25fd45278dcbe412207a3f35
+                name: Authorization
+                value: " Token 1540ce0cbfca0d68d01adf9aa02c82a3392d3560"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: ACCOUNTS
+        meta:
+          id: fld_f30d5bea5cb842d2bcf851753fb07aa3
+          created: 1756852964559
+          modified: 1756852964559
+          sortKey: -1756852183427
+          description: ""
+        children:
+          - url: http://localhost:8000/api/accounts/
+            name: CREATE ACCOUNTS
+            meta:
+              id: req_b240ceffb59b4bb3bca3493381c3a04f
+              created: 1756852964561
+              modified: 1756853037101
+              isPrivate: false
+              description: ""
+              sortKey: -1756852194286
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"user_FK": 2
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/accounts
+            name: GET ACCOUNTS
+            meta:
+              id: req_6d802e098713484cadb6540d55f03eff
+              created: 1756852964563
+              modified: 1756852995512
+              isPrivate: false
+              description: ""
+              sortKey: -1756852194386
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/accounts/tokens
+            name: GET ACCOUNT TOKENS
+            meta:
+              id: req_68b31d639df149739cd7c4ed7fe6e531
+              created: 1756853120333
+              modified: 1756864418519
+              isPrivate: false
+              description: ""
+              sortKey: -1756852194336
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+                id: pair_48b00ae62b1646a4862aaeb30b4df1ff
+              - id: pair_6feb5fbdcc92487aace528755f44e812
+                name: Authorization
+                value: Token 1540ce0cbfca0d68d01adf9aa02c82a3392d3560
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/accounts/tokens/
+            name: CREATE ACCOUNT TOKEN
+            meta:
+              id: req_3e5b876e553743abb63cb6787299cbac
+              created: 1756853293750
+              modified: 1756853432792
+              isPrivate: false
+              description: ""
+              sortKey: -1755950510873
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"account_FK": 1,
+                	"token_FK": 3,
+                	"balance": 0.01
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: TRANSACTIONS
+        meta:
+          id: fld_122590aad3fa49b18b9f1c14a492d2dd
+          created: 1756853513820
+          modified: 1756853513820
+          sortKey: -1756853513820
+          description: ""
+        children:
+          - url: http://localhost:8000/api/transactions
+            name: GET TRANSACTIONS
+            meta:
+              id: req_865931f5491b44c2b56f5d0c2a35dfb7
+              created: 1756853516803
+              modified: 1756853544683
+              isPrivate: false
+              description: ""
+              sortKey: -1756853516803
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/transactions/
+            name: CREATE TRANSACTIONS
+            meta:
+              id: req_85def20743144dcfaa3a46f7449ebd39
+              created: 1756853557851
+              modified: 1756853820487
+              isPrivate: false
+              description: ""
+              sortKey: -1756852855594.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"account_FK": 1,
+                	"token_source_FK": 2,
+                	"token_target_FK": 1,
+                	"token_source_amount": "0.001",
+                	"token_target_amount": "5000"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Bets
+        meta:
+          id: fld_4483ad38a95d4d9aa81c333b31c844b3
+          created: 1756853865613
+          modified: 1756853865613
+          sortKey: -1756853865613
+          description: ""
+        children:
+          - url: http://localhost:8000/api/bets
+            name: GET BETS
+            meta:
+              id: req_3c08728d5bb64a1cb335807ed0494ff7
+              created: 1756853868345
+              modified: 1756853905345
+              isPrivate: false
+              description: ""
+              sortKey: -1756853868345
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/bets/
+            name: CREATE BETS
+            meta:
+              id: req_ba4bd710391f4e95bbbba6dd133dfb59
+              created: 1756853885396
+              modified: 1756854029121
+              isPrivate: false
+              description: ""
+              sortKey: -1756853885396
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"account_FK": 1,
+                	"is_loss": true,
+                	"input_amount": 3,
+                	"output_amount": 1,
+                	"value1": 4,
+                	"value2": 4,
+                	"value3": 5
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/bets/try
+            name: GET BETS TRY
+            meta:
+              id: req_4bd2822e11ac45a6a1655fa0f437848b
+              created: 1756854959648
+              modified: 1756860710286
+              isPrivate: false
+              description: ""
+              sortKey: -1756853692574
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+                id: pair_7dd564f9bbb2427fad5b741fa9f4598b
+              - id: pair_183b9cc17366424ba6f63e891f2dda34
+                name: Authorization
+                value: Token 1540ce0cbfca0d68d01adf9aa02c82a3392d3560
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: AUTH
+        meta:
+          id: fld_b2a6febad52f44bf98c3fcb319316610
+          created: 1756860247725
+          modified: 1756860247725
+          sortKey: -1756860247725
+          description: ""
+        children:
+          - url: http://localhost:8000/api/auth/token/login/
+            name: LOGIN
+            meta:
+              id: req_0491282523c844fb93f301c3d264f851
+              created: 1756860252229
+              modified: 1756860422725
+              isPrivate: false
+              description: ""
+              sortKey: -1756860252229
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "fulano@senai.com",
+                	"password": "senaimange"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/auth/token/logout/
+            name: LOGOUT
+            meta:
+              id: req_08b931915b914c9c9a93d3b3d4bf4c0c
+              created: 1756860621314
+              modified: 1756860657919
+              isPrivate: false
+              description: ""
+              sortKey: -1756857068812.5
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+                id: pair_4dd994cb0c154bfc9873f19f8b87a560
+              - id: pair_e32bc35e8b49430d941d99e179b4301b
+                name: Authorization
+                value: Token 1e89752d778d72cf67de4bc6dccbf53fb1215187
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1742519080261
+    modified: 1743719586445
+  cookies:
+    - key: _auth_new_session
+      value: 828dfd15d9b288aa80f7dcec45a37f41
+      domain: api.contentful.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-04-03T22:32:46.153Z
+      lastAccessed: 2025-04-03T22:33:06.444Z
+      id: 10427cbf-e347-4f7a-978c-1e995b35aa93
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1742519080180
+    modified: 1742519080180
+    isPrivate: false

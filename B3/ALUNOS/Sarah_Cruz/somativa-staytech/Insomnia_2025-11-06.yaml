@@ -1,0 +1,831 @@
+type: collection.insomnia.rest/5.0
+name: stay
+meta:
+  id: wrk_76f2572ca20b4359be5bb5017f2b3754
+  created: 1762469729416
+  modified: 1762469729416
+  description: ""
+collection:
+  - name: Recepção
+    meta:
+      id: fld_72e91088cb384210af3491d88e9348e2
+      created: 1762469744985
+      modified: 1762469934820
+      sortKey: -1762469744985
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Listar reservas
+        meta:
+          id: req_fdb4741bfa584db6aed8f06a03fa33fa
+          created: 1762469744988
+          modified: 1762471123320
+          isPrivate: false
+          description: ""
+          sortKey: -1762469744988
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.recepcao
+          password: recep123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/1/
+        name: "Atualizar reserva "
+        meta:
+          id: req_80a38081800044f4b8ab67879e4f5c82
+          created: 1762469744994
+          modified: 1762471384423
+          isPrivate: false
+          description: ""
+          sortKey: -1762469744994
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"codigo": "reserva 1",
+             	"check_in": "2025-10-31",
+            	"check_out": "2025-11-03",
+            	"valor_total": "850.00",
+             	"status": "ativa",
+            	"hospede": 1,
+             	"acomodacao": 1
+            }
+        headers:
+          - id: pair_44f0607526744bcc9bc5bd8eb39e6d4b
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_118aca363e5d474bb9c47596206b9a70
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.recepcao
+          password: recep123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas
+        name: Visualizar reserva
+        meta:
+          id: req_36b1759468cc46d6bcd370b711814916
+          created: 1762469744997
+          modified: 1762470436389
+          isPrivate: false
+          description: ""
+          sortKey: -1762469744997
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.recepcao
+          password: recep123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/1/
+        name: Deletar reserva (falha)
+        meta:
+          id: req_38cbef0467244b3ca01983e3f7e0735f
+          created: 1762469745000
+          modified: 1762471284571
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745000
+        method: DELETE
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.recepcao
+          password: recep123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar Reserva
+        meta:
+          id: req_65a1f7b15448490597afc63c1f631f13
+          created: 1762471161660
+          modified: 1762471253150
+          isPrivate: false
+          description: ""
+          sortKey: -1762471161660
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": "reservaaa",
+              "check_in": "2025-10-30",
+              "check_out": "2025-11-03",
+              "valor_total": "800.00",
+              "status": "ativa",
+              "hospede": 1,
+              "acomodacao": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.recepcao
+          password: recep123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: user.recepcao
+      password: recep123
+  - name: Governança
+    meta:
+      id: fld_0d11c2582d8b402c829a5b7b62e96268
+      created: 1762469745003
+      modified: 1762469745003
+      sortKey: -1762469745003
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/acomodacoes/
+        name: Listar acomodações
+        meta:
+          id: req_61f123bb07db4e3e9b1ce0d6efdf65ed
+          created: 1762469745006
+          modified: 1762471603251
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745006
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.governanca
+          password: gover123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/acomodacoes/1/
+        name: Atualizar limpeza
+        meta:
+          id: req_a856057427fb450082f56b9a58cc02de
+          created: 1762469745009
+          modified: 1762471570602
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745009
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: '{"data_ultima_limpeza": "2025-10-28", "funcionario_responsavel": 1}'
+        headers:
+          - id: pair_49360a9d895c465ab809401be0dd0b16
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_c0d9f6fd771a4720b6afb2fa86a4c494
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.governanca
+          password: gover123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/acomodacoes/sujo-mais-7dias/
+        name: Listar acomodações sujas
+        meta:
+          id: req_b6b6122341d54f6e892765852383a7a8
+          created: 1762469745012
+          modified: 1762471486218
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745012
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.governanca
+          password: gover123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar reserva (falha
+        meta:
+          id: req_be334d303655468babf52e78be30a994
+          created: 1762469745028
+          modified: 1762471469240
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745028
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": "reservaaa",
+              "check_in": "2025-10-30",
+              "check_out": "2025-11-03",
+              "valor_total": "800.00",
+              "status": "ativa",
+              "hospede": 1,
+              "acomodacao": 1
+            }
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.governanca
+          password: gover123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Manutenção
+    meta:
+      id: fld_25b99db5c0c64e07826fe06033db7b77
+      created: 1762469745031
+      modified: 1762469745031
+      sortKey: -1762469745031
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/manutencoes/
+        name: Listar manutenções
+        meta:
+          id: req_9b1292015d37439d961de0a63d969dee
+          created: 1762469745033
+          modified: 1762471656979
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745033
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.manutencao
+          password: manut123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/manutencoes/
+        name: Criar manutenção
+        meta:
+          id: req_be3c7c16052d4fff97c1b5a180c0212f
+          created: 1762469745036
+          modified: 1762471747378
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745036
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"acomodacao": 1, "descricao": "Troca de lâmpada e revisão do
+            ar-condicionado"}'
+        headers:
+          - id: pair_2596a383f7364e9a88c1abecabb0897c
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_35a8558865ea41d4aee7ae7e09e90cee
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.manutencao
+          password: manut123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/acomodacoes/1/
+        name: Atualizar status acomodação
+        meta:
+          id: req_152d174136bc4ebf9343d80aeff5ecf7
+          created: 1762469745038
+          modified: 1762471801580
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745038
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: '{"status": "manutencao"}'
+        headers:
+          - id: pair_59259acb3d73466fa1f85b9489e80d70
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_575a26f1320943b6b631c9ce58a83029
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.manutencao
+          password: manut123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar reserva (falha)
+        meta:
+          id: req_7cd112bf4963488ca0ac76326d69c837
+          created: 1762469745041
+          modified: 1762471832389
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745041
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": "reservaaa",
+              "check_in": "2025-10-30",
+              "check_out": "2025-11-03",
+              "valor_total": "800.00",
+              "status": "ativa",
+              "hospede": 1,
+              "acomodacao": 1
+            }
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.manutencao
+          password: manut123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Gerência
+    meta:
+      id: fld_ae00916c21d9459095aef678d40baa67
+      created: 1762469745043
+      modified: 1762469745043
+      sortKey: -1762469745043
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Listar reservas
+        meta:
+          id: req_3819b2e04f084478809ab5bf1ff828c6
+          created: 1762469745046
+          modified: 1762471851043
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745046
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.gerencia
+          password: geren123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar reserva
+        meta:
+          id: req_b5d3082aae0649809b53792b568d098d
+          created: 1762469745048
+          modified: 1762472063671
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745048
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": "reserva4",
+              "check_in": "2025-10-30",
+              "check_out": "2025-11-03",
+              "valor_total": "85222.00",
+              "status": "ativa",
+              "hospede": 1,
+              "acomodacao": 1
+            }
+        headers:
+          - id: pair_ad5211644ad646bdb2cd51ed4d6f693c
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_645ecf0d742c4cd2949d62b27ce88e36
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.gerencia
+          password: geren123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/1/
+        name: Deletar reserva
+        meta:
+          id: req_12d5f76e450f41bc9fdbc986db719fb9
+          created: 1762469745050
+          modified: 1762472155697
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745050
+        method: DELETE
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.gerencia
+          password: geren123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/acomodacoes/1/
+        name: Atualizar limpeza
+        meta:
+          id: req_13bbda464d6b4977b2c52db7ad80a29d
+          created: 1762469745053
+          modified: 1762472212587
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745053
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: '{"data_ultima_limpeza": "2025-10-31"}'
+        headers:
+          - id: pair_00397840077d48358ba6ca07fbbb23b8
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_b4e4015f5a6c4169b9b5aba4639c20a0
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.gerencia
+          password: geren123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/manutencoes/
+        name: Criar manutenção
+        meta:
+          id: req_5e5f03eefdc7480699186acf64bcc2d9
+          created: 1762469745055
+          modified: 1762472352047
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745055
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"acomodacao": 1, "descricao": "Verificação completa"}'
+        headers:
+          - id: pair_8c3a2bef5c9e4f459d2252c41ec14b90
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_e9168ad133ce4636878f1be7edeeabea
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.gerencia
+          password: geren123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Admin
+    meta:
+      id: fld_ca69b422a77842838ced615008526872
+      created: 1762469745058
+      modified: 1762469745058
+      sortKey: -1762469745058
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/hospedes/
+        name: Listar hóspedes
+        meta:
+          id: req_8336052a583c4c6188e358231bfca9b9
+          created: 1762469745060
+          modified: 1762471059464
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745060
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.admin
+          password: ademe123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/hospedes/
+        name: Criar hóspede
+        meta:
+          id: req_22a5909eb8a54850a0ef6e34446b1d71
+          created: 1762469745061
+          modified: 1762472515589
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745061
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"nome_completo": "Ana Silva", "cpf": "123.456.789-00", "email":
+            "ana@teste.com", "telefone": "11999999999", "nacionalidade":
+            "Brasileira"}'
+        headers:
+          - id: pair_f0fb3daac28f4c07ac95f8661895a176
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_4d858c6b12d54c2cb3a0ac65958c5142
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.admin
+          password: ademe123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/acomodacoes/sujo-mais-7dias/
+        name: Lista acomodações sujas
+        meta:
+          id: req_45c0d472e7f3434d8d8a86e410635e45
+          created: 1762469745064
+          modified: 1762470952985
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745064
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.admin
+          password: ademe123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/acomodacoes/
+        name: Criar acomodação
+        meta:
+          id: req_9b37f82a8b504856a887fccbc431d4e6
+          created: 1762469745066
+          modified: 1762472445637
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745066
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"numero": "101", "tipo": "suite", "capacidade_maxima": 2,
+            "valor_diaria": "300.00", "status": "disponivel"}'
+        headers:
+          - id: pair_cba1c7af97164b95b1e380cf6d03d783
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_9941d3839c1640638087b7f3ddd0bf5a
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.admin
+          password: ademe123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar reserva
+        meta:
+          id: req_0ccffa208b004ef8b325726ef9157c98
+          created: 1762469745069
+          modified: 1762472562717
+          isPrivate: false
+          description: ""
+          sortKey: -1762469745069
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": "reservaa jnsmqefc",
+              "check_in": "2025-10-30",
+              "check_out": "2025-11-03",
+              "valor_total": "800.00",
+              "status": "ativa",
+              "hospede": 1,
+              "acomodacao": 1
+            }
+        headers:
+          - id: pair_2b21f89682c6412096c83b8dd5ba6f26
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_17c2025880a04b7cb86617c0af337e35
+            name: User-Agent
+            value: insomnia/12.0.0
+            description: ""
+            disabled: false
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: user.admin
+          password: ademe123
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_918513389e6e00510915a7866502c44f7d6d4303
+    created: 1762469729444
+    modified: 1762469729444
+environments:
+  name: Base Environment
+  meta:
+    id: env_918513389e6e00510915a7866502c44f7d6d4303
+    created: 1762469729438
+    modified: 1762469729438
+    isPrivate: false

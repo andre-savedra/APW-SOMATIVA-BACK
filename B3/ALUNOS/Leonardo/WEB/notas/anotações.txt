@@ -1,0 +1,86 @@
+Projeto 1 para utilizar o CRUD
+
+Para começar o projeto cria o ambiente: comando py -m venv venv
+
+A pasta "venv" tem que ser colocada na pasta gitignore para não subir para o github
+
+Sempre que fizer um clone no projeto do git deve ser feito o comando py -m venv venv
+
+Após instalar a venv ela deve ser ativada sempre. Até mesmo se o terminal for excluído: comando .\venv\Scripts\activate
+
+Após feito os passos acima é instalado o ambiente de trabalho. No caso Django: comando pip install django
+
+O primeiro comando pip install django apenas cria o Django. O segundo comando installa o Django: comando django-admin startproject manflix .
+
+Após esse passo é criado o App: comando django-admin startapp app
+
+É preciso dizer para o Django usar o app criado. Foi usado o nome app, mas poderia ser qualquer nome escolhido. Para ativar entrar em settings na pasta do projeto, exemplo manflix e
+em INSTALLED_APPS digitar 'app'
+
+Para rodar o Django fazer o runserver: comando py .\manage.py runserver. Se não funcionar, trocar a porta. Exemplo py .\manage.py runserver 8080
+
+//////////////////////////////////////
+
+O comando py .\manage.py makemigrations para criar o ambiente de tabela
+
+O comando py .\manage.py migrate vai realmente criar a tabela
+
+Na página que o Django abriu após rodar o servidor colocar /admin no endereço da página. Exemplo http://127.0.0.1:8000/admin. Isto vai criar um usuario de administracao: comando py .\manage.py createsuperuser
+
+/////////////////////////////////////
+
+Para a programação começou dentro de app na pasta models. Models onde é feito toda a lógica. Começamos criando as tabelas do banco de dados.
+
+Usa py .\manage.py makemigrations para ele ler o que foi feito no código e detectar e depois py .\manage.py migrate para realmente o Django criar a tabela.
+
+Depois disso ir na pasta Admin.py e chamar from .models import e admin.site.register(Movie) por exemplo. Foi criado a tabela Movie no banco.
+
+Tem que chamar sempre no admin.py qualquer tabela criada em models.py
+
+/////////////////////////////////////
+
+Após criar as tabelas e a página de admin ser possível adicionar os dados e cadastro vamor criar a API do CRUD
+
+Começamos instalando com o comando no terminal pip install djangorestframework
+
+Após isso vamos na pasta settings do projeto e habilitar como 'rest_framework' acima de 'app'
+
+Criamos um arquivo chamado serializer e colocamos as classes com o nome das tabelas criadas. Ele vai pegar o JSON e converter para PYTHON e vice versa
+
+Após isso foi na pasta views.py foi feito o CRUD com apenas duas linhas de código para cada tabela criada
+
+Foi criada uma pasta chamada urls.py para registrar as rotas (endereços das URL´s)
+
+/////////////////////////////////////
+
+Aula dia 21/08
+
+Instalamos novamente a venv e colocamos um comando para colocar todas as bibliotecas
+
+pip freeze > requirements.txt = mostra todas as bibliotecas
+
+Clona a pasta do repositorio e manda ler a requirements.txt. Comando é pip install -r .\requirements.txt  
+
+/////////////////////////////////////
+
+No endereço http://127.0.0.1:8001/api/ conseguimos visualizar todas as rotas de API do Django
+
+/////////////////////////////////////
+
+Hoje Criamos um modelo novo de usuario na pagina Models. Ou seja, um modelo de usuario customizado.
+
+Criamos um arquivo user_manager com definições para o Usuario comum e outra para o Super Usuario
+
+Na pagina Models nos campos que 'user' trocamos por CustomUser para usar o modelo customizado que criamos e não o modelo padrão pronto do Django (user)
+
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+from .user_manager import CustomUserManager
+
+///////////////////////////////////////////
+
+Aula dia 09/10 - Começando o FrontEnd
+
+Começamos instalando o NUXT para frontend. Framework mais robusto que o VUE. Usamos a documentação do NUXT que mostra o passo a passo para instalar.
+
+Necessário montar os Models no Nuxt de acordo com as classes do models do backend. Requisitos.
+

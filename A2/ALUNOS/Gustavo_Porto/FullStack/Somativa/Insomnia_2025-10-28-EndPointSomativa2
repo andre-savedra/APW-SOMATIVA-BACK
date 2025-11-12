@@ -1,0 +1,440 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1744067259636
+  modified: 1744067259636
+collection:
+  - name: Somativa2
+    meta:
+      id: fld_18006a7838d94d0cbfb429b3eb97c874
+      created: 1761699845116
+      modified: 1761700007007
+      sortKey: -1761699845866
+    children:
+      - name: Common
+        meta:
+          id: fld_cac1e5b0d0664f988819e8ccde92f626
+          created: 1761700326885
+          modified: 1761700342068
+          sortKey: -1761700342040
+        children:
+          - url: http://127.0.0.1:8000/api/lotes/reprovados/?inicio=2025-10-01&fim=2025-10-31&maquina=2&categoria=1
+            name: Lotes Reprovados
+            meta:
+              id: req_9957375f32204271bce5cd2cb27c1999
+              created: 1761700326906
+              modified: 1761700563272
+              isPrivate: false
+              sortKey: -1761700326906
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: admin
+              password: admin123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/maquinas/
+            name: Listar Maquinas
+            meta:
+              id: req_4d095f6d8c7a4a4187b08f8b5fedb322
+              created: 1761700326908
+              modified: 1761700326908
+              isPrivate: false
+              sortKey: -1761700326908
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: admin
+              password: admin123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/categorias/
+            name: Listar Categorias
+            meta:
+              id: req_97ce4c2b05f644fd86efffe8447265ef
+              created: 1761700326910
+              modified: 1761700326910
+              isPrivate: false
+              sortKey: -1761700326910
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: admin
+              password: admin123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/produtos/
+            name: Listar Produtos
+            meta:
+              id: req_f70c8d5b97ba47a8924ae098fb4ba0ca
+              created: 1761700326912
+              modified: 1761700326912
+              isPrivate: false
+              sortKey: -1761700326912
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: admin
+              password: admin123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Admin
+        meta:
+          id: fld_dac76212a6aa4e21b42b9afdec1619fd
+          created: 1761700326888
+          modified: 1761700355934
+          sortKey: -1761700342140
+        children:
+          - url: http://127.0.0.1:8000/api/funcionarios/
+            name: Listar Funcionarios
+            meta:
+              id: req_8bd60519670240a18212d3af4c5ad163
+              created: 1761700326914
+              modified: 1761700326914
+              isPrivate: false
+              sortKey: -1761700326914
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: admin
+              password: admin123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Producao
+        meta:
+          id: fld_f2f1ebba4cbb4906ab95a74a17c7c177
+          created: 1761700326891
+          modified: 1761700367324
+          sortKey: -1761700342240
+        children:
+          - url: http://127.0.0.1:8000/api/lotes/
+            name: Listar Lotes
+            meta:
+              id: req_a6df3a19df8f4c828217f88562c915f9
+              created: 1761700326915
+              modified: 1761700326915
+              isPrivate: false
+              sortKey: -1761700326915
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: producao
+              password: producao123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/lotes/
+            name: Criar Lote
+            meta:
+              id: req_92f239a40981483b95fe6d681fdc6ef7
+              created: 1761700326916
+              modified: 1761700326916
+              isPrivate: false
+              sortKey: -1761700326916
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "codigo": "L100",
+                  "produto": 1,
+                  "inicio": "2025-10-29T08:00:00"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+            authentication:
+              type: basic
+              username: producao
+              password: producao123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/itens/
+            name: Criar Item de Producao
+            meta:
+              id: req_43cc07be184d4b6e97270e8624967937
+              created: 1761700326918
+              modified: 1761700326918
+              isPrivate: false
+              sortKey: -1761700326918
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "lote": 1,
+                  "maquina": 1,
+                  "data_hora": "2025-10-29T09:00:00"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+            authentication:
+              type: basic
+              username: producao
+              password: producao123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/lotes/3/
+            name: Atualizar Inspecao
+            meta:
+              id: req_d60b55e8bd3740d3ad09cfacf9cd6e64
+              created: 1761700326919
+              modified: 1761700548290
+              isPrivate: false
+              sortKey: -1761700326919
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "status_inspecao": "APROVADO",
+                  "inspetor": 4,
+                  "data_inspecao": "2025-10-29T10:00:00"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+            authentication:
+              type: basic
+              username: producao
+              password: producao123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Inspecao
+        meta:
+          id: fld_ce86828d7da341b3b6e79b99213d781e
+          created: 1761700326894
+          modified: 1761700375660
+          sortKey: -1761700342340
+        children:
+          - url: http://127.0.0.1:8000/api/lotes/
+            name: Listar Lotes
+            meta:
+              id: req_d0c555a20620410ca3afb8cfc99c6b58
+              created: 1761700326921
+              modified: 1761700554543
+              isPrivate: false
+              sortKey: -1761700326921
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: inspecao
+              password: inspecao123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Manutencao
+        meta:
+          id: fld_35f3b6cbcc074da7adb7b6dfa0a6222f
+          created: 1761700326900
+          modified: 1761700387313
+          sortKey: -1761700342440
+        children:
+          - url: http://127.0.0.1:8000/api/maquinas/precisam-manutencao/
+            name: Maquinas que Precisam de Manutencao
+            meta:
+              id: req_ceb13e4ddc7d4ac2bedd97359745a478
+              created: 1761700326922
+              modified: 1761700326922
+              isPrivate: false
+              sortKey: -1761700326922
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: manutencao
+              password: manutencao123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/manutencoes/
+            name: Criar Manutencao
+            meta:
+              id: req_98d21b68090f43b685b38cd950bdac5e
+              created: 1761700326923
+              modified: 1761700326923
+              isPrivate: false
+              sortKey: -1761700326923
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "maquina": 2,
+                  "descricao": "Ajuste de alinhamento",
+                  "data_hora": "2025-10-29T11:00:00",
+                  "funcionario": 5
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+            authentication:
+              type: basic
+              username: manutencao
+              password: manutencao123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Lider
+        meta:
+          id: fld_aed45982db7c469fb1d959b2d502d5ff
+          created: 1761700326904
+          modified: 1761700388891
+          sortKey: -1761700342540
+        children:
+          - url: http://127.0.0.1:8000/api/dashboard/?inicio=2025-10-01&fim=2025-10-31&funcionario=4
+            name: Dashboard
+            meta:
+              id: req_40c280db8a8f46078f2651b093764f6e
+              created: 1761700326924
+              modified: 1761701604903
+              isPrivate: false
+              sortKey: -1761700326924
+            method: GET
+            headers:
+              - name: Accept
+                value: application/json
+            authentication:
+              type: basic
+              username: lider
+              password: lider123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/dashboard?funcionario=5
+            name: Dashboard com funcionario errado
+            meta:
+              id: req_00fb2e47c1bd48bd89ffaeb86385c4d9
+              created: 1761700679844
+              modified: 1761701653487
+              isPrivate: false
+              sortKey: -1761700327024
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.2
+            authentication:
+              type: basic
+              useISO88591: false
+              disabled: false
+              username: lider
+              password: lider123
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1744067279749
+    modified: 1744067279749
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1744067279201
+    modified: 1744067279201
+    isPrivate: false

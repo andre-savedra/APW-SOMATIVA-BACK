@@ -1,0 +1,24 @@
+Produtos (varias peças)
+imagem
+nome
+estrelas
+quantidade de avaliações
+preço
+opções de parcelamento 
+Categoria FK
+
+Categoria (varios produtos)
+nome (escritório, jantar, sala de estar, infantil, etc)
+
+Peças 
+nome
+medidas
+peso
+
+Carinho de compras 
+produtos FK
+valor total
+valor do desconto
+método de pagamento
+status
+código de rastreamento

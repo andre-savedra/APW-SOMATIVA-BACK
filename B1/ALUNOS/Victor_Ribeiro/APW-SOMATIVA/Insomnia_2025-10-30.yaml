@@ -1,0 +1,423 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1742863114164
+  modified: 1742863114164
+  description: ""
+collection:
+  - name: QUBITRO
+    meta:
+      id: fld_552c35ce73174428a05f714a4a9bd51a
+      created: 1747953357548
+      modified: 1759445542041
+      sortKey: -1744069154776
+      description: ""
+  - name: MANFLIX
+    meta:
+      id: fld_33f5bcc825d64f308c42c2a0f2dd819a
+      created: 1755048703629
+      modified: 1755048703629
+      sortKey: -1755048703629
+      description: ""
+  - name: MANFLIX
+    meta:
+      id: fld_4472b72411894448a4fbe63c5d6ae8b8
+      created: 1755048703629
+      modified: 1755048703629
+      sortKey: -1755048703629
+      description: ""
+  - name: MANFLIX
+    meta:
+      id: fld_73c416be06534f079d29a78dd1750434
+      created: 1755048703629
+      modified: 1755048703629
+      sortKey: -1755048703629
+      description: ""
+  - name: MANFLIX
+    meta:
+      id: fld_85f03fb13b5542289ad23f4b6ce57e4f
+      created: 1755048703629
+      modified: 1757028424669
+      sortKey: -1755048703629
+      description: ""
+  - name: MANFLIX
+    meta:
+      id: fld_c4fb76bfe5154e8680d839de817a4c2b
+      created: 1755048703629
+      modified: 1755048703629
+      sortKey: -1755048703629
+      description: ""
+  - name: MANGECOIN
+    meta:
+      id: fld_108ea79b505646499bb568b8be118704
+      created: 1756852176179
+      modified: 1756852176179
+      sortKey: -1756852176179
+      description: ""
+    children:
+      - name: TOKENS
+        meta:
+          id: fld_a3d2c190e2274f598fc363f2683eed6f
+          created: 1756852190675
+          modified: 1756852190675
+          sortKey: -1756852190675
+          description: ""
+      - name: ACCOUNTS
+        meta:
+          id: fld_bbeef774684044328b95a20dc2d4a486
+          created: 1756852964559
+          modified: 1756852964559
+          sortKey: -1756852183427
+          description: ""
+      - name: TRANSACTIONS
+        meta:
+          id: fld_b5e65bd1d15241d38598837b6f97e945
+          created: 1756853513820
+          modified: 1756853513820
+          sortKey: -1756853513820
+          description: ""
+      - name: Bets
+        meta:
+          id: fld_76d6825e3b334c1d833a354f48180190
+          created: 1756853865613
+          modified: 1756853865613
+          sortKey: -1756853865613
+          description: ""
+      - name: AUTH
+        meta:
+          id: fld_d46d140ec61e4980a1fad1deeae9ad85
+          created: 1756860247725
+          modified: 1756860247725
+          sortKey: -1756860247725
+          description: ""
+  - name: MANGECOIN
+    meta:
+      id: fld_9e8dd19b5dac4b4c9fab1019fa33982f
+      created: 1756852176179
+      modified: 1756852176179
+      sortKey: -1756852176179
+      description: ""
+    children:
+      - name: TOKENS
+        meta:
+          id: fld_e436df059df84abe9abd019be7cc2984
+          created: 1756852190675
+          modified: 1756852190675
+          sortKey: -1756852190675
+          description: ""
+      - name: ACCOUNTS
+        meta:
+          id: fld_536eb2cfbcd44d07a38d0ec66383af56
+          created: 1756852964559
+          modified: 1756852964559
+          sortKey: -1756852183427
+          description: ""
+      - name: TRANSACTIONS
+        meta:
+          id: fld_47ce00bd0c774927a164fb48db4c9cec
+          created: 1756853513820
+          modified: 1756853513820
+          sortKey: -1756853513820
+          description: ""
+      - name: Bets
+        meta:
+          id: fld_d5c880cb36404798b6bc95b380460127
+          created: 1756853865613
+          modified: 1756853865613
+          sortKey: -1756853865613
+          description: ""
+      - name: AUTH
+        meta:
+          id: fld_ae2f7dbbc8ca474bb865500f62d6fd60
+          created: 1756860247725
+          modified: 1756860247725
+          sortKey: -1756860247725
+          description: ""
+  - name: Somativa
+    meta:
+      id: fld_1a968dd4d241446882ef6ba690477fd3
+      created: 1761863322042
+      modified: 1761863322042
+      sortKey: -1761863322042
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: viagens
+        meta:
+          id: req_c5c42ca57f904d478c2d7088eb02f561
+          created: 1761863332143
+          modified: 1761871156598
+          isPrivate: false
+          description: ""
+          sortKey: -1761863336739
+        method: GET
+        body:
+          mimeType: application/json
+          text: |
+            {
+                "codigo_id": "V001",
+                "data_inicio": "2025-10-30",
+                "hora_inicio": "09:00:00",
+                "data_termino": "2025-10-30",
+                "hora_termino": "17:00:00",
+                "destino": "Rio de Janeiro",
+                "km": 500,
+                "motorista": "1",
+                "veiculo": 2
+            }
+        parameters:
+          - id: pair_ef5e7800c39d43429193eda628961e71
+            name: data_inicio__gte
+            value: 2025-10-30
+            description: ""
+            disabled: false
+          - id: pair_eb37d5aadc364237945977b6c6b343a8
+            name: data_termino__lte
+            value: 2025-10-30
+            description: ""
+            disabled: false
+          - id: pair_847e42ccfbe3468fa6bc60d7f894a685
+            name: veiculo
+            value: "2"
+            description: ""
+            disabled: false
+          - id: pair_ff7eff40e28146b7880d06d66505c276
+            name: categoria
+            value: CAMINHÃO
+            description: ""
+            disabled: false
+          - id: pair_dcad087dd2a347abbf3b091d3bb2c42d
+            name: km_min
+            value: "100"
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/veiculos/
+        name: cadastrar veiculos
+        meta:
+          id: req_8502b83aa4c640d08a5aeba315fe03a6
+          created: 1761866919616
+          modified: 1761875253821
+          isPrivate: false
+          description: ""
+          sortKey: -1761863336639
+        method: POST
+        body:
+          mimeType: application/json
+          text: |2-
+             {
+                    "id": 2,
+                    "placa": "AAA333",
+                    "modelo": "Fioriono ",
+                    "categoria": "VAN",
+                    "data_aquisicao": "2019-07-25",
+                    "data_ultima_manutencao": "2025-12-01"
+                }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_ae3092cc9dfb43d7806b56cb39f49f95
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_52a3bb3b86534ba4a63921108d275b66
+          - id: pair_580a8992fd364003ab383c2e1b94d600
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc1Mzc1LCJpYXQiOjE3NjE4NzUwNzUsImp0aSI6IjdhNzJkNDNiNTYxZjQ4MTJiNzNkZjA1NGYzOGU0ZTYzIiwidXNlcl9pZCI6IjIifQ.TXKBskTC_XmtMxykjdegjD8mbnGv5wilA5fCBInflmM
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/funcionarios/
+        name: funcionario
+        meta:
+          id: req_24a1034fde6a44c48f78c97f274906b3
+          created: 1761867583015
+          modified: 1761875925800
+          isPrivate: false
+          description: ""
+          sortKey: -1761863336839
+        method: GET
+        body:
+          mimeType: application/json
+          text: |+
+            {
+                "nome": "Daniel",
+                "matricula": "1234567880",
+                "email": "daniel@daniel.com",
+                "cpf": "12345678901",
+                "data_contratacao": "2021-06-15",
+                "cargo": "MOTORISTA"
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_1f5b36fc3a304374b0dec004f62cd5bc
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4386e4413b2943579b65d4dc008843fd
+          - id: pair_795f08e25a82475d9f51b2d55f6fc733
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc2MjE2LCJpYXQiOjE3NjE4NzU5MTYsImp0aSI6Ijc4MjFhMmU2NjIyMTQ0MTNiZDU5M2QyMTFlOGQ4MGNkIiwidXNlcl9pZCI6IjIifQ.7y34ss24ItZVPYvpmcqbksTNo7c6kigqwtZj0fMGyns
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/manutencao/
+        name: manutencao
+        meta:
+          id: req_b35b2f92a5864194bd8cb50f52fe82e5
+          created: 1761867932625
+          modified: 1761868567608
+          isPrivate: false
+          description: ""
+          sortKey: -1761863336939
+        method: POST
+        body:
+          mimeType: application/json
+          text: |2+
+                {
+                    "codigo": "002" ,
+            			  "data": "2023-02-15",
+            				"tipo": "preventiva",
+            				"descricao": "Realizado inspeção nos freios e no oleo do motor",
+            			 "custo": 1500.00,
+            			 "funcionario_tecnico": "2"								
+                    
+                 }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/viagens/
+        name: viagemSemFiltro
+        meta:
+          id: req_72b440a3b7ef4beeb3d9fc8b176945e7
+          created: 1761870981339
+          modified: 1761871604605
+          isPrivate: false
+          description: ""
+          sortKey: -1761863337039
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/token/
+        name: login
+        meta:
+          id: req_a972d7c261aa4bbd8552a6d26c418179
+          created: 1761871600603
+          modified: 1761873094011
+          isPrivate: false
+          description: ""
+          sortKey: -1761863336989
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "victor",
+            	"password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/register-user/
+        name: register
+        meta:
+          id: req_46f2c2dda8264a31b839ffaab9aed830
+          created: 1761872154565
+          modified: 1761872196493
+          isPrivate: false
+          description: ""
+          sortKey: -1761863337139
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+                "username": "victor",
+                "password": "123456",
+                "email": "victor@email.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1743723940109
+    modified: 1743723940109
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1743723940036
+    modified: 1743723940036
+    isPrivate: false

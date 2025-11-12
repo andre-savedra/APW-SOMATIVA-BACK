@@ -1,0 +1,600 @@
+type: collection.insomnia.rest/5.0
+name: MangeAutomation API - Testes de Regras
+meta:
+  id: wrk_736ab704a6a24ea394461b6952ab6538
+  created: 1761966581137
+  modified: 1761966581137
+  description: ""
+collection:
+  - name: "TESTE: Papel INSPECAO"
+    meta:
+      id: fld_05b0feb1ce29485e88ba8071c8a652ac
+      created: 1678834800000
+      modified: 1678834800000
+      sortKey: -50
+      description: Use o Ambiente 'Inspetor'
+    children:
+      - url: "{{ _.base_url }}/lotes/producao_reprovada/"
+        name: "SUCESSO: Ver Lotes Reprovados (Acao)"
+        meta:
+          id: req_279237e520b5471c842982a4d815f584
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: "Regra: 'INSPECAO' PODE ver producao reprovada."
+          sortKey: -90
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/usuarios/"
+        name: "FALHA: Ver Todos Usuarios"
+        meta:
+          id: req_6056f1b8ae5a4b4c9e5815273ed15b85
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: |-
+            Regra: 'INSPECAO' so pode ver ele mesmo.
+
+            A lista deve conter apenas 1 usuario (ele mesmo).
+          sortKey: -70
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/dashboard/producao/"
+        name: "FALHA: Ver Dashboard"
+        meta:
+          id: req_c5d458d3e8294abfacd1f21dfcf9954f
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: |-
+            Regra: 'INSPECAO' NAO PODE ver dashboard.
+
+            Deve retornar 403 Forbidden.
+          sortKey: -80
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/lotes/"
+        name: "SUCESSO: Ver Lotes (Queryset)"
+        meta:
+          id: req_c92d02ff3a9c4cbd9982326241893f61
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: "Regra: 'INSPECAO' ve apenas lotes nao inspecionados ou atribuidos
+            a ele."
+          sortKey: -100
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: ADMIN (Setup Inicial)
+    meta:
+      id: fld_a313c747c94c44b8a9760cb769db72c6
+      created: 1678834800000
+      modified: 1678834800000
+      sortKey: -100
+      description: Use o Ambiente 'Admin' para criar dados basicos para os outros testes.
+    children:
+      - url: "{{ _.base_url }}/produtos/"
+        name: "Cria Produto (Ex: Parafuso)"
+        meta:
+          id: req_29f4877ccc2149c1b439e2ba003ae6e0
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: ""
+          sortKey: -100
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Parafuso Sextavado 1/4",
+            	"codigo": "PAR-001",
+            	"descricao": "Parafuso de alta resistencia",
+            	"categoria": "Fixacao"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/maquinas/"
+        name: "Cria Maquina (Ex: Prensa)"
+        meta:
+          id: req_541bed8a974b4dfba6495fa80159dd34
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: ""
+          sortKey: -90
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"codigo": "PRN-01",
+            	"nome": "Prensa Hidraulica 10T",
+            	"descricao": "Prensa para moldar pecas"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/lotes/"
+        name: Cria Lote (Para o Produto 1)
+        meta:
+          id: req_dc1aa0469bc74b29a15bcadadc397cb2
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: ""
+          sortKey: -80
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"codigo": "LOTE-2025-10-31",
+            	"data_inicio": "2025-10-31T10:00:00Z",
+            	"produto": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: "TESTE: Papel CHEFE_PRODUCAO"
+    meta:
+      id: fld_c60e9ded410544ae8b4c5b07eeca23a5
+      created: 1678834800000
+      modified: 1678834800000
+      sortKey: -40
+      description: Use o Ambiente 'Chefe'
+    children:
+      - url: "{{ _.base_url }}/lotes/producao_reprovada/"
+        name: "SUCESSO: Ver Lotes Reprovados (Acao)"
+        meta:
+          id: req_033f386bc67b493ab00d9e83b93f5f65
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: "Regra: 'CHEFE_PRODUCAO' PODE ver producao reprovada."
+          sortKey: -90
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/usuarios/"
+        name: "SUCESSO: Ver Todos Usuarios"
+        meta:
+          id: req_be5544039b8f43c4878563e2194e4639
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: |-
+            Regra: 'CHEFE_PRODUCAO' PODE ver todos usuarios.
+
+            A lista deve conter todos os usuarios criados.
+          sortKey: -80
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/dashboard/producao/"
+        name: "SUCESSO: Ver Dashboard"
+        meta:
+          id: req_c7192673bef74ceba4f6f6e1a603a6c3
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: "Regra: 'CHEFE_PRODUCAO' PODE ver dashboard."
+          sortKey: -100
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: "TESTE: Papel PRODUCAO"
+    meta:
+      id: fld_ccca8390afc443b8a2726f2ded4caec1
+      created: 1678834800000
+      modified: 1678834800000
+      sortKey: -70
+      description: Use o Ambiente 'Produtor'
+    children:
+      - url: "{{ _.base_url }}/maquinas/"
+        name: "FALHA: Criar Maquina"
+        meta:
+          id: req_004d73356967481690ccb7b5c69be8c6
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: |-
+            Regra: 'PRODUCAO' NAO PODE criar maquinas.
+
+            Deve retornar 403 Forbidden.
+          sortKey: -90
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"codigo": "PRN-02-FAIL",
+            	"nome": "Maquina Teste Producao",
+            	"descricao": "Deve falhar"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/dashboard/producao/"
+        name: "FALHA: Ver Dashboard"
+        meta:
+          id: req_74d138909b9c4cb7be34b86cf6556a21
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: |-
+            Regra: 'PRODUCAO' NAO PODE ver dashboard.
+
+            Deve retornar 403 Forbidden.
+          sortKey: -80
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/itens/"
+        name: "SUCESSO: Criar ItemProduzido"
+        meta:
+          id: req_f784f00c0a844419a63589e539a6058f
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: "Regra: 'PRODUCAO' PODE criar itens."
+          sortKey: -100
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"lote": 1,
+            	"maquina": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: "TESTE: Papel MANUTENCAO"
+    meta:
+      id: fld_edabc987fd2d4318a08866ff9226e386
+      created: 1678834800000
+      modified: 1761966862415
+      sortKey: -60
+      description: Use o Ambiente 'Mecanico'
+    children:
+      - url: "{{ _.base_url }}/maquinas/precisa_manutencao/"
+        name: "SUCESSO: Ver Maquinas (Acao)"
+        meta:
+          id: req_1096ecb5d3fa4ab39fe462b12e5f4e84
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: "Regra: 'MANUTENCAO' PODE ver maquinas que precisam de manutencao."
+          sortKey: -90
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/itens/"
+        name: "FALHA: Criar ItemProduzido"
+        meta:
+          id: req_13d4e60c21a54623be0fcf5853e7d30e
+          created: 1678834800000
+          modified: 1678834800000
+          isPrivate: false
+          description: |-
+            Regra: 'MANUTENCAO' NAO PODE criar itens.
+
+            Deve retornar 403 Forbidden.
+          sortKey: -80
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"lote": 1,
+            	"maquina": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: ""
+        name: "SUCESSO: Criar Manutencao"
+        meta:
+          id: req_a1275c7e366049309fc0cb502f133211
+          created: 1678834800000
+          modified: 1761967073950
+          isPrivate: false
+          description: |-
+            Regra: 'MANUTENCAO' PODE criar manutencoes.
+
+            O 'funcionario' sera setado automaticamente para o usuario logado.
+          sortKey: -100
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"maquina": 1,
+            	"descricao": "Troca de oleo realizada pelo mecanico"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{% request 'authentication', 'user' %}"
+          password: "{% request 'authentication', 'pass' %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_63b03f1cedf2b9892e3bcb09942130e62a975564
+    created: 1761966582817
+    modified: 1761966582817
+environments:
+  name: Base Environment
+  meta:
+    id: env_d40bb4905b0649589d11d5bc057b2714
+    created: 1678834800000
+    modified: 1678834800000
+    isPrivate: false
+  data:
+    base_url: http://127.0.0.1:8000/api
+  subEnvironments:
+    - name: Chefe
+      meta:
+        id: env_15d9cf3d461a4b86bd9da0b660739852
+        created: 1678834800000
+        modified: 1761966744765
+        isPrivate: false
+        sortKey: 200
+      data:
+        user: chefe
+        pass: chefe123
+      color: "#f89b3d"
+    - name: Mecanico
+      meta:
+        id: env_5c80fd73e6534a849ab6f902c074d693
+        created: 1678834800000
+        modified: 1761966766501
+        isPrivate: false
+        sortKey: 500
+      data:
+        user: mecanico
+        pass: mecanico123
+      color: "#f83de6"
+    - name: Produtor
+      meta:
+        id: env_785e95ec46b84a2482838d6dbd0d1c6e
+        created: 1678834800000
+        modified: 1761966751113
+        isPrivate: false
+        sortKey: 300
+      data:
+        user: produtor
+        pass: produtor123
+      color: "#3d9df8"
+    - name: Admin
+      meta:
+        id: env_95646f6cb45342be82cfe4ed3bfce275
+        created: 1678834800000
+        modified: 1761966730293
+        isPrivate: false
+        sortKey: 100
+      data:
+        user: admin
+        pass: adm@adm.com
+      color: "#e03434"
+    - name: Inspetor
+      meta:
+        id: env_9dd3e55af2b34cb08919a26e0f9d4917
+        created: 1678834800000
+        modified: 1761966758762
+        isPrivate: false
+        sortKey: 400
+      data:
+        user: inspetor
+        pass: inspetor123
+      color: "#3df8a2"

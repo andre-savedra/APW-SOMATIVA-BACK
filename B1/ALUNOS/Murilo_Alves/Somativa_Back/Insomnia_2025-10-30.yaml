@@ -1,0 +1,52 @@
+type: collection.insomnia.rest/5.0
+name: LOGIN JWT
+meta:
+  id: wrk_e90ecf0e0c7f4fd79cddbe1968593946
+  created: 1761872447306
+  modified: 1761872447306
+collection:
+  - url: http://127.0.0.1:8000/api/funcionarios/
+    name: New Request
+    meta:
+      id: req_92c8a8225bf64e25b3faaf2ad25e26c8
+      created: 1761872455387
+      modified: 1761876425522
+      isPrivate: false
+      sortKey: -1761872455387
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "username": "admin2@admin2.com",
+          "password": "123456789"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc5ODU1LCJpYXQiOjE3NjE4NzYyNTUsImp0aSI6IjYyOTk3YTZhNjYzMjQ4NGJhZmYwNDg1MTI0ZjYzOGFmIiwidXNlcl9pZCI6IjMifQ.AbDEmAyRm2RboUZ-5EfBL9qWCmNGsBExpr4cpRZL8G8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_29d3a9335421a81da0480c37906a8e1dcebe2422
+    created: 1761872447316
+    modified: 1761872447316
+environments:
+  name: Base Environment
+  meta:
+    id: env_29d3a9335421a81da0480c37906a8e1dcebe2422
+    created: 1761872447312
+    modified: 1761872447312
+    isPrivate: false

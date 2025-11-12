@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/250ae9c3-6c33-4030-b72a-ed22fce22920/resourceGroups/leonardorodrigues-manflix-senai/providers/Microsoft.Web/sites/leonardorodrigues-manflix-senai",
+    "appService.deploySubpath": "."
+}

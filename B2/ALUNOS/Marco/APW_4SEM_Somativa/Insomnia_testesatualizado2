@@ -1,0 +1,537 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1744067230426
+  modified: 1744067230426
+collection:
+  - name: Registros
+    meta:
+      id: fld_085732cf98304299b84fc38556a67b0a
+      created: 1699221600000
+      modified: 1699221600000
+      sortKey: -1699221600000
+    children:
+      - url: http://127.0.0.1:8000/api/registros/
+        name: Listar Registros
+        meta:
+          id: req_44c2042f95634baf87ec0312fbb119c9
+          created: 1699221600000
+          modified: 1762471850448
+          isPrivate: false
+          description: Listar registros
+          sortKey: -1699221600000
+        method: GET
+        headers:
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_64b155eab86d46148c3d848d968a3d11
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/registros/
+        name: Criar Registro (PRODUCAO)
+        meta:
+          id: req_fa72576523f04ee791efb7146e56050f
+          created: 1699221600000
+          modified: 1762472466162
+          isPrivate: false
+          description: Cria registro do tipo PRODUCAO e checa aumento da
+            quantidade_produzida
+          sortKey: -1699221600000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "ordem_producao": 1,
+              "funcionario_id": 2,
+              "tipo": "PRODUCAO",
+              "quantidade": 10,
+              "descricao": "Registro de produção teste"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_b6c3f5bb8ad14369bb893ed403cb1f38
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_25ea210cf393475f95ffc1d3e654396c
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Linhas de Produção
+    meta:
+      id: fld_12ff06387880483f9b0e6c229b30f66c
+      created: 1699221600000
+      modified: 1699221600000
+      sortKey: -1699221400000
+    children:
+      - url: http://127.0.0.1:8000/api/linhas/
+        name: Criar Linha
+        meta:
+          id: req_245de8b05ddf4195895a1a059776d2ae
+          created: 1699221600000
+          modified: 1762471530595
+          isPrivate: false
+          sortKey: -1699221600000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Linha de Montagem B",
+            	"descricao": "Linha principal de montagem2",
+            	"ativa": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_73d6f0289fa642f28d56beee870cc36a
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_ebc64fbe89be47a1a1284a0436bacea0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/linhas/
+        name: Ver linhas
+        meta:
+          id: req_ae7f1906200e4424847f95d105b77568
+          created: 1762471500894
+          modified: 1762471500894
+          isPrivate: false
+          sortKey: -1699221599950
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Linha de Montagem A",
+            	"descricao": "Linha principal de montagem",
+            	"ativa": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_73d6f0289fa642f28d56beee870cc36a
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_ebc64fbe89be47a1a1284a0436bacea0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Funcionários
+    meta:
+      id: fld_2d3e251e39fe4a91b2dd0ed5f95d90e6
+      created: 1699221600000
+      modified: 1699221600000
+      sortKey: -1699221500000
+    children:
+      - url: http://127.0.0.1:8000/api/funcionarios/
+        name: Criar Funcionário
+        meta:
+          id: req_6cce18b70fd94d889015e8392d6563c7
+          created: 1699221600000
+          modified: 1762471732311
+          isPrivate: false
+          sortKey: -1699221600000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "operador@example.com",
+            	"nome": "João da Silva",
+            	"numero_registro": "OP001",
+            	"cpf": "12345678901",
+            	"cargo": "PRODUCAO",
+            	"password": "senha123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_91d9e9f7be384e6fb6b2a3873c2ac8ee
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_02d2020665f84c61a3f420c90f1ab872
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/funcionarios/
+        name: Ver funcionarios
+        meta:
+          id: req_daa9d5e7c9cc444ea6b9cca55d8e9052
+          created: 1762472282459
+          modified: 1762472287953
+          isPrivate: false
+          sortKey: -1699221599975
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "operador@example.com",
+            	"nome": "João da Silva",
+            	"numero_registro": "OP001",
+            	"cpf": "12345678901",
+            	"cargo": "PRODUCAO",
+            	"password": "senha123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_91d9e9f7be384e6fb6b2a3873c2ac8ee
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_02d2020665f84c61a3f420c90f1ab872
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Alertas
+    meta:
+      id: fld_559131082eec4e5eb6fbf0b69339cd46
+      created: 1699221600000
+      modified: 1699221600000
+      sortKey: -1699221600000
+    children:
+      - url: http://127.0.0.1:8000/api/alertas/
+        name: Criar Alerta
+        meta:
+          id: req_40fa43da66cd4549bf8ef9b2e8073641
+          created: 1699221600000
+          modified: 1762471921543
+          isPrivate: false
+          description: Criação de alerta
+          sortKey: -1699221600000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "titulo": "Alerta teste",
+              "descricao": "Descrição do alerta",
+              "linha": 1,
+              "criado_por_id": 3,
+              "prioridade": "ALTA"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_db003c35329c4beebf90118f40326572
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_d0212f9c3cb0439fb7d0c5c649c1faeb
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/alertas/1/resolver/
+        name: Resolver Alerta (ação)
+        meta:
+          id: req_8207515257004f96b5d94deb4799e8d5
+          created: 1699221600000
+          modified: 1762471912729
+          isPrivate: false
+          description: Ação resolver em alerta id 1
+          sortKey: -1699221600000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "observacoes": "Resolvido via teste"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_93195b0e46dd43f0b36bae26977b4bef
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_a31121e599f6479cad2acb5f67c61580
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Autenticação
+    meta:
+      id: fld_663c26c4e63c4cfe82d107bbb03666fb
+      created: 1699221600000
+      modified: 1762476195512
+      sortKey: -1699221600100
+    children:
+      - url: http://127.0.0.1:8000/auth/token/
+        name: Obter token
+        meta:
+          id: req_7003ecce143640cdb06f86fd2e9d1b38
+          created: 1699221600000
+          modified: 1762470229608
+          isPrivate: false
+          sortKey: -1699221600000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "admin@example.com",
+            	"password": "admin@admin1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Manutenções
+    meta:
+      id: fld_c9f884e906584721a3004b2fac2d7b20
+      created: 1699221600000
+      modified: 1699221600000
+      sortKey: -1699221600000
+    children:
+      - url: http://127.0.0.1:8000/api/manutencoes/
+        name: Criar Manutenção
+        meta:
+          id: req_bfde8e48ed214434bd46eaa39297083f
+          created: 1699221600000
+          modified: 1762472059106
+          isPrivate: false
+          description: Cria manutenção com responsavel cargo MANUTENCAO
+          sortKey: -1699221600000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "linha": 1,
+              "tipo": "CORRETIVA",
+              "descricao": "Manutenção teste",
+              "data_agendada": "2025-11-10T09:00:00Z",
+              "responsavel_id": 4,
+              "duracao_estimada": "01:00:00",
+              "custo_estimado": "100.00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_30d9faa5a28b4b3b876b60599daff0cf
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_41d77a79b79043c7982e92f212d0db52
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/manutencoes/1/iniciar/
+        name: Iniciar Manutenção (ação)
+        meta:
+          id: req_ff6f30de0d654a1b82a53e94de861091
+          created: 1699221600000
+          modified: 1762472004709
+          isPrivate: false
+          description: Ação iniciar em manutenção id 1
+          sortKey: -1699221600000
+        method: POST
+        headers:
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_b7525ac192ee4a02be0bd7895ab06954
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Ordens de Produção
+    meta:
+      id: fld_ce4e808153bb4ee4a3e9136465c5dc8e
+      created: 1699221600000
+      modified: 1699221600000
+      sortKey: -1699221600000
+    children:
+      - url: http://127.0.0.1:8000/api/ordens-producao/1/concluir_producao/
+        name: Concluir Produção (ação)
+        meta:
+          id: req_17274395078f49878d2f2776629e1f9a
+          created: 1699221600000
+          modified: 1762472088596
+          isPrivate: false
+          description: Ação concluir_producao na ordem com id 1
+          sortKey: -1699221600000
+        method: POST
+        headers:
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_c2d55bc8b3984d2585b643a570d45009
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/ordens-producao/
+        name: Criar Ordem (válida)
+        meta:
+          id: req_5345e70ddf7c460ab261e387ace8a600
+          created: 1699221600000
+          modified: 1762472103549
+          isPrivate: false
+          description: Cria uma ordem de produção com responsavel CHEFE_PRODUCAO
+          sortKey: -1699221600000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "numero": "OP1001",
+              "produto": "Produto X",
+              "quantidade_planejada": 100,
+              "linha": 1,
+              "responsavel_id": 2,
+              "observacoes": "Teste de criação"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_879ea862dc2044729d5efdf26479321d
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_eaf028f844ad4524817f70e39f94b60b
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/ordens-producao/
+        name: Listar Ordens
+        meta:
+          id: req_679ec6b881fe465191817668274a1c0e
+          created: 1699221600000
+          modified: 1762472118233
+          isPrivate: false
+          description: Lista ordens de produção
+          sortKey: -1699221600000
+        method: GET
+        headers:
+          - id: pair_26f7f2cc58df40f5a638dec668c0d5c8
+            name: Content-Type
+            value: Application/json
+            disabled: false
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_4f357beb302944f6b2ef8134de09a6f0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/ordens-producao/1/iniciar_producao/
+        name: Iniciar Produção (ação)
+        meta:
+          id: req_eaf4b1878cc5474cbc7afb2f031a78c8
+          created: 1699221600000
+          modified: 1762472131141
+          isPrivate: false
+          description: Ação iniciar_producao na ordem com id 1
+          sortKey: -1699221600000
+        method: POST
+        headers:
+          - id: pair_d48c216127884f03963036a6603c7b6b
+            name: Content-Type
+            value: application/json
+            disabled: false
+          - name: Authorization
+            value: Token
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNDc0NjIxLCJpYXQiOjE3NjI0NzEwMjIsImp0aSI6IjE1ZDBlNTE3MDFkODQzODM4ZjJkNzA4NzkwMGUzODgzIiwidXNlcl9pZCI6IjEifQ.LSoIvYwosLXAhZqW42x6mzSWvcBGrm031KpVrupjGLM
+            id: pair_bbaf66be20a94ac2a2619b876bfe97e0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1747956761561
+    modified: 1747956761561
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1747956761013
+    modified: 1747956761013
+    isPrivate: false

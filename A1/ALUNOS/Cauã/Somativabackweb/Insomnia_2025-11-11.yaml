@@ -1,0 +1,668 @@
+type: collection.insomnia.rest/5.0
+name: Somativa
+meta:
+  id: wrk_5943286297f14908ac70cb0daabfefb6
+  created: 1748306277842
+  modified: 1748306277842
+collection:
+  - name: Login
+    meta:
+      id: fld_18ce000667194c4fa71645618247fee6
+      created: 1761700288182
+      modified: 1761700288182
+      sortKey: -1761700288182
+    children:
+      - url: http://127.0.0.1:8000/api/auth/jwt/create/
+        name: Login Manutenção
+        meta:
+          id: req_bbf7dc3fd9e0453a8cd5fa8d74fc42a6
+          created: 1761700262467
+          modified: 1762903424982
+          isPrivate: false
+          sortKey: -1762903424935
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "manutencao@manutencao.com",
+            	"password": "Cv123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/auth/jwt/create/
+        name: Login Engenharia
+        meta:
+          id: req_fced3a4889e7401c8cb00ab5efe46c7e
+          created: 1762902900360
+          modified: 1762903430742
+          isPrivate: false
+          sortKey: -1762903425135
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "engenharia@empresa.com",
+            	"password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/auth/jwt/create/
+        name: Login Admin
+        meta:
+          id: req_aefa0a05d64e435f9718d82dd4a3b85e
+          created: 1762903032087
+          modified: 1762903433439
+          isPrivate: false
+          sortKey: -1762903425235
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "admin@admin.com",
+            	"password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/auth/jwt/create/
+        name: Login Produção
+        meta:
+          id: req_de35c90760a142b882b011b8d72af9fa
+          created: 1762903132443
+          modified: 1762903427613
+          isPrivate: false
+          sortKey: -1762903425035
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "producao@empresa.com",
+            	"password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/auth/jwt/create/
+        name: Login Inspetor
+        meta:
+          id: req_44dd547a96bf451686abc32d68d8f7bf
+          created: 1762903514662
+          modified: 1762904241915
+          isPrivate: false
+          sortKey: -1762903406159
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "inspetor@empresa.com",
+            	"password": "Cv@12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/auth/jwt/create/
+        name: Login Lider de Produção
+        meta:
+          id: req_50eab3dd52b3415191b9a859755e7d77
+          created: 1762907751028
+          modified: 1762907769599
+          isPrivate: false
+          sortKey: -1762903424985
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "lider@empresa.com",
+            	"password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Criar maquina
+    meta:
+      id: fld_4ab6da6ea1df476f96e8c34043743ff8
+      created: 1761700826886
+      modified: 1761700826886
+      sortKey: -1761700826886
+    children:
+      - url: http://127.0.0.1:8000/api/maquinas/
+        name: Maquina
+        meta:
+          id: req_5b2a888379b54e758ed5bbb47e0cf1ba
+          created: 1761700860903
+          modified: 1762904549812
+          isPrivate: false
+          sortKey: -1762903438986
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"codigo_identificador": "RBT-ASM-005",
+            	"nome": "Braço Robótico Articulado",
+            	"descricao": "Robô Yaskawa de 6 eixos para pick-and-place e inspeção visual.",
+            	"ultima_data_manutencao": "2025-06-01T10:00:00Z", 
+            	"responsavel_manutencao": 2 
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_f002c3f26f5045baaffb766bc0519984
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+          - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA0NTcwLCJpYXQiOjE3NjI5MDQ1MTAsImp0aSI6IjcwMmY0YTgwZTc0ODRhNDE4YTE0YjQ4MjYzODYyMWQ1IiwidXNlcl9pZCI6IjIifQ.1v6N5gv87z2VU4b93yuYO05FL4gHrj2LmUDj64uWkiY
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Criar Funcionario
+    meta:
+      id: fld_56dcfa2ca0eb4b1ea95224b2a039b54a
+      created: 1762903246859
+      modified: 1762903246859
+      sortKey: -1762903246859
+    children:
+      - url: http://127.0.0.1:8000/api/funcionarios/
+        name: Criar Funcionario
+        meta:
+          id: req_b2b2f77b6f17484183d15c0322ee44a6
+          created: 1762903340830
+          modified: 1762904701690
+          isPrivate: false
+          sortKey: -1762903387383
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "email": "inspetor@empresa.com",
+                "password": "123", 
+                "nome": "Inspetor Teste", 
+                "cpf": "44444444444", 
+                "numero_registro": "0000004", 
+                "data_contratacao": "2025-10-28", 
+                "cargo": "INSPECAO", 
+                "is_active": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_f002c3f26f5045baaffb766bc0519984
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+          - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTAzNTI0LCJpYXQiOjE3NjI5MDM0NjQsImp0aSI6ImNiZGM3YzlhNmZkNzQ1NWM4ZGUxYTViMDBkZDQ2YjYyIiwidXNlcl9pZCI6IjEifQ.3RV2Wd9bFSSVVOzwXOnjhkKG7E7YuUkHk7taCM_Ksrw
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Consultar Permissões
+    meta:
+      id: fld_cc8af4db3948489b9af0b5efae74d6c2
+      created: 1762904646278
+      modified: 1762904646278
+      sortKey: -1762904646278
+    children:
+      - name: Lotes
+        meta:
+          id: fld_17cb3b931ef042d0bd105a70202fa1bf
+          created: 1762907802260
+          modified: 1762907806807
+          sortKey: -1762904666855
+        children:
+          - url: http://127.0.0.1:8000/api/lotes/
+            name: Lote - Engenharia GET
+            meta:
+              id: req_93060e92b5c24996a91ceab2f2e72e6a
+              created: 1762904626111
+              modified: 1762907814280
+              isPrivate: false
+              sortKey: -1762907814213
+            method: GET
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                "codigo": "LT-2025-B",
+                "data_hora_inicio": "2025-11-01T08:00:00Z"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_f002c3f26f5045baaffb766bc0519984
+              - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+                value: "Content-Type: application/json"
+                disabled: false
+              - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA1MTE1LCJpYXQiOjE3NjI5MDUwNTUsImp0aSI6Ijg3NzgwMGViNzFiZTRmNjE4NjUwZDMyMzZkZDM2ODg0IiwidXNlcl9pZCI6IjQifQ.fqj1ekyd_tgM94mkvtgwVxoh5lbUUFA_z7hCUjvoO_o
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/lotes/
+            name: Lote - Engenharia POST
+            meta:
+              id: req_b267c0ada74647d79dbd1c87dcb2b5fc
+              created: 1762905015719
+              modified: 1762907817200
+              isPrivate: false
+              sortKey: -1762907814313
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                "codigo": "LT-2025-B",
+                "data_hora_inicio": "2025-11-01T08:00:00Z"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_f002c3f26f5045baaffb766bc0519984
+              - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+                value: "Content-Type: application/json"
+                disabled: false
+              - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA1MTE1LCJpYXQiOjE3NjI5MDUwNTUsImp0aSI6Ijg3NzgwMGViNzFiZTRmNjE4NjUwZDMyMzZkZDM2ODg0IiwidXNlcl9pZCI6IjQifQ.fqj1ekyd_tgM94mkvtgwVxoh5lbUUFA_z7hCUjvoO_o
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/lotes/
+            name: Lote - Produção POST
+            meta:
+              id: req_4599fc6b97aa4612972d2608261e99d2
+              created: 1762906573229
+              modified: 1762907819598
+              isPrivate: false
+              sortKey: -1762907814413
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                { 
+                "codigo": "LT-PROD-001", 
+                "data_hora_inicio": "2025-11-11T12:00:00Z" 
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_f002c3f26f5045baaffb766bc0519984
+              - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+                value: "Content-Type: application/json"
+                disabled: false
+              - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA2NzE1LCJpYXQiOjE3NjI5MDY2NTUsImp0aSI6IjM1ZDk1N2UxMGU4MzQ3NWU4ZmUxZGM2YjY5NTEwYWU2IiwidXNlcl9pZCI6IjMifQ.aZQHDYy-eZaK761I8h9z7KyKSsuhYF-O9HnIL1kG2QY
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/lotes/
+            name: Lote - Inspetor GET
+            meta:
+              id: req_ce93e1c4b2744adf89c49736a865830f
+              created: 1762907394561
+              modified: 1762907822773
+              isPrivate: false
+              sortKey: -1762907814513
+            method: GET
+            body:
+              mimeType: application/json
+              text: |-
+                { 
+                "codigo": "LT-PROD-001", 
+                "data_hora_inicio": "2025-11-11T12:00:00Z" 
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_f002c3f26f5045baaffb766bc0519984
+              - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+                value: "Content-Type: application/json"
+                disabled: false
+              - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA3NDY1LCJpYXQiOjE3NjI5MDc0MDUsImp0aSI6ImFhMGFiZTRlOWVmMzQ4YzI5MDUzMTY3NDEwOTA0NTZiIiwidXNlcl9pZCI6IjUifQ.lk-TXqCslKAF40H6R-KVeJih7hkprK6Ct4EIp8i1u6M
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Dashboard
+        meta:
+          id: fld_d2332813567e4546a70860f342524aa6
+          created: 1762907837715
+          modified: 1762907843662
+          sortKey: -1762904666880
+        children:
+          - url: http://127.0.0.1:8000/api/lotes/dashboard/
+            name: Dashboard - Lider
+            meta:
+              id: req_17f536d6e262444a98a73709af532042
+              created: 1762907862116
+              modified: 1762907973901
+              isPrivate: false
+              sortKey: -1762907868213
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_f002c3f26f5045baaffb766bc0519984
+              - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+                value: "Content-Type: application/json"
+                disabled: false
+              - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA4MDI1LCJpYXQiOjE3NjI5MDc5NjUsImp0aSI6IjM4MjA3OTg4NTdlMDQyZTJiYmE0NjBlYTNmNzQ1MWRhIiwidXNlcl9pZCI6IjYifQ.iySlgA53JdI7duBLq7dGgM53nyGmMCjtgQHOCNw1C7k
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/lotes/dashboard/
+            name: Dashboard - Inspetor
+            meta:
+              id: req_f1fbef93d4f64201ad6d71f1f8f8b231
+              created: 1762907988155
+              modified: 1762908017998
+              isPrivate: false
+              sortKey: -1762907841363
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_f002c3f26f5045baaffb766bc0519984
+              - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+                value: "Content-Type: application/json"
+                disabled: false
+              - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA4MDY4LCJpYXQiOjE3NjI5MDgwMDgsImp0aSI6IjBmNWQxZGZjOGMyNDQxZjU5YTM3MmRhMGM0NjFkMDM0IiwidXNlcl9pZCI6IjUifQ.XFt2E5BTIWtopD_H2K2QNmAhxbbwW4Jn4JLLWzO4dpc
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: http://127.0.0.1:8000/api/funcionarios/
+        name: Maquina
+        meta:
+          id: req_feeada5b0961499cab4ffd5cb498e9c7
+          created: 1761701225360
+          modified: 1762907001421
+          isPrivate: false
+          sortKey: -1762904666905
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"codigo_identificador": "RBT-ASM-005",
+            	"nome": "Braço Robótico Articulado",
+            	"descricao": "Robô Yaskawa de 6 eixos para pick-and-place e inspeção visual.",
+            	"ultima_data_manutencao": "2025-06-01T10:00:00Z", 
+            	"responsavel_manutencao": 2 
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_f002c3f26f5045baaffb766bc0519984
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+          - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA0NTcwLCJpYXQiOjE3NjI5MDQ1MTAsImp0aSI6IjcwMmY0YTgwZTc0ODRhNDE4YTE0YjQ4MjYzODYyMWQ1IiwidXNlcl9pZCI6IjIifQ.1v6N5gv87z2VU4b93yuYO05FL4gHrj2LmUDj64uWkiY
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Manutenção Pendente
+    meta:
+      id: fld_82b64f95fbd746a5a0194ca41ce7896e
+      created: 1762907018530
+      modified: 1762907063537
+      sortKey: -1762907018530
+    children:
+      - url: http://127.0.0.1:8000/api/maquinas/manutencao_pendente/
+        name: Manutenção
+        meta:
+          id: req_12dde0c6776f4dbea214995bc413ae76
+          created: 1762907041360
+          modified: 1762907236756
+          isPrivate: false
+          sortKey: -1762907052047
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_f002c3f26f5045baaffb766bc0519984
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+          - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA3Mjg2LCJpYXQiOjE3NjI5MDcyMjYsImp0aSI6ImU5Y2M2ZTM2ZjA4ZDQ3N2JhMzBlMGVmMTUxNzNkYTVmIiwidXNlcl9pZCI6IjIifQ.V4EJD3D99nh9ubthxTCbxod5qHiYhafTHKggD85_EwU
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/maquinas/manutencao_pendente/
+        name: Engenharia
+        meta:
+          id: req_f2601d5e12e9412b880c289f214a429d
+          created: 1762907267065
+          modified: 1762907281710
+          isPrivate: false
+          sortKey: -1762905859476
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_f002c3f26f5045baaffb766bc0519984
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+          - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA3MzM0LCJpYXQiOjE3NjI5MDcyNzQsImp0aSI6IjE2YmU5ZDIyZTljMTQxNDc5M2MzY2JmMWQ3ZTRiYTBjIiwidXNlcl9pZCI6IjQifQ._2j9Y5m7hDsM3rdcovTAFFwSB56HV9BkT7V8UcP5OAU
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/maquinas/manutencao_pendente/
+        name: Admin
+        meta:
+          id: req_d3f50e1c9f27493c938c13e820451de8
+          created: 1762907293906
+          modified: 1762907310579
+          isPrivate: false
+          sortKey: -1762907052147
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_f002c3f26f5045baaffb766bc0519984
+          - id: pair_e49dbc69ad4b4a28bab4a35574e2c6c0
+            value: "Content-Type: application/json"
+            disabled: false
+          - id: pair_866bf6e20fa6430193739f8e48b0b6e7
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA3MzYwLCJpYXQiOjE3NjI5MDczMDAsImp0aSI6IjBmNzliNjE3ZWVkNjRiNGY4ODM2ODZlYjg5NzIxNGIyIiwidXNlcl9pZCI6IjEifQ.c2Yn3jFcMo3U8l3vWvtS9mgrWpbLUvihrJsBSDhEWtQ
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_78d0832b1b8a2c3ca00bdfd1667e14a32a644412
+    created: 1748306277851
+    modified: 1748306277851
+environments:
+  name: Base Environment
+  meta:
+    id: env_78d0832b1b8a2c3ca00bdfd1667e14a32a644412
+    created: 1748306277848
+    modified: 1748306277848
+    isPrivate: false

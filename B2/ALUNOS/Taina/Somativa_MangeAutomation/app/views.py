@@ -13,7 +13,7 @@ from .filters import *
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         user = self.request.user
@@ -24,14 +24,14 @@ class UserViewSet(viewsets.ModelViewSet):
 class ProdutoViewSet(viewsets.ModelViewSet):
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 class LoteViewSet(viewsets.ModelViewSet):
     queryset = Lote.objects.all()
     serializer_class = LoteSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = LoteFilter
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         user = self.request.user
@@ -60,7 +60,7 @@ class MaquinaViewSet(viewsets.ModelViewSet):
     serializer_class = MaquinaSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = MaquinaFilter
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         return Maquina.objects.all().prefetch_related('manutencoes__funcionario')

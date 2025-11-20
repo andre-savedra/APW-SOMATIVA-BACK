@@ -57,11 +57,11 @@ class EmpregadoManager(BaseUserManager):
 
 class Empregado(AbstractBaseUser, PermissionsMixin):
     cargos_tipo = [
-        ("RECEPCAO", "Recepção"),
-        ("GOVERNANCA", "Governança"),
-        ("MANUTENCAO", "Manutenção"),
-        ("GERENCIA", "Gerência"),
-        ("ADMIN", "Admin"),
+        ("Recepçao", "Recepção"),
+        ("Governanca", "Governança"),
+        ("Manutencao", "Manutenção"),
+        ("Gerencia", "Gerência"),
+        ("Admin", "Admin"),
     ]
 
     nome = models.CharField(max_length=200)
@@ -78,14 +78,14 @@ class Empregado(AbstractBaseUser, PermissionsMixin):
     
     groups = models.ManyToManyField(
         'auth.Group',
-        related_name='empregado_set',  # evita conflito
+        related_name='empregado_set',  
         blank=True,
         help_text='Grupos de usuários.',
         verbose_name='groups'
     )
     user_permissions = models.ManyToManyField(
         'auth.Permission',
-        related_name='empregado_set',  # evita conflito
+        related_name='empregado_set',  
         blank=True,
         help_text='Permissões do usuário.',
         verbose_name='user permissions'
@@ -121,8 +121,8 @@ class Reservas(models.Model):
         ("CANCELADA", "Cancelada"),
     ]
     codigo = models.CharField(max_length=50, unique=True)
-    hospede = models.ForeignKey(Hospede, on_delete=models.CASCADE)
-    acomodacao = models.ForeignKey(Acomodacao, on_delete=models.CASCADE)
+    hospede = models.ForeignKey(Hospede, on_delete=models.SET_NULL, null=True, blank=True)
+    acomodacao = models.ForeignKey(Acomodacao, on_delete=models.SET_NULL, null=True, blank=True)
     check_in = models.DateField()
     check_out = models.DateField()
     valor_total = models.DecimalField(max_digits=12, decimal_places=2)
@@ -134,15 +134,14 @@ class Reservas(models.Model):
     
 
 
-# class CustomUser(AbstractUser):
-#     CARGOS = [
-#         ('RECEPCAO', 'Recepção'),
-#         ('GOVERNANCA', 'Governança'),
-#         ('MANUTENCAO', 'Manutenção'),
-#         ('GERENCIA', 'Gerência'),
-#         ('ADMIN', 'Administração'),
-#     ]
-#     cargo = models.CharField(max_length=20, choices=CARGOS, default='RECEPCAO')
 
-#     def __str__(self):
-#         return f"{self.username} ({self.cargo})"
+
+
+
+
+
+
+
+
+
+

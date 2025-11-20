@@ -1,8 +1,8 @@
 from .funcionario import *
+from .categoria import *
 from .maquina import *
 from .item import *
 from .lote import *
-from .producao import *
 from .produto import *
 
 __all__ = [
@@ -10,6 +10,6 @@ __all__ = [
     'MaquinaView',
     'ItemView',
     'LoteView',
-    'ProducaoView',
     'ProdutoView',
+    'CategoriaView',
 ]

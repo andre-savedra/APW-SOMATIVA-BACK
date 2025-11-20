@@ -14,15 +14,15 @@ from datetime import timedelta
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from rest_framework import status
-from .user_manager import RecepcaoPermission
-from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
+from .user_manager import IsGovernanceForCleaning, IsMaintenanceForAccommodation
 
 class ReservasViewSet(ModelViewSet):
     queryset = Reservas.objects.all().order_by('-check_in')
     serializer_class = ReservasSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = ReservationFilter
-    permission_classes = [IsAuthenticated, RecepcaoPermission]
+    permission_classes = [IsAuthenticated]
+
 
 class HospedeViewSet(ModelViewSet):
     queryset = Hospede.objects.all()
@@ -31,6 +31,8 @@ class HospedeViewSet(ModelViewSet):
 class AcomodacaoViewSet(ModelViewSet):
     queryset = Acomodacao.objects.all()
     serializer_class = AcomodacaoSerializer
+    permission_classes = [IsAuthenticated]#, IsMaintenanceForAccommodation]
+
 
     @action(detail=False, methods=['get'], url_path='nao-limpas')
     def nao_limpas(self, request):
@@ -47,7 +49,8 @@ class EmpregadoViewSet(ModelViewSet):
 class LimpezaViewSet(ModelViewSet):
     queryset = Limpeza.objects.all()
     serializer_class = LimpezaSerializer
-    # permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    permission_classes = [IsAuthenticated, IsGovernanceForCleaning]
 
 class ManutencoesViewSet(ModelViewSet):
     queryset = Manutencoes.objects.all()
@@ -74,7 +77,7 @@ class UserDetailView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        # Tenta encontrar o Empregado vinculado ao usuário autenticado
+        
         try:
             empregado = Empregado.objects.get(registro=request.user.username)
         except Empregado.DoesNotExist:

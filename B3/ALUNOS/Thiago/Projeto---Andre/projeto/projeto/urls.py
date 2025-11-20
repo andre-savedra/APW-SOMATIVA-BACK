@@ -24,6 +24,5 @@ urlpatterns = [
     path('api/', include('app.urls')),
     path('api/auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.jwt')),
-    path('api/login/', CustomAuthToken.as_view(), name='api_login'),
-    path('user/', UserDetailView.as_view(), name='user_detail'),
+    # path('user/', UserDetailView.as_view(), name='user_detail'),
 ]

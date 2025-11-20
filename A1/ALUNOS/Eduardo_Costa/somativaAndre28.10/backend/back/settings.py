@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -126,7 +127,6 @@ USE_TZ = True
 
 #SALVAR NO BACK --> back vira um servidor de imagens/arquivos
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR/'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -137,8 +137,17 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES' : [
-        'rest_framework.permissions.AllowAny',
-    ],  
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
 
+
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=40),
+    'REFRESH_TOKEN_LIFETIME': timedelta(minutes=30),
+}

@@ -1,0 +1,831 @@
+type: collection.insomnia.rest/5.0
+name: Somativa-Andre
+meta:
+  id: wrk_36e7e7de324249d8909f94b57ac9fcaa
+  created: 1762900640396
+  modified: 1762900640396
+collection:
+  - name: ADMIN
+    meta:
+      id: fld_a34d092d1f74476487882d6536f77e5b
+      created: 1762903246189
+      modified: 1762903246189
+      sortKey: -1762903246189
+    children:
+      - url: http://localhost:8001/api/users/
+        name: Listar Usuários
+        meta:
+          id: req_943bb98c9bd8438eb98aeb567fd5e0ea
+          created: 1762863312607
+          modified: 1762903356385
+          isPrivate: false
+          sortKey: -1762903248505
+        method: GET
+        headers:
+          - name: Authorization
+            value: Token 845162f717a08b24b1de30ee9cf9117686229ddf
+            id: pair_062501fb75d94dda8ed99870395b7835
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/maquinas/
+        name: Listar Máquinas
+        meta:
+          id: req_973e172e87704826a994b3c0d479f75f
+          created: 1762863312621
+          modified: 1762904019039
+          isPrivate: false
+          sortKey: -1762903248205
+        method: GET
+        headers:
+          - name: Authorization
+            value: Token 845162f717a08b24b1de30ee9cf9117686229ddf
+            id: pair_ae95ddd420d948d784a41f9b510f7d7b
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/maquinas/need_maintenance/
+        name: Máquinas que precisam de manutenção
+        meta:
+          id: req_49432ca928fa489d86207e12e7e4c6ed
+          created: 1762863312623
+          modified: 1762903435806
+          isPrivate: false
+          sortKey: -1762903248180
+        method: GET
+        headers:
+          - name: Authorization
+            value: " Token 845162f717a08b24b1de30ee9cf9117686229ddf"
+            id: pair_01cb1dac9dba4f0cbd5c5bb263e07306
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/lotes/
+        name: Add Lotes
+        meta:
+          id: req_af97e79074014cdeb9e8190aae4b6a99
+          created: 1762863312626
+          modified: 1762903515071
+          isPrivate: false
+          sortKey: -1762903248173.75
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": "Lote Teste",
+              "descricao": "Apenas para teste"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_6798ba4788834393ad937634e2576ac6
+          - name: Authorization
+            value: Token 845162f717a08b24b1de30ee9cf9117686229ddf
+            id: pair_a3e2a3c0b49e481db8be6a82cc5cb0a7
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/producoes/
+        name: Listar Produções
+        meta:
+          id: req_44c2277267b44933b7540943a4f7d51e
+          created: 1762863312630
+          modified: 1762903549999
+          isPrivate: false
+          sortKey: -1762903248067.5
+        method: GET
+        headers:
+          - name: Authorization
+            value: Token b2d8e2af8112a2214bb417b436823db2bbb07998
+            id: pair_d149771e6425409caf0d32635bdd6d8a
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/maquinas/
+        name: Visual Lotes
+        meta:
+          id: req_8d9db5c986df4724aa05fc825b8e9aea
+          created: 1762864220993
+          modified: 1762905518422
+          isPrivate: false
+          sortKey: -1762903248167.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_9e09f3b51da54e58aa86a7f94ebefb40
+          - name: Authorization
+            value: Token b2d8e2af8112a2214bb417b436823db2bbb07998
+            id: pair_a052f5d1f3fe4922ab0c4de9e7bec949
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/maquinas/
+        name: Add Maquinas
+        meta:
+          id: req_67a633db1a024487a15fd82a56c5abb8
+          created: 1762883826666
+          modified: 1762903421069
+          isPrivate: false
+          sortKey: -1762903248255
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Máquina de Teste",
+              "descricao": "03"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_c7300952547b4dc2bc5366b45ca3ee4c
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_b2c80d0ad1e94b28a3a2e3a022325131
+          - name: Authorization
+            value: Token 845162f717a08b24b1de30ee9cf9117686229ddf
+            id: pair_7c1f471b000e419a95e64e3a6ffee090
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/categorias/
+        name: Add Categoria
+        meta:
+          id: req_ffac032a19dd46aa91c7cb7eda97aa78
+          created: 1762885081529
+          modified: 1762903373172
+          isPrivate: false
+          sortKey: -1762903248405
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Chocolate Amargo"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_7b1e661c50f94f08a572a53590cca846
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_ed44e7286d174ed3973adb8881a9a795
+          - name: Authorization
+            value: Token 845162f717a08b24b1de30ee9cf9117686229ddf
+            id: pair_1c08dcfccf0849f59ae7d40569a95667
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/categorias/
+        name: Visual Categoria
+        meta:
+          id: req_580c07a1396f40369a3806283f7f519c
+          created: 1762886816075
+          modified: 1762903382229
+          isPrivate: false
+          sortKey: -1762903248305
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_35b98af24a0047a2aa032274c9faa3b5
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_0d151ca4f0df4ec6b0efd28ee512165a
+          - name: Authorization
+            value: " Token 845162f717a08b24b1de30ee9cf9117686229ddf"
+            id: pair_862f0fa82c8442e89e306683834c1a89
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/auth/token/login/
+        name: LOGIN
+        meta:
+          id: req_d823fad1577b4faeb8c720a7c1850e6b
+          created: 1762903248605
+          modified: 1762906036689
+          isPrivate: false
+          sortKey: -1762903248605
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "email": "admin@admin.com",
+              "password": "123456789"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/producoes/
+        name: Add Produções
+        meta:
+          id: req_64ffb1fb5aef44cea8754aa208e5949b
+          created: 1762903555136
+          modified: 1762903674435
+          isPrivate: false
+          sortKey: -1762903247967.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": "Lote Teste",
+              "descricao": "Apenas para teste"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: ENGENHARIA
+    meta:
+      id: fld_811ca736a25e4e9e8439845e987c0f3f
+      created: 1762903718357
+      modified: 1762903718357
+      sortKey: -1762903718357
+    children:
+      - url: http://localhost:8001/api/produtos/
+        name: Add Produtos
+        meta:
+          id: req_a522ff0ea5304f6494eb5ed0f59a386f
+          created: 1762884582217
+          modified: 1762910424554
+          isPrivate: false
+          sortKey: -1762903515153.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Produto Teste",
+              "codigo": "PRD-001",
+              "descricao": "Produto usado para teste",
+              "categoria": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_4c6d39e1dc394dbcb9ff577e803aebbf
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_da90776343f94e9399cd6730fbccbc7e
+          - name: Authorization
+            value: Token 845162f717a08b24b1de30ee9cf9117686229ddf
+            id: pair_735a93d0d49040048281a0f77aa59433
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/produtos/
+        name: Listar Produtos
+        meta:
+          id: req_cdb35f35ef8e4b72ba9fb15f82b55af4
+          created: 1762903065113
+          modified: 1762910427759
+          isPrivate: false
+          sortKey: -1762903500345.25
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/auth/token/login/
+        name: LOGIN
+        meta:
+          id: req_888fd424aadf4bdfbf14e4634d5987aa
+          created: 1762903722569
+          modified: 1762903759664
+          isPrivate: false
+          sortKey: -1762903722569
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "email": "Engenharia@eng.com",
+              "password": "123456789"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/maquinas/
+        name: Add maquina
+        meta:
+          id: req_1841d0cff22a4bfda91c94947dbe8371
+          created: 1762903792006
+          modified: 1762904102102
+          isPrivate: false
+          sortKey: -1762903722469
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Máquina de Teste",
+              "descricao": "04"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_cef7658c1689468ea50a2d905d76403e
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_f06fa33bc748428db2a74f7de60e33fe
+          - id: pair_86a901ec3df746baba01cc061723d60b
+            name: Authorization
+            value: Token b2d8e2af8112a2214bb417b436823db2bbb07998
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/maquinas/2/
+        name: edit maquina
+        meta:
+          id: req_8a46f4be5aba4c298bde9026877e958a
+          created: 1762903880369
+          modified: 1762910430084
+          isPrivate: false
+          sortKey: -1762903589194.75
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Máquina de Teste2",
+              "descricao": "05"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_cef7658c1689468ea50a2d905d76403e
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_f06fa33bc748428db2a74f7de60e33fe
+          - id: pair_86a901ec3df746baba01cc061723d60b
+            name: Authorization
+            value: Token b2d8e2af8112a2214bb417b436823db2bbb07998
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/producoes/
+        name: Listar Produções
+        meta:
+          id: req_3d7d5baf01a946769f72e6d1a911ad91
+          created: 1762904134279
+          modified: 1762904144134
+          isPrivate: false
+          sortKey: -1762903604003
+        method: GET
+        headers:
+          - name: Authorization
+            value: Token b2d8e2af8112a2214bb417b436823db2bbb07998
+            id: pair_d149771e6425409caf0d32635bdd6d8a
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/producoes/
+        name: Add Produções
+        meta:
+          id: req_f42b4e2f68c94909bc3bda3a3ec7a753
+          created: 1762904154215
+          modified: 1762904168540
+          isPrivate: false
+          sortKey: -1762903544770
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "codigo": "Lote Teste",
+              "descricao": "Apenas para teste"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_c8d9f849379c48259829782ff163f6eb
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_5e9cd572ec104935be069a231778488b
+          - id: pair_24c7c5092a1141c8a0e7a08f8ec370e1
+            name: Authorization
+            value: Token b2d8e2af8112a2214bb417b436823db2bbb07998
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/categorias/
+        name: Add Categoria
+        meta:
+          id: req_b48cbb3c4d0540bcaaf6e54780c61652
+          created: 1762904190628
+          modified: 1762904209834
+          isPrivate: false
+          sortKey: -1762903574386.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Chocolate Meio Amargo"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_7b1e661c50f94f08a572a53590cca846
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_ed44e7286d174ed3973adb8881a9a795
+          - name: Authorization
+            value: Token  b2d8e2af8112a2214bb417b436823db2bbb07998
+            id: pair_1c08dcfccf0849f59ae7d40569a95667
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: LIDER_PRODUÇÃO
+    meta:
+      id: fld_f881ea6e6d864259bee9e42928b312a5
+      created: 1762904254510
+      modified: 1762904254510
+      sortKey: -1762904254510
+    children:
+      - url: http://localhost:8001/api/producoes/dashboard
+        name: Visualizar Dashboard
+        meta:
+          id: req_f873a17c27f3415ab7b6f7a30f3f7b5b
+          created: 1762863312634
+          modified: 1762910052326
+          isPrivate: false
+          sortKey: -1762904256901
+        method: GET
+        headers:
+          - name: Authorization
+            value: Token aee565408ea7298ef8532cb32578bcad19afb529
+            id: pair_6f49f213cbe74ee992e70da4ac58a698
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8001/api/auth/token/login/
+        name: LOGIN
+        meta:
+          id: req_4fd28a029c0741618a9789e344d12846
+          created: 1762904281740
+          modified: 1762909345406
+          isPrivate: false
+          sortKey: -1762904257101
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "email": "lider@lid.com",
+              "password": "123456789"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: INSPEÇÃO
+    meta:
+      id: fld_8d1a6d45bc424233b8fd0c72462c4174
+      created: 1762904453364
+      modified: 1762904453364
+      sortKey: -1762904453364
+  - name: MANUTENÇÃO
+    meta:
+      id: fld_4005476d599d486381ba962e4c699696
+      created: 1762905555983
+      modified: 1762905555983
+      sortKey: -1762905555983
+  - url: http://localhost:8001/api/auth/token/login/
+    name: LOGIN
+    meta:
+      id: req_077d093d4ff44c75a36f96a0c311b7c6
+      created: 1762904460970
+      modified: 1762904525781
+      isPrivate: false
+      sortKey: -1762904353937
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "insp@insp.com",
+          "password": "123456789"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8001/api/producoes/?status=Aprovado
+    name: Listar Produções Aprovada
+    meta:
+      id: req_f0ec17046391496f95965db9c50dd334
+      created: 1762904606259
+      modified: 1762904885052
+      isPrivate: false
+      sortKey: -1762904304223.5
+    method: GET
+    headers:
+      - name: Authorization
+        value: Token 264bc63b2531adf35581f7f1730a5553fd1ba24e
+        id: pair_d149771e6425409caf0d32635bdd6d8a
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8001/api/producoes/?status=Reprovado
+    name: Listar Produções Reprovada
+    meta:
+      id: req_d0ef7b00b483469b95d6df06d3ff7669
+      created: 1762904872471
+      modified: 1762904879151
+      isPrivate: false
+      sortKey: -1762904280662.25
+    method: GET
+    headers:
+      - name: Authorization
+        value: Token 264bc63b2531adf35581f7f1730a5553fd1ba24e
+        id: pair_d149771e6425409caf0d32635bdd6d8a
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8001/api/auth/token/login/
+    name: LOGIN
+    meta:
+      id: req_44c4e73472344a0790085dab354902b4
+      created: 1762905561596
+      modified: 1762905607535
+      isPrivate: false
+      sortKey: -1762905004673.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": " manut@manut.com",
+          "password": "123456789"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8001/api/maquinas/
+    name: Add maquina
+    meta:
+      id: req_ef1fc63df8254f1b8127fdac708df440
+      created: 1762905619895
+      modified: 1762905650397
+      isPrivate: false
+      sortKey: -1762904729018.75
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome": "Máquina de Teste",
+          "descricao": "08"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_cef7658c1689468ea50a2d905d76403e
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_f06fa33bc748428db2a74f7de60e33fe
+      - id: pair_86a901ec3df746baba01cc061723d60b
+        name: Authorization
+        value: Token f25c1b823ba7f13aee734ccff05c9fef72f00f49
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8001/api/maquinas/2/
+    name: edit maquina
+    meta:
+      id: req_bbbcdb38e88a40ccbc197a52f54e02ff
+      created: 1762905632840
+      modified: 1762905643792
+      isPrivate: false
+      sortKey: -1762904591191.375
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome": "Máquina de Teste2",
+          "descricao": "05"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_cef7658c1689468ea50a2d905d76403e
+      - name: User-Agent
+        value: insomnia/11.0.2
+        id: pair_f06fa33bc748428db2a74f7de60e33fe
+      - id: pair_86a901ec3df746baba01cc061723d60b
+        name: Authorization
+        value: Token f25c1b823ba7f13aee734ccff05c9fef72f00f49
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8001/maquinas/pendentes-manutencao/
+    name: Máquinas que precisam de manutenção
+    meta:
+      id: req_ba5a9812663344d2bba86a5a9fe75637
+      created: 1762905753170
+      modified: 1762906465651
+      isPrivate: false
+      sortKey: -1762904522277.6875
+    method: GET
+    headers:
+      - name: Authorization
+        value: " Token f25c1b823ba7f13aee734ccff05c9fef72f00f49"
+        id: pair_01cb1dac9dba4f0cbd5c5bb263e07306
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c61427a71548f2442b5107dc0c9b15734b2dbbf2
+    created: 1762900640405
+    modified: 1762900640405
+environments:
+  name: Base Environment
+  meta:
+    id: env_c61427a71548f2442b5107dc0c9b15734b2dbbf2
+    created: 1762900640401
+    modified: 1762900640401
+    isPrivate: false

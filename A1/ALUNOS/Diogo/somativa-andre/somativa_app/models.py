@@ -55,7 +55,7 @@ class Funcionario(AbstractUser):
     email = models.EmailField(unique=True, validators=[validate_email])
     
     USERNAME_FIELD = 'numero_registro'
-    REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
+    REQUIRED_FIELDS = ['email', 'cpf', 'first_name', 'last_name']
     
     objects = FuncionarioManager()  # certifique-se de registrar o manager
 

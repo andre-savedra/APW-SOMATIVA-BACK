@@ -1,105 +1,105 @@
 from rest_framework.permissions import BasePermission
 
-class Admin(BasePermission):
-    """Apenas ADMIN tem acesso"""
+class BaseCargoPermission(BasePermission):
+    """Base de permissão que dá acesso total ao Admin"""
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.cargo == 'Admin'
 
 
-class Inspecao(BasePermission):
+class Admin(BaseCargoPermission):
+    """Apenas ADMIN tem acesso"""
+    def has_permission(self, request, view):
+        # Admin já tem acesso pelo BaseCargoPermission
+        if super().has_permission(request, view):
+            return True
+        return False  # Somente admin
+
+
+class Inspecao(BaseCargoPermission):
     """Apenas INSPEÇÃO tem acesso"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True  # Admin sempre pode
         return request.user.is_authenticated and request.user.cargo == 'Inspecao'
 
 
-class Engenharia(BasePermission):
+class Engenharia(BaseCargoPermission):
     """Apenas ENGENHARIA tem acesso"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True
         return request.user.is_authenticated and request.user.cargo == 'Engenharia'
 
 
-class Producao(BasePermission):
+class Producao(BaseCargoPermission):
     """Apenas PRODUÇÃO tem acesso"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True
         return request.user.is_authenticated and request.user.cargo == 'Producao'
 
 
-class Manutencao(BasePermission):
+class Manutencao(BaseCargoPermission):
     """Apenas MANUTENÇÃO tem acesso"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True
         return request.user.is_authenticated and request.user.cargo == 'Manutencao'
 
 
-class LiderProducao(BasePermission):
+class LiderProducao(BaseCargoPermission):
     """Apenas LÍDER DE PRODUÇÃO tem acesso"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True
         return request.user.is_authenticated and request.user.cargo == 'Lider_producao'
 
 
-class ManageMaquinas(BasePermission):
+class ManageMaquinas(BaseCargoPermission):
     """Apenas MANUTENÇÃO e ENGENHARIA podem gerenciar máquinas"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True  # Admin sempre pode
         if not request.user.is_authenticated:
             return False
-        
-        # Admin sempre pode
-        if request.user.cargo == 'Admin':
-            return True
-        
-        # Manutenção e Engenharia podem criar/editar
         if request.user.cargo in ['Manutencao', 'Engenharia']:
             return True
-        
-        # Outros podem apenas visualizar (GET)
         if request.method == 'GET':
             return True
-        
         return False
 
 
-class ManageCategorias(BasePermission):
+class ManageCategorias(BaseCargoPermission):
     """Apenas ENGENHARIA e ADMIN podem criar categorias"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True
         if not request.user.is_authenticated:
             return False
-        
-        # Admin sempre pode
-        if request.user.cargo == 'Admin':
-            return True
-        
-        # Engenharia pode criar/editar
         if request.user.cargo == 'Engenharia':
             return True
-        
-        # Outros podem apenas visualizar (GET)
         if request.method == 'GET':
             return True
-        
         return False
 
 
-class ManageLotes(BasePermission):
+class ManageLotes(BaseCargoPermission):
     """Apenas PRODUÇÃO e ADMIN podem gerenciar lotes"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True
         if not request.user.is_authenticated:
             return False
-        
-        # Admin sempre pode
-        if request.user.cargo == 'Admin':
-            return True
-        
-        # Produção pode fazer CRUD completo
         if request.user.cargo == 'Producao':
             return True
-        
-        # Engenharia pode apenas visualizar
         if request.user.cargo == 'Engenharia' and request.method == 'GET':
             return True
-        
         return False
 
 
-class Authenticated(BasePermission):
+class Authenticated(BaseCargoPermission):
     """Usuário precisa estar autenticado"""
     def has_permission(self, request, view):
+        if super().has_permission(request, view):
+            return True  # Admin sempre pode
         return request.user.is_authenticated

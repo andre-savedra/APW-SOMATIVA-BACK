@@ -1,74 +1,79 @@
-from rest_framework import permissions
+from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
-class RecepcaoPodeModificarReservas(permissions.BasePermission):
-    def tem_permissao(self, request, view):
-        if not request.user or not request.user.is_authenticated:
-            return False
-        
-        role = getattr(request.user, 'cargo', None) or getattr(request.user, 'cargo', None)
-        if request.user.is_staff:
-            return True
-
-        if request.method in permissions.SAFE_METHODS:
-            return True
-
-        if request.method == 'DELETE':
-            return False
-
-        if role == 'RECEPCAO' or role in ('GERENCIA', 'ADMIN'):
-            return True
-
-        return False
-
-class IsGovernanceForCleaning(permissions.BasePermission):
-
-    def tem_permissao(self, request, view):
-        if not request.user or not request.user.is_authenticated:
-            return False
-        role = getattr(request.user, 'cargo', None) or getattr(request.user, 'cargo', None)
-        if request.user.is_staff:
-            return True
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        return role == 'GOVERNANCA'
-
-
-class IsMaintenanceForAccommodation(permissions.BasePermission):
-    
-    def tem_permissao(self, request, view):
-        if not request.user or not request.user.is_authenticated:
-            return False
-        role = getattr(request.user, 'cargo', None) or getattr(request.user, 'cargo', None)
-        if request.user.is_staff:
-            return True
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        return role == 'MANUTENCAO'
-    
-
-from rest_framework.permissions import BasePermission
-
-class RecepcaoPermission(BasePermission):
+class RecepcaoPodeModificarReservas(BasePermission):
     def has_permission(self, request, view):
-        user = getattr(request.user, 'empregado', None)
-        if not user:
+        user = request.user
+        if not user or not user.is_authenticated:
             return False
-        if user.cargo == 'RECEPCAO':
-            # Pode criar, editar e visualizar, mas não deletar
-            return request.method in ['GET', 'POST', 'PUT', 'PATCH']
-        return True
+
+        cargo = getattr(user, "cargo", None)
+
+        if user.is_staff:
+            return True
+
+        if request.method in SAFE_METHODS:
+            return True
+
+        if request.method == "DELETE":
+            return False
+
+        return cargo in ("Recepçao", "Gerencia", "Admin")
+
+
+from rest_framework.permissions import BasePermission, SAFE_METHODS
+
+
+class IsGovernanceForCleaning(BasePermission):
+ 
+    def has_permission(self, request, view):
+        user = request.user
+        if not user or not user.is_authenticated:
+            return False
+
+        cargo = getattr(user, "cargo", None)
+        
+        if user.is_staff or cargo == "Admin":
+            return True
     
-from rest_framework.permissions import BasePermission
+        if cargo == "Governanca":
+            if request.method in SAFE_METHODS:
+                return True
+            return request.method in ["PUT", "PATCH"]
+    
+        return request.method in SAFE_METHODS
+
+
+
+class IsMaintenanceForAccommodation(BasePermission):
+   
+    def has_permission(self, request, view):
+        user = request.user
+        if not user or not user.is_authenticated:
+            return False
+
+        cargo = getattr(user, "cargo", None)
+
+        if user.is_staff:
+            return True
+
+        if request.method in SAFE_METHODS:
+            return True
+
+        return cargo == "Manutencao"
+
+
 
 class IsRecepcao(BasePermission):
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.cargo == 'RECEPCAO'
+        return request.user.is_authenticated and request.user.cargo == "Recepçao"
+
 
 class IsGovernanca(BasePermission):
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.cargo == 'GOVERNANCA'
+        return request.user.is_authenticated and request.user.cargo == "Governanca"
+
 
 class IsManutencao(BasePermission):
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.cargo == 'MANUTENCAO'
+        return request.user.is_authenticated and request.user.cargo == "Manutencao"

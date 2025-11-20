@@ -26,15 +26,15 @@ class LotePermission(permissions.BasePermission):
 
         cargo = get_user_cargo(user)
 
-        # R. 11: Admin pode tudo
+        # Admin pode tudo
         if cargo == Cargo.ADMIN:
             return True
 
-        # R. 7: Produção pode CRUD
+        # Produção pode CRUD
         if cargo == Cargo.PRODUCAO:
             return True
 
-        # R. 6 e R. 5: Engenharia e Inspeção só podem visualizar
+        # Engenharia e Inspeção só podem visualizar
         if cargo in [Cargo.ENGENHARIA, Cargo.INSPECAO]:
             return request.method in permissions.SAFE_METHODS
         
@@ -49,10 +49,9 @@ class IsLiderProducaoOrAdmin(permissions.BasePermission):
             
         cargo = get_user_cargo(user)
         
-        # R. 10: Líder de Produção e Admin podem acessar
+        # Líder de Produção e Admin podem acessar
         return cargo in [Cargo.ADMIN, Cargo.LIDER_PRODUCAO]
 
-# --- CLASSES ADICIONAIS NECESSÁRIAS (Sem Comentários) ---
 
 class IsProducaoOrAdmin(permissions.BasePermission):
     def has_permission(self, request, view):

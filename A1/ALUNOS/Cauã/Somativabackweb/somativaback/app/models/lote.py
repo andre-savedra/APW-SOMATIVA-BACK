@@ -8,7 +8,7 @@ class Lote(models.Model):
         ('APROVADO', 'Aprovado'), # Status (aprovado/reprovado)
         ('REPROVADO', 'Reprovado'),
     ]
-
+    
     codigo = models.CharField(max_length=50, unique=True)
     data_hora_inicio = models.DateTimeField() # data e hora inicio
     data_hora_finalizacao = models.DateTimeField(blank=True, null=True) # data e hora fim

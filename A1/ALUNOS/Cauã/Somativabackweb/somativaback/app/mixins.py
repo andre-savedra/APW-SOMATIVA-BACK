@@ -1,6 +1,4 @@
-# app/mixins.py
-
-from rest_framework import permissions # Pode ser necessário para o BasePermission
+from rest_framework import permissions 
 
 class ReadWriteSerializerMixin(object):
     read_serializer_class = None

@@ -29,6 +29,5 @@ urlpatterns = [
     path('api/auth/', include('djoser.urls')), 
     path('api/auth/', include('djoser.urls.jwt')), # Chaves: /jwt/create/, /jwt/refresh/, /jwt/verify/
     
-    # Adicione também a rota padrão de autenticação do DRF (opcional, mas recomendado)
     path('api-auth/', include('rest_framework.urls')),
 ]

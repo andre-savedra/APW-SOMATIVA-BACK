@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from ..models.lote import Lote
-# Importa o serializer de Funcionario para aninhamento
 from .customuser import FuncionarioNomeSerializer 
-# Importa o serializer de ItemProducao para aninhamento
 from .itemproducao import ItemProducaoSerializer 
 
 class LoteDetailSerializer(serializers.ModelSerializer):

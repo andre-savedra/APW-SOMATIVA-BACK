@@ -1,10 +1,10 @@
-from .categoria import*
-from .custom_user import*
-from .lote import*
-from .maquina import*
-from .producao import*
-from .produto import*
-from .custom_S import *
+from .categoria import CategoriaSerializer
+from .custom_user import CustomUserSerializer
+from .lote import LoteSerializer, LoteReadSerializer, LoteWriteSerializer
+from .maquina import MaquinaSerializer
+from .producao import ProducaoSerializer
+from .produto import ProdutoSerializer
+from .custom_S import ReadWriteSerializer
 __all__ = [
     'CategoriaSerializer',
     'CustomUserSerializer',

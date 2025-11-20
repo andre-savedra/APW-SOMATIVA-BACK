@@ -1,0 +1,591 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1762986189257
+  modified: 1762986189257
+  description: ""
+collection:
+  - name: Projeto Andre
+    meta:
+      id: fld_b6ef751603ff4f3c882b49a83a53bdb0
+      created: 1761867771128
+      modified: 1762994443218
+      sortKey: -1761867771128
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar Reservas
+        meta:
+          id: req_c7e2029207594c00973f513e716e1c37
+          created: 1761867774607
+          modified: 1761870393595
+          isPrivate: false
+          description: ""
+          sortKey: -1761867776683
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Criar hospedes
+        meta:
+          id: req_bbee216f39b945679201bf28caa0c2c5
+          created: 1761867875507
+          modified: 1761876291302
+          isPrivate: false
+          description: ""
+          sortKey: -1761867776783
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: nome_inteiro
+              value: Thiago Alves
+              disabled: false
+              id: pair_52b64373925a4a9ba3f26668698431a6
+            - name: cpf
+              value: "123143"
+              disabled: false
+              id: pair_71b1a1f71bfd4e7a87cf3dd96b697aa2
+            - name: email
+              value: thiago123@gmail.com
+              disabled: false
+              id: pair_8da144ff59d140c29cf26b8ee83915e8
+            - name: phone
+              value: "12413413"
+              disabled: false
+              id: pair_27071e506f2c431986b3a802c1e90305
+            - name: data_de_registro
+              value: 2025-10-31
+              disabled: false
+              id: pair_2f9eb9934a2e4dad8d0a856b42160723
+            - name: nacionalidade
+              value: Brasil
+              disabled: false
+              id: pair_b3d5fe9f1e374502ab16e056b02fde79
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxODc5ODgwLCJpYXQiOjE3NjE4NzYyODAsImp0aSI6IjBjNDU4YWRhNWZkNDQ2NmRhZmFmMjFjZjNiOGQzYTNmIiwidXNlcl9pZCI6IjUifQ.hb_Nf7w_aqUIaWuZGTsC7wYoaD_G3_eJbqrm6F9M8wU
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/reservas/
+        name: Retornar Reservas
+        meta:
+          id: req_83da95155f7943daab8175e79a88694f
+          created: 1761870382974
+          modified: 1761870400006
+          isPrivate: false
+          description: ""
+          sortKey: -1755212269642.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/auth/jwt/create/
+        name: Get Token (Registro e Password)
+        meta:
+          id: req_080d0f9fd2b34f28bacb8df01b81dd01
+          created: 1761870988845
+          modified: 1762996972076
+          isPrivate: false
+          description: ""
+          sortKey: -1761867776883
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: registro
+              value: 1234524312eq333w
+              disabled: false
+              id: pair_f9f78e3144884666a43f1d980c005190
+            - name: password
+              value: 1234de3e3q@
+              disabled: false
+              id: pair_b5343979659749349024bbb346ea278a
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - name: Funcionários
+        meta:
+          id: fld_8256c3f803a949f094522a0d33697e2f
+          created: 1761875494663
+          modified: 1762996057424
+          sortKey: -1761867776983
+          description: ""
+        children:
+          - url: http://127.0.0.1:8000/api/auth/users/
+            name: POST funcionario
+            meta:
+              id: req_3d10a4b58bd14eb99efc372f113e22a3
+              created: 1762986444708
+              modified: 1762996967380
+              isPrivate: false
+              description: ""
+              sortKey: -1761868984539.5625
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - name: registro
+                  value: 1234524312eq333w
+                  disabled: false
+                  id: pair_479d0011761849c6965b1ca9132d4513
+                - name: nome
+                  value: Thiago123
+                  disabled: false
+                  id: pair_0018957d6d5941d7b7c73b6ba725a37a
+                - name: cargo
+                  value: Manutencao
+                  disabled: false
+                  id: pair_98c70a89e53c43caa5e4014d78210365
+                - name: data_contratacao
+                  value: 2025-10-31
+                  disabled: false
+                  id: pair_410152749d0a46bdacf60f96a018b4ef
+                - name: password
+                  value: 1234de3e3q@
+                  disabled: false
+                  id: pair_5eff21961789402e84882696ce520ca4
+            parameters:
+              - name: ""
+                value: ""
+                disabled: false
+                id: pair_d75cb69688ed411597895b027f9b3930
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/empregado/create/
+            name: GET funcionário
+            meta:
+              id: req_3b0f6ad4334e4d899d20d85795619498
+              created: 1762986681538
+              modified: 1762987123098
+              isPrivate: false
+              description: ""
+              sortKey: -1761868380711.2812
+            method: GET
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_94cf678904fd4b6cbf57cc885b98712c
+                  name: ""
+                  value: ""
+                  description: ""
+                  disabled: false
+            parameters:
+              - name: ""
+                value: ""
+                disabled: false
+                id: pair_d75cb69688ed411597895b027f9b3930
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: 7 - Governança podem apenas atualizar o status de limpeza
+        meta:
+          id: fld_723a459d7fd545d09d1a56f1eb37540f
+          created: 1762987549709
+          modified: 1762994454404
+          sortKey: -1761867777183
+          description: ""
+        children:
+          - url: http://127.0.0.1:8000/api/reservas/
+            name: PATCH Limpeza - Governança
+            meta:
+              id: req_a57c0324f3e347aa8706abb23ad9b700
+              created: 1762987556891
+              modified: 1762987758391
+              isPrivate: false
+              description: ""
+              sortKey: -1762987560399
+            method: PATCH
+            headers:
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/limpeza/
+            name: GET Limpezas
+            meta:
+              id: req_a84448fff85241829ba2c746b2e8d3ba
+              created: 1762987738637
+              modified: 1762997302448
+              isPrivate: false
+              description: ""
+              sortKey: -1762987560499
+            method: GET
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_8fd6d4f64a1b475f856155596a2e6637
+                  name: ""
+                  value: ""
+                  description: ""
+                  disabled: false
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTk4MzQ0LCJpYXQiOjE3NjI5OTQ3NDQsImp0aSI6IjRhMDRlM2M3ZDdiNTRjNWM5N2JmMWQ0OGQyNzJjY2FiIiwidXNlcl9pZCI6IjkifQ.8l4blvhuZNJ38v7_GWik-PhwKOMP0YXusnwWFK8W9Zs
+                id: pair_a23ef099bd5a4976a205bf5a509c8aa1
+              - id: pair_30fa4d34e66a45f4b85b5885fde630c7
+                name: Content-Type
+                value: multipart/form-data
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: " 6 - Recepção podem criar, editar e visualizar reservas menos deletar"
+        meta:
+          id: fld_02c49004563549a5b5dce032ac159a06
+          created: 1762987929445
+          modified: 1762994415537
+          sortKey: -1761867777283
+          description: ""
+        children:
+          - url: http://127.0.0.1:8000/api/reservas/
+            name: GET Reservas
+            meta:
+              id: req_7ea1dc5ec28047479dca3eae681225cb
+              created: 1762987938781
+              modified: 1762997305624
+              isPrivate: false
+              description: ""
+              sortKey: -1762987953222
+            method: GET
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_3b331dcc03124bcf82ad056adfcea1e5
+                  name: ""
+                  value: ""
+                  description: ""
+                  disabled: false
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTk1NDk5LCJpYXQiOjE3NjI5OTE4OTksImp0aSI6IjMwYzIzMjRhNzVhNzQwMGRiYTgwZjliMGMxM2I2MjdmIiwidXNlcl9pZCI6IjgifQ.0DYgMC8clsFPjH9PWWSyxZqAX72VG945s8-1XA8XYnE
+                id: pair_e4d207fa17904ce7a6cff2eba147468e
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/reservas/
+            name: Excluir Reservas
+            meta:
+              id: req_09bf2263f22849ecaecd6332915760af
+              created: 1762987960482
+              modified: 1762994289769
+              isPrivate: false
+              description: ""
+              sortKey: -1762987953322
+            method: DELETE
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_e0d9ee78cf764af5ab1a81f0398b00e3
+                  name: ""
+                  value: ""
+                  description: ""
+                  disabled: false
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTk1MjI1LCJpYXQiOjE3NjI5OTE2MjUsImp0aSI6ImVlNjA4YmE2YTMxOTQ3ZjZiY2U3MWJmNGJiOTA2ZDAwIiwidXNlcl9pZCI6IjgifQ.FGw3cuSbbW6uwkyCJBzQ0w6IttFMtQIm-9SfjS9iDZw
+                id: pair_613f87e55f6c417a8a9273874630f5da
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: 3 - GET /reservas, exiba também o nome do hóspede
+        meta:
+          id: fld_a9cf229c83564c078ce9b90ddecbe1f5
+          created: 1762988463013
+          modified: 1762991592593
+          sortKey: -1761867777683
+          description: ""
+        children:
+          - url: http://127.0.0.1:8000/api/reservas/
+            name: GET Reservas
+            meta:
+              id: req_abdd799f85074c7a950a19860230acbb
+              created: 1762988468392
+              modified: 1762994339505
+              isPrivate: false
+              description: ""
+              sortKey: -1762990350191
+            method: GET
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_6b4f6f1efb314124bf796d46adb08cd0
+                  name: ""
+                  value: ""
+                  description: ""
+                  disabled: false
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+                id: pair_1c7ae5be910d4b728cff5f620666d580
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTk1MjI1LCJpYXQiOjE3NjI5OTE2MjUsImp0aSI6ImVlNjA4YmE2YTMxOTQ3ZjZiY2U3MWJmNGJiOTA2ZDAwIiwidXNlcl9pZCI6IjgifQ.FGw3cuSbbW6uwkyCJBzQ0w6IttFMtQIm-9SfjS9iDZw
+                id: pair_374a2a6bb7394ed891c9526354e41890
+            authentication:
+              type: bearer
+              disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: 4 - Crie filtros avançados para reservas
+        meta:
+          id: fld_9b75ec3e3b8347308170203e793a2207
+          created: 1762988787124
+          modified: 1762991594630
+          sortKey: -1761867777633
+          description: ""
+        children:
+          - url: http://127.0.0.1:8000/api/reservas/?check_out_max=2025-12-03&check_in_min=2025-11-18
+            name: GET Reservas - Período
+            meta:
+              id: req_4c09bd83dd144b1cbb38e65456a763c2
+              created: 1762988807883
+              modified: 1762997339588
+              isPrivate: false
+              description: ""
+              sortKey: -1762988813211
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTk1MjI1LCJpYXQiOjE3NjI5OTE2MjUsImp0aSI6ImVlNjA4YmE2YTMxOTQ3ZjZiY2U3MWJmNGJiOTA2ZDAwIiwidXNlcl9pZCI6IjgifQ.FGw3cuSbbW6uwkyCJBzQ0w6IttFMtQIm-9SfjS9iDZw
+                id: pair_f49720e76fa441458d3263121958619a
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/reservas/?status=FINALIZADA
+            name: GET Reservas - Status
+            meta:
+              id: req_558c338b28d346479b5526eeea5869f6
+              created: 1762988834340
+              modified: 1762994369599
+              isPrivate: false
+              description: ""
+              sortKey: -1762988640801.5
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTk1MjI1LCJpYXQiOjE3NjI5OTE2MjUsImp0aSI6ImVlNjA4YmE2YTMxOTQ3ZjZiY2U3MWJmNGJiOTA2ZDAwIiwidXNlcl9pZCI6IjgifQ.FGw3cuSbbW6uwkyCJBzQ0w6IttFMtQIm-9SfjS9iDZw
+                id: pair_4d69fa3259d449a788c1aa00032791a3
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://127.0.0.1:8000/api/reservas/?tipo_acomodacao=SUITE
+            name: GET Reservas - Tipo de acomodação
+            meta:
+              id: req_90086a1ac8604cc8be661ef54fa5cb45
+              created: 1762988845155
+              modified: 1762994386754
+              isPrivate: false
+              description: ""
+              sortKey: -1762988554596.75
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTk1MjI1LCJpYXQiOjE3NjI5OTE2MjUsImp0aSI6ImVlNjA4YmE2YTMxOTQ3ZjZiY2U3MWJmNGJiOTA2ZDAwIiwidXNlcl9pZCI6IjgifQ.FGw3cuSbbW6uwkyCJBzQ0w6IttFMtQIm-9SfjS9iDZw
+                id: pair_eaaa5745c4ba47719c74199cd86f69dd
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: " 5 - GET /acomodacoes, exiba as informações completas da última limpeza"
+        meta:
+          id: fld_7323e422d12144fb9496f9761821379c
+          created: 1762990430532
+          modified: 1762990433316
+          sortKey: -1761867777583
+          description: ""
+        children:
+          - url: http://127.0.0.1:8000/api/acomodacao/
+            name: GET Acomodacoes
+            meta:
+              id: req_40573913abd74bc1985bffdb27785e7b
+              created: 1762990452488
+              modified: 1762997329652
+              isPrivate: false
+              description: ""
+              sortKey: -1762990454444
+            method: GET
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_b4b7d5c1172f42b88c647930e08c5519
+                  name: ""
+                  value: ""
+                  description: ""
+                  disabled: false
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+                id: pair_c8bd540482224cafae472c74d2a4b031
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDAwNTczLCJpYXQiOjE3NjI5OTY5NzMsImp0aSI6IjZkMmY3NDY4YzM3NDQ0ZDc5YzhjZmNiYWZhNTUwMTRlIiwidXNlcl9pZCI6IjExIn0.g_ZZndVA1ew3lJMhnMnQu1YepaqcCZaSAjYhsAMGapQ
+                id: pair_9bc0774d5e50483f9a7015d827b038e8
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: " 8 - Manutenção podem atualizar o status da acomodação "
+        meta:
+          id: fld_415fc1b9954741a495f74cc7f9e6b0c5
+          created: 1762995936436
+          modified: 1762995962467
+          sortKey: -1761867777083
+          description: ""
+        children:
+          - url: http://127.0.0.1:8000/api/acomodacao/1/
+            name: GET Acomodacao
+            meta:
+              id: req_6ba1862fbe204bff8925b2277589a05b
+              created: 1762996028178
+              modified: 1762997451457
+              isPrivate: false
+              description: ""
+              sortKey: -1762996030613
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "status": "MANUTENCAO"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDAwNTczLCJpYXQiOjE3NjI5OTY5NzMsImp0aSI6IjZkMmY3NDY4YzM3NDQ0ZDc5YzhjZmNiYWZhNTUwMTRlIiwidXNlcl9pZCI6IjExIn0.g_ZZndVA1ew3lJMhnMnQu1YepaqcCZaSAjYhsAMGapQ
+                id: pair_a5ccd2ad9a884948a62994549545fa31
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1762986196088
+    modified: 1762986196088
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1762986196085
+    modified: 1762986196085
+    isPrivate: false

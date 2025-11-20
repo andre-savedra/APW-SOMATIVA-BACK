@@ -1,0 +1,985 @@
+type: collection.insomnia.rest/5.0
+name: Somativa Backend - Produção
+meta:
+  id: wrk_95b43f200de347f389e9e3a33a2f75ab
+  created: 1762900829709
+  modified: 1762900829709
+collection:
+  - name: Autenticação
+    meta:
+      id: fld_128d0cafa1b147f29431b494e3ef5e06
+      created: 1762900829812
+      modified: 1762906599600
+      sortKey: -1762900829812
+    children:
+      - url: "{{ _.base_url }}/api/auth/users/"
+        name: 1. Registrar Admin
+        meta:
+          id: req_9885bad8ebac495b97dc6ba26c8ac832
+          created: 1762900829718
+          modified: 1762904192367
+          isPrivate: false
+          sortKey: -1762900829718
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "admin@producao.com",
+              "nome": "Administrador Sistema",
+              "numero_registro": "ADM001",
+              "cpf": "11111111111",
+              "cargo": "Admin",
+              "dt_contratacao": "2025-01-01",
+              "password": "adm12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/users/"
+        name: 2. Registrar Produção
+        meta:
+          id: req_6d0d3a0449ba4a8f833d730818f58012
+          created: 1762900829721
+          modified: 1762905022335
+          isPrivate: false
+          sortKey: -1762900829721
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "producao@producao.com",
+              "nome": "João Silva",
+              "numero_registro": "PROD001",
+              "cpf": "22222222222",
+              "cargo": "Producao",
+              "dt_contratacao": "2025-01-15",
+              "password": "prod1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/users/"
+        name: 3. Registrar Inspeção
+        meta:
+          id: req_0579e01a791e48e78bd732afd25f95d5
+          created: 1762900829724
+          modified: 1762905048227
+          isPrivate: false
+          sortKey: -1762900829724
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "inspecao@producao.com",
+              "nome": "Maria Santos",
+              "numero_registro": "INSP001",
+              "cpf": "33333333333",
+              "cargo": "Inspecao",
+              "dt_contratacao": "2025-01-20",
+              "password": "insp1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/users/"
+        name: 4. Registrar Engenharia
+        meta:
+          id: req_f008954bc4924d759dd07093c31044e5
+          created: 1762900829727
+          modified: 1762905100817
+          isPrivate: false
+          sortKey: -1762900829727
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "engenharia@producao.com",
+              "nome": "Carlos Engenheiro",
+              "numero_registro": "ENG001",
+              "cpf": "44444444444",
+              "cargo": "Engenharia",
+              "dt_contratacao": "2025-01-10",
+              "password": "eng12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/users/"
+        name: 5. Registrar Manutenção
+        meta:
+          id: req_00b1d9d2c8e34ef19dd1b79ff05bd336
+          created: 1762900829730
+          modified: 1762905130913
+          isPrivate: false
+          sortKey: -1762900829730
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "manutencao@producao.com",
+              "nome": "Pedro Mecânico",
+              "numero_registro": "MAN001",
+              "cpf": "55555555555",
+              "cargo": "Manutencao",
+              "dt_contratacao": "2025-01-12",
+              "password": "man12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/users/"
+        name: 6. Registrar Líder Produção
+        meta:
+          id: req_42a1811088104bbfb5aedf8009ed40c0
+          created: 1762900829732
+          modified: 1762905149516
+          isPrivate: false
+          sortKey: -1762900829732
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "lider@producao.com",
+              "nome": "Ana Líder",
+              "numero_registro": "LID001",
+              "cpf": "66666666666",
+              "cargo": "Lider_producao",
+              "dt_contratacao": "2025-01-05",
+              "password": "lid12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/jwt/create/"
+        name: Login Admin
+        meta:
+          id: req_406286accabf4610b754d9b39a6650b3
+          created: 1762900829735
+          modified: 1762904216725
+          isPrivate: false
+          sortKey: -1762900829735
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "admin@producao.com",
+              "password": "adm12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/jwt/create/"
+        name: Login Produção
+        meta:
+          id: req_4256eb9aff48471d90bb839bda83e336
+          created: 1762900829737
+          modified: 1762905037375
+          isPrivate: false
+          sortKey: -1762900829737
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "producao@producao.com",
+              "password": "prod1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/jwt/create/"
+        name: Login Inspeção
+        meta:
+          id: req_a348a3225654421a983e3491c9c4a2c1
+          created: 1762900829740
+          modified: 1762905054061
+          isPrivate: false
+          sortKey: -1762900829740
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "inspecao@producao.com",
+              "password": "insp1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/jwt/create/"
+        name: Login Engenharia
+        meta:
+          id: req_7cd4f49d840e42b79471cf2a89ccd762
+          created: 1762900829742
+          modified: 1762905112247
+          isPrivate: false
+          sortKey: -1762900829742
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "engenharia@producao.com",
+              "password": "eng12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/jwt/create/"
+        name: Login Manutenção
+        meta:
+          id: req_ee8e992ca7864c24a8bfc061d9ca636a
+          created: 1762900829744
+          modified: 1762905168308
+          isPrivate: false
+          sortKey: -1762900829744
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "manutencao@producao.com",
+              "password": "man12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/auth/jwt/create/"
+        name: Login Líder
+        meta:
+          id: req_8302726222534c0ba6c62a3f65e6d965
+          created: 1762900829746
+          modified: 1762905158263
+          isPrivate: false
+          sortKey: -1762900829746
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "lider@producao.com",
+              "password": "lid12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: "Categorias "
+    meta:
+      id: fld_40fe3af1b5ff4a20abf6609106dcef0e
+      created: 1762900829814
+      modified: 1762906605492
+      sortKey: -1762900829814
+    children:
+      - url: "{{ _.base_url }}/api/categoria/"
+        name: Listar Categorias
+        meta:
+          id: req_8a9c24244d374090898bc1435f21b142
+          created: 1762900829749
+          modified: 1762900829749
+          isPrivate: false
+          sortKey: -1762900829749
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/categoria/"
+        name: Criar Categoria (Admin)
+        meta:
+          id: req_6f1ef475ee984bf5acdf43d2603f4dde
+          created: 1762900829751
+          modified: 1762905222444
+          isPrivate: false
+          sortKey: -1762900829751
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Eletrônicos"
+            }
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+            id: pair_62e4bf4330074c68b4429edf107204e7
+          - name: Content-Type
+            value: application/json
+            id: pair_8b1f3de763744508874610278630b0d3
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/categoria/"
+        name: "Criar Categoria (Engenharia) "
+        meta:
+          id: req_9edc567f522d48ef8df08fbf5074fc44
+          created: 1762900829754
+          modified: 1762905348173
+          isPrivate: false
+          sortKey: -1762900829754
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Mecânicos"
+            }
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_engenharia }}
+            id: pair_1fdc4bbdb8214012805e493f38b3f8f7
+          - name: Content-Type
+            value: application/json
+            id: pair_3d8fced92f1f4cbda509001965c82f0c
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produtos
+    meta:
+      id: fld_49875547978e4cd5b15e952ff2db101a
+      created: 1762900829817
+      modified: 1762906611346
+      sortKey: -1762900829817
+    children:
+      - url: "{{ _.base_url }}/api/produto/"
+        name: Criar Produto
+        meta:
+          id: req_82104182da8e493a8898c1eb21428092
+          created: 1762900829758
+          modified: 1762900829758
+          isPrivate: false
+          sortKey: -1762900829758
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Smartphone XPro",
+              "codigo": "PROD-001",
+              "descricao": "Smartphone de última geração",
+              "categoria": 1
+            }
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/produto/"
+        name: Listar Produtos
+        meta:
+          id: req_31b3b23cc9ca4b1ea216dbf4895f3f04
+          created: 1762900829760
+          modified: 1762900829760
+          isPrivate: false
+          sortKey: -1762900829760
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Máquinas
+    meta:
+      id: fld_9db3a4f85d3545e9ab70fa4f57e615db
+      created: 1762900829819
+      modified: 1762907708773
+      sortKey: -1762900829819
+    children:
+      - url: "{{ _.base_url }}/api/maquina/"
+        name: "Criar Máquina (Manutenção) "
+        meta:
+          id: req_74e1f849353e48f698c265ef9b6d8fe6
+          created: 1762900829763
+          modified: 1762905355717
+          isPrivate: false
+          sortKey: -1762900829763
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "code": "MAQ-001",
+              "nome": "Torno CNC",
+              "descricao": "Torno computadorizado",
+              "ultima_manutencao": "2024-06-01",
+              "responsavel": 5
+            }
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_manutencao }}
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/maquina/"
+        name: "Criar Máquina (Engenharia) "
+        meta:
+          id: req_43ff4937613e4e2ba93c67265a77cf3a
+          created: 1762900829765
+          modified: 1762905353402
+          isPrivate: false
+          sortKey: -1762900829765
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "code": "MAQ-002",
+              "nome": "Torno CNC",
+              "descricao": "Torno computadorizado",
+              "ultima_manutencao": "2024-06-01",
+              "responsavel": 5
+            }
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_engenharia }}
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/maquina/"
+        name: Listar Máquinas
+        meta:
+          id: req_d4d627d4e4f044e6a3ba224a49353a82
+          created: 1762900829770
+          modified: 1762900829770
+          isPrivate: false
+          sortKey: -1762900829770
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/maquina/precisa_manutencao/"
+        name: "Máquinas que Precisam Manutenção "
+        meta:
+          id: req_8d0282b4b4a34afba1feaf28e9efb250
+          created: 1762900829772
+          modified: 1762905749085
+          isPrivate: false
+          sortKey: -1762900829772
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_manutencao }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: "Lotes "
+    meta:
+      id: fld_3f58ce474e9d4e60bdd36e01f30bbdde
+      created: 1762900829822
+      modified: 1762907713933
+      sortKey: -1762900829822
+    children:
+      - url: "{{ _.base_url }}/api/lote/"
+        name: Criar Lote (Produção)
+        meta:
+          id: req_eb49d213056345b28eaafc10383bc24f
+          created: 1762900829776
+          modified: 1762900829776
+          isPrivate: false
+          sortKey: -1762900829776
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "codigo": "LOTE-001",
+              "dt_inicio": "2025-10-01T08:00:00Z",
+              "dt_fim": "2025-10-01T17:00:00Z",
+              "dt_inspecao": "2025-10-02T10:00:00Z",
+              "responsavel_inspecao": 3,
+              "status_inspecao": "Aprovado",
+              "produto": 1
+            }
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_producao }}
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/lote/"
+        name: Criar Lote Reprovado
+        meta:
+          id: req_18241da95ca343f1b0459944c482e8fe
+          created: 1762900829778
+          modified: 1762900829778
+          isPrivate: false
+          sortKey: -1762900829778
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "codigo": "LOTE-002",
+              "dt_inicio": "2025-09-15T08:00:00Z",
+              "dt_fim": "2025-09-15T17:00:00Z",
+              "dt_inspecao": "2025-09-16T10:00:00Z",
+              "responsavel_inspecao": 3,
+              "status_inspecao": "Reprovado",
+              "produto": 1
+            }
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_producao }}
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/lote/"
+        name: Listar Todos os Lotes
+        meta:
+          id: req_b4091ba5ff424816ad44f6ef2174cb59
+          created: 1762900829782
+          modified: 1762900829782
+          isPrivate: false
+          sortKey: -1762900829782
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/lote/"
+        name: "Listar Lotes (Engenharia) "
+        meta:
+          id: req_6ea202cdb8f24f23afbfdc453f12d231
+          created: 1762900829785
+          modified: 1762905792938
+          isPrivate: false
+          sortKey: -1762900829785
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_engenharia }}
+            id: pair_a4d641a80648458bb685d2c0beb2f1f6
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/lote/?status_inspecao=Reprovado"
+        name: Filtrar Lotes Reprovados
+        meta:
+          id: req_4982965f4e5843448bfca68c76d0d542
+          created: 1762900829788
+          modified: 1762900829788
+          isPrivate: false
+          sortKey: -1762900829788
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url
+          }}/api/lote/?dt_inicio_min=2025-09-01&dt_inicio_max=2025-09-30"
+        name: Filtrar por Data (Range)
+        meta:
+          id: req_8f428c5b81714d339872f038ca8bc4a7
+          created: 1762900829790
+          modified: 1762900829790
+          isPrivate: false
+          sortKey: -1762900829790
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/lote/?maquina=1"
+        name: Filtrar por Máquina
+        meta:
+          id: req_7aab6ca36bde49eeb3054af5f8590f0b
+          created: 1762900829792
+          modified: 1762900829792
+          isPrivate: false
+          sortKey: -1762900829792
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/lote/?categoria=1"
+        name: Filtrar por Categoria
+        meta:
+          id: req_0655af02d9ee488fa0a6e8520a35817a
+          created: 1762900829794
+          modified: 1762900829794
+          isPrivate: false
+          sortKey: -1762900829794
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url
+          }}/api/lote/?status_inspecao=Reprovado&dt_inicio_min=2025-01-01&dt_in\
+          icio_max=2025-12-31&maquina=1&categoria=1"
+        name: Filtro Completo (Reprovado + Data + Máquina + Categoria)
+        meta:
+          id: req_c705fd1bcc8840588b2536c83f954143
+          created: 1762900829796
+          modified: 1762900829796
+          isPrivate: false
+          sortKey: -1762900829796
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url
+          }}/api/lote/dashboard/?dt_inicio=2025-01-01&dt_fim=2025-12-31"
+        name: "Dashboard (Líder) "
+        meta:
+          id: req_51392928b4f2406499404b6314d9661a
+          created: 1762900829798
+          modified: 1762905795027
+          isPrivate: false
+          sortKey: -1762900829798
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_lider }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url
+          }}/api/lote/dashboard/?dt_inicio=2025-01-01&dt_fim=2025-12-31&funcion\
+          ario_id=3"
+        name: Dashboard Filtrado por Funcionário
+        meta:
+          id: req_a1d37a4db57748b9aa644ee1402367d2
+          created: 1762900829801
+          modified: 1762900829801
+          isPrivate: false
+          sortKey: -1762900829801
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_lider }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: "Itens Produzidos "
+    meta:
+      id: fld_541f71671f904e50bffa5cc5e9da4370
+      created: 1762900829824
+      modified: 1762907719374
+      sortKey: -1762900829824
+    children:
+      - url: "{{ _.base_url }}/api/item/"
+        name: Criar Item (Produção)
+        meta:
+          id: req_ae96dbb4f46343418553a4a86cc6950d
+          created: 1762900829806
+          modified: 1762900829806
+          isPrivate: false
+          sortKey: -1762900829806
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Item 001",
+              "dthItem": "2025-10-01T09:30:00Z",
+              "identificacaoMaquina": 1,
+              "lote": 1
+            }
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_producao }}
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/item/"
+        name: Listar Itens
+        meta:
+          id: req_0ee8f613da1f4ce29a0870e09bd03e80
+          created: 1762900829808
+          modified: 1762900829808
+          isPrivate: false
+          sortKey: -1762900829808
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_admin }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/item/"
+        name: "Listar Itens (Engenharia) "
+        meta:
+          id: req_e9ea4206e6014e378c73669d2b4eb00b
+          created: 1762900829810
+          modified: 1762905820112
+          isPrivate: false
+          sortKey: -1762900829810
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer {{ _.token_engenharia }}
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5d16f802fe906dc5e15cd8a1e1aa8ec03f7fc48c
+    created: 1762900829827
+    modified: 1762900829827
+environments:
+  name: Base Environment
+  meta:
+    id: env_b8656b49036e4851a6127b0f3d323f3f
+    created: 1762900829714
+    modified: 1762906067894
+    isPrivate: false
+  data:
+    base_url: http://127.0.0.1:8000
+    token_admin: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA2MzU1LCJpYXQiOjE3NjI5MDYwNTUsImp0aSI6ImI3M2E5MzJhN2IyNjRhMjliMGU3MWU5YzZhOTM1NDU1IiwidXNlcl9pZCI6IjIifQ.lRF3RyCL8tm2FREyMq0Gi4zOvkWA-RiTUYYO3bync34
+    token_producao: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA1MzM4LCJpYXQiOjE3NjI5MDUwMzgsImp0aSI6IjliZTZkOWIwNzMyNjRlNDU5MTM4NGZkMmY0MzUxYjcxIiwidXNlcl9pZCI6IjMifQ.g6JBtK6ua4KmA0jx3mI5q-iS5Lj3CoT_5VKj0Im4tWw
+    token_inspecao: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA1MzU1LCJpYXQiOjE3NjI5MDUwNTUsImp0aSI6ImZkYzhmYzM5OGE5OTQ1MTU4MGM3NDA0OWZlMmJjNDVhIiwidXNlcl9pZCI6IjQifQ.H2RJlteEMCk42EjqxB607raWlwHSbA4km0ccId05NmM
+    token_engenharia: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA1NDEzLCJpYXQiOjE3NjI5MDUxMTMsImp0aSI6IjMwZjlmMjgyZWMzOTQ5ZGM4NTM0Zjc0MmRkYzAyMmJkIiwidXNlcl9pZCI6IjUifQ.Ta5q73_KZiwVAqfRHnUWgLPTqnnk7p3rt4tb8Qaf_QY
+    token_manutencao: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA2MDAzLCJpYXQiOjE3NjI5MDU3MDMsImp0aSI6IjZmOGMwM2JjNDczZDRjNmY5MmNhMGE1YmRjMWI1NWNiIiwidXNlcl9pZCI6IjYifQ.8z9rahg98G12WbiEX_1AhUTtg1CekjUdbTSljyQKX0A
+    token_lider: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA1NDU5LCJpYXQiOjE3NjI5MDUxNTksImp0aSI6IjcwMmM5MDUxNDUyNTQ1MTVhNzJiZGU0NGJmYzk4OTJiIiwidXNlcl9pZCI6IjcifQ.vEWmCjIBBE4g9TRwMJp-_cFqzXaM0ABMecq7RMVu3_Q

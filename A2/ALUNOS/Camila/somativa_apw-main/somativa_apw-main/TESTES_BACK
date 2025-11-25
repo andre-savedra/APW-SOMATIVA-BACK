@@ -1,0 +1,317 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1732467740200
+  modified: 1732467740200
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/api/lotes/reprovados/
+    name: buscar_producao_reprovada
+    meta:
+      id: req_f35cbf85e9214e318dafd56baf599587
+      created: 1761697805521
+      modified: 1762896569957
+      isPrivate: false
+      description: ""
+      sortKey: -1761697805521
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a4a2838450d24ec7ae051c1a3a45f7cf
+      - name: User-Agent
+        value: insomnia/11.6.2
+        id: pair_86213f9c450c4a2ca304e199a4734a06
+      - id: pair_88b28c8fa2a84c4f87ef70151ef08e33
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTAwMDUzLCJpYXQiOjE3NjI4OTY0NTMsImp0aSI6ImJkNjQyZDk1N2M1OTRlMmQ4NzQzODFhNzEyYjYxZTkyIiwidXNlcl9pZCI6IjEifQ.Dkzjk5QLQfMJcsDDf8ByLF5TN01_rTDb8FB3yOqcyQQ
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/lotes/reprovados/?data_inicio=2024-10-27&data_fim=2024-10-31
+    name: buscar_reprovada+data
+    meta:
+      id: req_2dddbd51320340a6b5cfd559b964fb9a
+      created: 1761698135161
+      modified: 1762896591674
+      isPrivate: false
+      description: ""
+      sortKey: -1761698135161
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.2
+        id: pair_37621c2199c347a9bb6534cb4158a169
+      - id: pair_e8b11e6fd6b04ad8a02a35c51c94ef70
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTAwMDUzLCJpYXQiOjE3NjI4OTY0NTMsImp0aSI6ImJkNjQyZDk1N2M1OTRlMmQ4NzQzODFhNzEyYjYxZTkyIiwidXNlcl9pZCI6IjEifQ.Dkzjk5QLQfMJcsDDf8ByLF5TN01_rTDb8FB3yOqcyQQ
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/token/
+    name: JWT
+    meta:
+      id: req_3c1fd1caebd64c8fab2ee9519915de96
+      created: 1761701910882
+      modified: 1762909339640
+      isPrivate: false
+      description: ""
+      sortKey: -1761701910882
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "username": "jose@jose.com",
+          "password": "Senha@123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_28451868b285479da1607995c352e1e2
+      - name: User-Agent
+        value: insomnia/11.6.2
+        id: pair_b40d95c4cd31492baf52f1afbc90b660
+      - id: pair_1aa7883b200a40f0a6a547368d73cdbd
+        name: Authorization
+        value: ""
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/maquinas/
+    name: busca_historico_manutencoes
+    meta:
+      id: req_878ada0f330a4febb66f020653488414
+      created: 1761702044428
+      modified: 1762897098865
+      isPrivate: false
+      description: ""
+      sortKey: -1761702044428
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email":"camila@camila.com",
+        	"password":"camila"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3c2e795561644c2aab77cb8c1ba6e732
+      - name: User-Agent
+        value: insomnia/11.6.2
+        id: pair_c83e288614f742f5981bc5df376e6c3c
+      - id: pair_04982cdf22734e7fbbe73b78f85b2bda
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTAwMDUzLCJpYXQiOjE3NjI4OTY0NTMsImp0aSI6ImJkNjQyZDk1N2M1OTRlMmQ4NzQzODFhNzEyYjYxZTkyIiwidXNlcl9pZCI6IjEifQ.Dkzjk5QLQfMJcsDDf8ByLF5TN01_rTDb8FB3yOqcyQQ
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/lotes/
+    name: consulta_funcionarios_inspecao
+    meta:
+      id: req_9b2ee5d629a740d29a0401dfedf242d6
+      created: 1762897213250
+      modified: 1762901435280
+      isPrivate: false
+      description: ""
+      sortKey: -1762897213250
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.2
+        id: pair_79a291fe77dd4f79b8962b0667d434ea
+      - id: pair_96dc0e9cc1264f99854844ade8460633
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA0ODYzLCJpYXQiOjE3NjI5MDEyNjMsImp0aSI6IjkzOTNlM2VhMmE0ODQ4ODU4MGFkNjMzNzQ3NmI2ZjgzIiwidXNlcl9pZCI6IjMifQ.JdfyaAyHiUbFclBuk0LKUCxomiojpaP71N82w-1ah_M
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/maquinas/
+    name: criar_maquina
+    meta:
+      id: req_cd697ad0960344479b5dffa38d23975d
+      created: 1762901371813
+      modified: 1762910593895
+      isPrivate: false
+      description: ""
+      sortKey: -1762901371813
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "codigo": "M005",
+          "nome": "Máquina de Corte a Laser",
+          "descricao": "Corte de alta precisão",
+          "foto": ""
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_7f709e0f69fb432e9dc45df0fd99e517
+      - name: User-Agent
+        value: insomnia/11.6.2
+        id: pair_b52272690fd441c7ae9d087e1b493ddd
+      - id: pair_89d3d904e4fa412b8dd259878b19317a
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTEyOTQxLCJpYXQiOjE3NjI5MDkzNDEsImp0aSI6ImI2ZDU3N2E4MGQxZjRhYTZiZmY5Y2Q4NzQyMDM4NDhkIiwidXNlcl9pZCI6IjQifQ.lZCW_QL9Ilap4PK4PokkJTaIaMdEveYPUyldDXIF9uY
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/lotes/
+    name: CRIAR_LOTE
+    meta:
+      id: req_4f011f5cd36c4deeba0448b378272647
+      created: 1762903757647
+      modified: 1762908787996
+      isPrivate: false
+      description: ""
+      sortKey: -1762899292531.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "codigo": "L101",
+          "produto": 1,
+          "data_inicio": "2025-11-02T08:00:00Z",
+          "data_fim": "2025-11-02T16:00:00Z",
+          "responsavel_inspecao": 2
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.2
+        id: pair_b52272690fd441c7ae9d087e1b493ddd
+      - id: pair_89d3d904e4fa412b8dd259878b19317a
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTA0ODYzLCJpYXQiOjE3NjI5MDEyNjMsImp0aSI6IjkzOTNlM2VhMmE0ODQ4ODU4MGFkNjMzNzQ3NmI2ZjgzIiwidXNlcl9pZCI6IjMifQ.JdfyaAyHiUbFclBuk0LKUCxomiojpaP71N82w-1ah_M
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/manutencoes/
+    name: criar_manutencao
+    meta:
+      id: req_4d73e6220c69436baf7d2c0b7ad32dad
+      created: 1762910576057
+      modified: 1762910779978
+      isPrivate: false
+      description: ""
+      sortKey: -1762900332172.25
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "maquina": 1,
+          "data_hora": "2025-01-01T10:00:00Z",
+          "descricao": "Troca de lâmina",
+          "funcionario": 3
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_7f709e0f69fb432e9dc45df0fd99e517
+      - name: User-Agent
+        value: insomnia/11.6.2
+        id: pair_b52272690fd441c7ae9d087e1b493ddd
+      - id: pair_89d3d904e4fa412b8dd259878b19317a
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyOTEyOTQxLCJpYXQiOjE3NjI5MDkzNDEsImp0aSI6ImI2ZDU3N2E4MGQxZjRhYTZiZmY5Y2Q4NzQyMDM4NDhkIiwidXNlcl9pZCI6IjQifQ.lZCW_QL9Ilap4PK4PokkJTaIaMdEveYPUyldDXIF9uY
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1732467781509
+    modified: 1760812642472
+  cookies:
+    - key: csrftoken
+      value: 8y6jl9EhR4XfaGlZDOzFMuVZHBIXkd6u
+      maxAge: 31449600
+      domain: 127.0.0.1
+      path: /
+      hostOnly: true
+      creation: 2025-10-18T18:33:01.829Z
+      lastAccessed: 2025-10-18T18:37:22.471Z
+      sameSite: lax
+      id: e671a9f7-4377-4460-8bde-f30dd082b688
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1732467781393
+    modified: 1732467781393
+    isPrivate: false
